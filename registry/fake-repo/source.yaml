@@ -1,0 +1,3 @@
+source:
+  type: github
+  repository: https://github.com/this-org-does-not-exist-xyz/fake-repo-abc

@@ -25,3 +25,4 @@ jobs:
       - run: npm run validate
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
