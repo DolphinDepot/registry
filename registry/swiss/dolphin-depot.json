@@ -1,0 +1,24 @@
+{
+  "name": "Swiss",
+  "maintainer": "Extrems",
+  "authors": ["Extrems", "emukidid"],
+  "description_short": "The swiss army knife of GameCube homebrew",
+  "description_long": "Swiss is an all-in-one homebrew utility for the Nintendo GameCube. It allows browsing and loading DOL executables and GCM disc images from various storage devices including SD Gecko, SD2SP2, GC Loader, IDE-EXI, M.2 Loader, USB Gecko, Broadband Adapter (via SMB/FTP/FSP), DVD-R, memory cards, and many more. It also provides hardware emulation for the DVD Interface, Broadband Adapter, and Processor Interface.",
+  "category": "utilities",
+  "platforms": ["gamecube", "wii"],
+  "peripherals": ["gc_controller", "sd_gecko", "broadband_adapter"],
+  "source": {
+    "type": "github_release",
+    "asset_pattern": "swiss_r*.7z"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["swiss_r*.7z", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["DOL/swiss_r*.dol", "boot.dol"]
+    }
+  ]
+}
