@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["source"],
+  "additionalProperties": false,
+  "properties": {
+    "source": {
+      "type": "object",
+      "required": ["type", "repository"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["github"]
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^https://github\\.com/[\\w.-]+/[\\w.-]+$"
+        }
+      }
+    }
+  }
+}

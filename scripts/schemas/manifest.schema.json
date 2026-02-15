@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["name", "maintainer", "description_short", "category", "source", "treatments"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "maintainer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "description_short": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description_long": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["games", "emulators", "utilities", "demos", "media"]
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["gamecube", "wii", "dolphin"]
+      }
+    },
+    "peripherals": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["gc_controller", "gc_keyboard", "sd_gecko", "broadband_adapter"]
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["type", "asset_pattern"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["github_release"]
+        },
+        "asset_pattern": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "treatments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["treatment", "arguments"],
+        "additionalProperties": false,
+        "properties": {
+          "treatment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "arguments": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
