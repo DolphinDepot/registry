@@ -1,3 +1,2 @@
 source:
-  type: github
-  repository: https://github.com/emukidid/swiss-gc
+  type: local
