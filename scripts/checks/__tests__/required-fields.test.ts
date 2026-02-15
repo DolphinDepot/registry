@@ -60,4 +60,24 @@ describe("requiredFields", () => {
     expect(result.passed).toBe(false);
     expect(result.message).toMatch(/repository/);
   });
+
+  it("passes with valid local source config (no repository)", () => {
+    const ctx = makeCtx({
+      sourceConfig: { source: { type: "local" } },
+    });
+    const result = requiredFields(ctx);
+
+    expect(result.passed).toBe(true);
+  });
+
+  it("fails when local source has extra fields", () => {
+    const ctx = makeCtx({
+      sourceConfig: {
+        source: { type: "local", repository: "https://github.com/owner/repo" },
+      } as any,
+    });
+    const result = requiredFields(ctx);
+
+    expect(result.passed).toBe(false);
+  });
 });

@@ -10,7 +10,15 @@ export async function repoExists(ctx: CheckContext): Promise<CheckResult> {
     };
   }
 
-  const url = ctx.sourceConfig.source.repository;
+  if (ctx.sourceConfig.source.type === "local") {
+    return {
+      check: "repo-exists",
+      passed: true,
+      message: "Skipped (local source)",
+    };
+  }
+
+  const url = ctx.sourceConfig.source.repository!;
   const match = url.match(/github\.com\/([^/]+)\/([^/]+)$/);
 
   if (!match) {
