@@ -1,7 +1,7 @@
 export interface SourceConfig {
   source: {
     type: string;
-    repository: string;
+    repository?: string;
   };
 }
 

@@ -1,5 +1,11 @@
+import { vol } from "memfs";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import type { CheckContext } from "../../lib/types.js";
+
+vi.mock("node:fs", async () => {
+  const memfs = await vi.importActual<typeof import("memfs")>("memfs");
+  return memfs.fs;
+});
 
 vi.mock("../../lib/github.js", () => ({
   getRawFile: vi.fn(),
@@ -24,6 +30,7 @@ function makeCtx(overrides?: Partial<CheckContext>): CheckContext {
 
 describe("manifestExists", () => {
   beforeEach(() => {
+    vol.reset();
     mockedGetRawFile.mockReset();
   });
 
@@ -64,5 +71,56 @@ describe("manifestExists", () => {
 
     expect(result.passed).toBe(false);
     expect(result.message).toMatch(/repo check failed/i);
+  });
+
+  it("reads local manifest for local source type", async () => {
+    const manifest = JSON.stringify({ name: "Local App" });
+    vol.fromJSON({ "/entry/dolphin-depot.json": manifest });
+
+    const ctx = makeCtx({
+      dir: "/entry",
+      repoOwner: undefined,
+      repoName: undefined,
+      defaultBranch: undefined,
+      sourceConfig: { source: { type: "local" } },
+    });
+    const result = await manifestExists(ctx);
+
+    expect(result.passed).toBe(true);
+    expect(result.message).toMatch(/local/);
+    expect(ctx.manifest).toEqual({ name: "Local App" });
+    expect(mockedGetRawFile).not.toHaveBeenCalled();
+  });
+
+  it("fails when local manifest is missing", async () => {
+    vol.fromJSON({ "/entry": null });
+
+    const ctx = makeCtx({
+      dir: "/entry",
+      repoOwner: undefined,
+      repoName: undefined,
+      defaultBranch: undefined,
+      sourceConfig: { source: { type: "local" } },
+    });
+    const result = await manifestExists(ctx);
+
+    expect(result.passed).toBe(false);
+    expect(result.message).toMatch(/not found/);
+  });
+
+  it("fails when local manifest has invalid JSON", async () => {
+    vol.fromJSON({ "/entry/dolphin-depot.json": "{bad json" });
+
+    const ctx = makeCtx({
+      dir: "/entry",
+      repoOwner: undefined,
+      repoName: undefined,
+      defaultBranch: undefined,
+      sourceConfig: { source: { type: "local" } },
+    });
+    const result = await manifestExists(ctx);
+
+    expect(result.passed).toBe(false);
+    expect(result.message).toMatch(/not valid JSON/);
   });
 });

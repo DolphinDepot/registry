@@ -6,18 +6,26 @@
   "properties": {
     "source": {
       "type": "object",
-      "required": ["type", "repository"],
-      "additionalProperties": false,
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": ["github"]
+      "oneOf": [
+        {
+          "properties": {
+            "type": { "const": "github" },
+            "repository": {
+              "type": "string",
+              "pattern": "^https://github\\.com/[\\w.-]+/[\\w.-]+$"
+            }
+          },
+          "required": ["type", "repository"],
+          "additionalProperties": false
         },
-        "repository": {
-          "type": "string",
-          "pattern": "^https://github\\.com/[\\w.-]+/[\\w.-]+$"
+        {
+          "properties": {
+            "type": { "const": "local" }
+          },
+          "required": ["type"],
+          "additionalProperties": false
         }
-      }
+      ]
     }
   }
 }

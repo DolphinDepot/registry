@@ -57,6 +57,17 @@ describe("repoExists", () => {
     expect(result.message).toMatch(/no source config/i);
   });
 
+  it("skips with pass for local source type", async () => {
+    const ctx = makeCtx({
+      sourceConfig: { source: { type: "local" } },
+    });
+    const result = await repoExists(ctx);
+
+    expect(result.passed).toBe(true);
+    expect(result.message).toMatch(/local source/i);
+    expect(mockedGetRepoInfo).not.toHaveBeenCalled();
+  });
+
   it("fails when repository URL cannot be parsed", async () => {
     const ctx = makeCtx({
       sourceConfig: {
