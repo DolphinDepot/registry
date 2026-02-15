@@ -23,7 +23,10 @@ function getAllSlugs(): string[] {
 
 function getChangedSlugs(): string[] {
   try {
-    const diff = execSync("git diff --name-only HEAD~1", {
+    const baseRef = process.env.BASE_REF;
+    const diffTarget = baseRef ? `origin/${baseRef}...HEAD` : "HEAD~1";
+
+    const diff = execSync(`git diff --name-only ${diffTarget}`, {
       cwd: ROOT,
       encoding: "utf-8",
     });
@@ -31,7 +34,7 @@ function getChangedSlugs(): string[] {
     const slugs = new Set<string>();
 
     for (const line of diff.split("\n")) {
-      const match = line.match(/^registry\/([^/]+)\/source\.yaml$/);
+      const match = line.match(/^registry\/([^/]+)\/.+$/);
       if (match) slugs.add(match[1]);
     }
 
