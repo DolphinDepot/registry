@@ -41,19 +41,9 @@ describe("reportEntry", () => {
     expect(output).toContain("required-fields");
     expect(output).toContain("Missing fields");
   });
-
-  it("does not emit ::error:: annotation outside CI", () => {
-    const results: CheckResult[] = [
-      { check: "yaml-syntax", passed: false, message: "Bad YAML" },
-    ];
-    reportEntry("my-app", results);
-
-    const output = collectOutput(logSpy);
-    expect(output).not.toContain("::error::");
-  });
 });
 
-describe("reportEntry with GITHUB_ACTIONS", () => {
+describe("reportEntry CI annotations", () => {
   const originalGA = process.env.GITHUB_ACTIONS;
 
   afterEach(() => {
@@ -65,17 +55,36 @@ describe("reportEntry with GITHUB_ACTIONS", () => {
     }
   });
 
-  it("emits ::error:: annotation for failed checks in CI", async () => {
-    process.env.GITHUB_ACTIONS = "true";
+  it("does not emit ::error:: annotation outside CI", async () => {
+    delete process.env.GITHUB_ACTIONS;
     vi.resetModules();
-    const { reportEntry: reportEntryCI } = await import("../reporter.js");
+    const { reportEntry: freshReportEntry } = await import("../reporter.js");
 
     const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
     try {
       const results: CheckResult[] = [
         { check: "yaml-syntax", passed: false, message: "Bad YAML" },
       ];
-      reportEntryCI("my-app", results);
+      freshReportEntry("my-app", results);
+
+      const output = collectOutput(logSpy);
+      expect(output).not.toContain("::error::");
+    } finally {
+      logSpy.mockRestore();
+    }
+  });
+
+  it("emits ::error:: annotation for failed checks in CI", async () => {
+    process.env.GITHUB_ACTIONS = "true";
+    vi.resetModules();
+    const { reportEntry: freshReportEntry } = await import("../reporter.js");
+
+    const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
+    try {
+      const results: CheckResult[] = [
+        { check: "yaml-syntax", passed: false, message: "Bad YAML" },
+      ];
+      freshReportEntry("my-app", results);
 
       const output = collectOutput(logSpy);
       expect(output).toContain("::error::");
