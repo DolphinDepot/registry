@@ -11,7 +11,7 @@ const validManifest: Manifest = {
   maintainer: "tester",
   description_short: "A test application",
   category: "games",
-  source: { type: "github_release", asset_pattern: "*.dol" },
+  source: { type: "github_release", repository: "owner/repo", asset_pattern: "*.dol" },
   treatments: [{ treatment: "decompress", arguments: ["zip"] }],
 };
 
