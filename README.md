@@ -1,6 +1,6 @@
 # Dolphin Depot Registry
 
-The central registry of homebrew applications for [Dolphin Depot](https://gcstore.webhdx.dev). App authors submit their projects here via pull request.
+The central registry of homebrew applications for [Dolphin Depot](https://dolphindepot.org). App authors submit their projects here via pull request.
 
 ## How It Works
 
