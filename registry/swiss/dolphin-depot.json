@@ -9,6 +9,7 @@
   "peripherals": ["gc_controller", "sd_gecko", "broadband_adapter"],
   "source": {
     "type": "github_release",
+    "repository": "emukidid/swiss-gc",
     "asset_pattern": "swiss_r*.7z"
   },
   "treatments": [

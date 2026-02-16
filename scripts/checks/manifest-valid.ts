@@ -1,8 +1,10 @@
 import Ajv from "ajv";
+import addFormats from "ajv-formats";
 import manifestSchema from "../schemas/manifest.schema.json" with { type: "json" };
 import type { CheckContext, CheckResult } from "../lib/types.js";
 
 const ajv = new Ajv({ allErrors: true });
+addFormats(ajv);
 const validate = ajv.compile(manifestSchema);
 
 export function manifestValid(ctx: CheckContext): CheckResult {

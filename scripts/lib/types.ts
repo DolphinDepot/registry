@@ -14,10 +14,9 @@ export interface Manifest {
   category: string;
   platforms?: string[];
   peripherals?: string[];
-  source: {
-    type: string;
-    asset_pattern: string;
-  };
+  source:
+    | { type: "github_release"; repository: string; asset_pattern: string }
+    | { type: "direct_url"; url: string; file_name?: string };
   treatments: {
     treatment: string;
     arguments: string[];

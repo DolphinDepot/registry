@@ -42,18 +42,26 @@
     },
     "source": {
       "type": "object",
-      "required": ["type", "asset_pattern"],
-      "additionalProperties": false,
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": ["github_release"]
+      "oneOf": [
+        {
+          "properties": {
+            "type": { "const": "github_release" },
+            "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+            "asset_pattern": { "type": "string", "minLength": 1 }
+          },
+          "required": ["type", "repository", "asset_pattern"],
+          "additionalProperties": false
         },
-        "asset_pattern": {
-          "type": "string",
-          "minLength": 1
+        {
+          "properties": {
+            "type": { "const": "direct_url" },
+            "url": { "type": "string", "format": "uri" },
+            "file_name": { "type": "string", "minLength": 1 }
+          },
+          "required": ["type", "url"],
+          "additionalProperties": false
         }
-      }
+      ]
     },
     "treatments": {
       "type": "array",
