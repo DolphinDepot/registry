@@ -2,9 +2,6 @@ import { readdirSync, existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
-import { yamlSyntax } from "./checks/yaml-syntax.js";
-import { requiredFields } from "./checks/required-fields.js";
-import { repoExists } from "./checks/repo-exists.js";
 import { manifestExists } from "./checks/manifest-exists.js";
 import { manifestValid } from "./checks/manifest-valid.js";
 import { slugUnique } from "./checks/slug-unique.js";
@@ -15,93 +12,77 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const REGISTRY_DIR = join(ROOT, "registry");
 
 function getAllSlugs(): string[] {
-  if (!existsSync(REGISTRY_DIR)) return [];
-  return readdirSync(REGISTRY_DIR, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => d.name);
+    if (!existsSync(REGISTRY_DIR)) return [];
+    return readdirSync(REGISTRY_DIR, { withFileTypes: true })
+        .filter((d) => d.isDirectory())
+        .map((d) => d.name);
 }
 
 function getChangedSlugs(): string[] {
-  try {
-    const baseRef = process.env.BASE_REF;
-    const diffTarget = baseRef ? `origin/${baseRef}...HEAD` : "HEAD~1";
+    try {
+        const baseRef = process.env.BASE_REF;
+        const diffTarget = baseRef ? `origin/${baseRef}...HEAD` : "HEAD~1";
 
-    const diff = execSync(`git diff --name-only ${diffTarget}`, {
-      cwd: ROOT,
-      encoding: "utf-8",
-    });
+        const diff = execSync(`git diff --name-only ${diffTarget}`, {
+            cwd: ROOT,
+            encoding: "utf-8",
+        });
 
-    const slugs = new Set<string>();
+        const slugs = new Set<string>();
 
-    for (const line of diff.split("\n")) {
-      const match = line.match(/^registry\/([^/]+)\/.+$/);
-      if (match) slugs.add(match[1]);
+        for (const line of diff.split("\n")) {
+            const match = line.match(/^registry\/([^/]+)\/.+$/);
+            if (match) slugs.add(match[1]);
+        }
+
+        return [...slugs];
+    } catch {
+        console.log(
+            "Could not detect changed files via git diff, falling back to --all",
+        );
+        return getAllSlugs();
     }
-
-    return [...slugs];
-  } catch {
-    console.log("Could not detect changed files via git diff, falling back to --all");
-    return getAllSlugs();
-  }
 }
 
-async function validateEntry(slug: string, allSlugs: string[]): Promise<boolean> {
-  const dir = join(REGISTRY_DIR, slug);
-  const ctx: CheckContext = { slug, dir, allSlugs };
-  const results: CheckResult[] = [];
+async function validateEntry(
+    slug: string,
+    allSlugs: string[],
+): Promise<boolean> {
+    const dir = join(REGISTRY_DIR, slug);
+    const ctx: CheckContext = { slug, dir, allSlugs };
+    const results: CheckResult[] = [
+        await manifestExists(ctx),
+        manifestValid(ctx),
+        slugUnique(ctx),
+    ];
 
-  // Check 1: YAML syntax (gating)
-  results.push(yamlSyntax(ctx));
-  if (!results.at(-1)!.passed) {
     reportEntry(slug, results);
-    return false;
-  }
 
-  // Check 2: Required fields (gating)
-  results.push(requiredFields(ctx));
-  if (!results.at(-1)!.passed) {
-    reportEntry(slug, results);
-    return false;
-  }
-
-  // Check 3-5: Remote checks (sequential, each depends on previous)
-  results.push(await repoExists(ctx));
-  if (results.at(-1)!.passed) {
-    results.push(await manifestExists(ctx));
-    if (results.at(-1)!.passed) {
-      results.push(manifestValid(ctx));
-    }
-  }
-
-  // Check 6: Slug format and uniqueness
-  results.push(slugUnique(ctx));
-
-  reportEntry(slug, results);
-  return results.every((r) => r.passed);
+    return results.every((r) => r.passed);
 }
 
 async function main(): Promise<void> {
-  const allFlag = process.argv.includes("--all");
-  const allSlugs = getAllSlugs();
-  const slugsToValidate = allFlag ? allSlugs : getChangedSlugs();
+    const allFlag = process.argv.includes("--all");
+    const allSlugs = getAllSlugs();
+    const slugsToValidate = allFlag ? allSlugs : getChangedSlugs();
 
-  if (slugsToValidate.length === 0) {
-    console.log("No registry entries to validate.");
-    return;
-  }
+    if (slugsToValidate.length === 0) {
+        console.log("No registry entries to validate.");
+        return;
+    }
 
-  console.log(`Validating ${slugsToValidate.length} entr${slugsToValidate.length === 1 ? "y" : "ies"}...`);
+    console.log(`Validating ${slugsToValidate.length} entries...`);
 
-  let failed = 0;
+    let failed = 0;
 
-  for (const slug of slugsToValidate) {
-    const passed = await validateEntry(slug, allSlugs);
-    if (!passed) failed++;
-  }
+    for (const slug of slugsToValidate) {
+        const passed = await validateEntry(slug, allSlugs);
+        if (!passed) failed++;
+    }
 
-  reportSummary(slugsToValidate.length, failed);
+    reportSummary(slugsToValidate.length, failed);
 
-  if (failed > 0) process.exit(1);
+    if (failed > 0) process.exit(1);
 }
 
 main();

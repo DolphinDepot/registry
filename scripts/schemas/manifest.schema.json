@@ -1,5 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dolphindepot.org/schemas/manifest.schema.json",
   "type": "object",
   "required": ["name", "maintainer", "description_short", "category", "source", "treatments"],
   "properties": {
@@ -17,10 +18,12 @@
     },
     "description_short": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "maxLength": 160
     },
     "description_long": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 500
     },
     "category": {
       "type": "string",
@@ -30,14 +33,21 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["gamecube", "wii", "dolphin"]
+        "enum": ["gamecube", "wii_nintendont", "wii_swiss", "dolphin"]
       }
     },
     "peripherals": {
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["gc_controller", "gc_keyboard", "sd_gecko", "broadband_adapter"]
+        "enum": [
+          "controller", "keyboard",
+          "gb_player", "gba_link_cable",
+          "microphone", "memory_card", "dance_mat", "dk_bongos", "racing_wheel",
+          "sd_gecko", "sd2sp2", "m2_loader", "mmce",
+          "bba", "modem", "eth2gc", 
+          "gcloader", "flippydrive", "picoboot", "usb_gecko"
+        ]
       }
     },
     "source": {
@@ -59,6 +69,15 @@
             "file_name": { "type": "string", "minLength": 1 }
           },
           "required": ["type", "url"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "type": { "const": "gitlab_release" },
+            "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+            "asset_pattern": { "type": "string", "minLength": 1 }
+          },
+          "required": ["type", "repository", "asset_pattern"],
           "additionalProperties": false
         }
       ]
