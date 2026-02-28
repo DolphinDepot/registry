@@ -1,0 +1,19 @@
+{
+  "name": "GameBoy Interface",
+  "author": "Extrems",
+  "description_short": "A free alternative to the Game Boy Player Start-up Disc software",
+  "description_long": "",
+  "category": "utilities",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": [
+    "controller", 
+    "gb_player",
+    "gba_link_cable",
+    "sd_gecko",
+    "sd2sp2"
+  ],
+  "source": {
+    "type": "qr_code",
+    "url": "https://www.gc-forever.com/wiki/index.php?title=Game_Boy_Interface"
+  }
+}

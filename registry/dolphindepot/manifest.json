@@ -1,0 +1,41 @@
+{
+  "name": "Dolphin Depot",
+  "maintainer": "Dolphin Depot Team",
+  "authors": ["webhdx", "Dolphin Depot Team"],
+  "description_short": "Stocking the best GameCube homebrew",
+  "description_long": "",
+  "category": "utilities",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": [
+    "gc_controller", 
+    "sd_gecko", 
+    "sd2sp2", 
+    "gcloader", 
+    "flippydrive", 
+    "bba",
+    "eth2gc"
+  ],
+  "source": {
+    "type": "github_release",
+    "repository": "DolphinDepot/gc-client",
+    "asset_pattern": "dolphindepot-gc-client*.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["dolphindepot-gc-client*.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["apps/dolphindepot/default.dol", "default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["apps/dolphindepot/opening.bnr", "opening.bnr"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["data/ui/*", "dolphindepot/ui"]
+    }
+  ]
+}
