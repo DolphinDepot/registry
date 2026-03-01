@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dolphindepot.org/schemas/manifest.schema.json",
+  "type": "object",
+  "required": ["name", "author", "description_short", "category", "source", "treatments"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description_short": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "description_long": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "category": {
+      "type": "string",
+      "enum": ["games", "emulators", "utilities", "demos", "media"]
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["gamecube", "wii_nintendont", "wii_swiss", "dolphin"]
+      }
+    },
+    "peripherals": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "controller", "keyboard",
+          "gb_player", "gba_link_cable",
+          "microphone", "memory_card", "dance_mat", "dk_bongos", "racing_wheel",
+          "sd_gecko", "sd2sp2", "m2_loader", "mmce",
+          "bba", "modem", "eth2gc", 
+          "gcloader", "flippydrive", "picoboot", "usb_gecko"
+        ]
+      }
+    },
+    "source": {
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "type": { "const": "github_release" },
+            "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+            "asset_pattern": { "type": "string", "minLength": 1 }
+          },
+          "required": ["type", "repository", "asset_pattern"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "type": { "const": "direct_url" },
+            "url": { "type": "string", "format": "uri" },
+            "file_name": { "type": "string", "minLength": 1 }
+          },
+          "required": ["type", "url"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "type": { "const": "gitlab_release" },
+            "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
+            "asset_pattern": { "type": "string", "minLength": 1 }
+          },
+          "required": ["type", "repository", "asset_pattern"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "treatments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["treatment", "arguments"],
+        "additionalProperties": false,
+        "properties": {
+          "treatment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "arguments": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

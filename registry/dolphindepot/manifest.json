@@ -1,13 +1,12 @@
 {
   "name": "Dolphin Depot",
-  "maintainer": "Dolphin Depot Team",
-  "authors": ["webhdx", "Dolphin Depot Team"],
+  "author": "Dolphin Depot Team",
   "description_short": "Stocking the best GameCube homebrew",
   "description_long": "",
   "category": "utilities",
   "platforms": ["gamecube", "panasonic_q"],
   "peripherals": [
-    "gc_controller", 
+    "controller", 
     "sd_gecko", 
     "sd2sp2", 
     "gcloader", 
