@@ -29,7 +29,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["gamecube", "wii_nintendont", "wii_swiss", "dolphin"]
+        "enum": ["gamecube", "panasonic_q", "triforce", "tdev", "gdev", "wii_nintendont", "wii_swiss", "dolphin"]
       }
     },
     "peripherals": {
