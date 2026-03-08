@@ -1,0 +1,24 @@
+{
+  "name": "CleanRip",
+  "author": "emu_kidid",
+  "description_short": "Disc Backup Tool for GC/Wii Discs",
+  "description_long": "A tool to backup your Gamecube/Wii Discs via IOS58 Create 1:1 backups of your GC/Wii discs for archival purposes without any requirements for custom IOS (cIOS). Supports USB 2.0 / NTFS / exFAT & Front SD.",
+  "category": "utilities",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2", "m2loader", "mmce"],
+  "source": {
+    "type": "github_release",
+    "repository": "emukidid/cleanrip",
+    "asset_pattern": "CleanRip-*-gc.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["CleanRip-*-gc.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["cleanrip-gc.dol", "apps/cleanrip/default.dol"]
+    }
+  ]
+}
