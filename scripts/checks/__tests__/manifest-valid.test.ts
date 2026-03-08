@@ -8,7 +8,7 @@ function makeCtx(manifest?: Manifest): CheckContext {
 
 const validManifest: Manifest = {
     name: "Test App",
-    maintainer: "tester",
+    author: "tester",
     description_short: "A test application",
     category: "games",
     source: {
