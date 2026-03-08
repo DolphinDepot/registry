@@ -19,7 +19,7 @@
     },
     {
       "treatment": "contents.move",
-      "arguments": ["gcmm/gcmm_*/gamecube/gcmm_GC.dol", "apps/gcmm/default.dol"]
+      "arguments": ["gcmm_*/gamecube/gcmm_*.dol", "apps/gcmm/default.dol"]
     }
   ]
 }
