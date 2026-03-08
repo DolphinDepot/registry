@@ -1,6 +1,6 @@
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
-import manifestSchema from "../schemas/manifest.schema.json" with { type: "json" };
+import manifestSchema from "../../manifest.schema.json" with { type: "json" };
 import type { CheckContext, CheckResult } from "../lib/types.js";
 
 const ajv = new Ajv2020({ allErrors: true });
