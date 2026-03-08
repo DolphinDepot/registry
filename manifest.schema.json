@@ -41,7 +41,7 @@
           "gb_player", "gba_link_cable",
           "microphone", "memory_card", "dance_mat", "dk_bongos", "racing_wheel",
           "sd_gecko", "sd2sp2", "m2_loader", "mmce",
-          "bba", "modem", "eth2gc", 
+          "bba", "modem", "eth2gc",
           "gcloader", "flippydrive", "picoboot", "usb_gecko"
         ]
       }
@@ -53,7 +53,12 @@
           "properties": {
             "type": { "const": "github_release" },
             "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
-            "asset_pattern": { "type": "string", "minLength": 1 }
+            "asset_pattern": { "type": "string", "minLength": 1 },
+            "ignore_versions": {
+              "type": "array",
+              "items": { "type": "string", "minLength": 1 },
+              "uniqueItems": true
+            }
           },
           "required": ["type", "repository", "asset_pattern"],
           "additionalProperties": false
@@ -71,7 +76,12 @@
           "properties": {
             "type": { "const": "gitlab_release" },
             "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
-            "asset_pattern": { "type": "string", "minLength": 1 }
+            "asset_pattern": { "type": "string", "minLength": 1 },
+            "ignore_versions": {
+              "type": "array",
+              "items": { "type": "string", "minLength": 1 },
+              "uniqueItems": true
+            }
           },
           "required": ["type", "repository", "asset_pattern"],
           "additionalProperties": false
