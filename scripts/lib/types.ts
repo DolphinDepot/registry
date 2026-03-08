@@ -7,8 +7,7 @@ export interface SourceConfig {
 
 export interface Manifest {
     name: string;
-    maintainer: string;
-    authors?: string[];
+    author: string;
     description_short: string;
     description_long?: string;
     category: string;
