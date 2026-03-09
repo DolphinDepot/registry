@@ -42,7 +42,7 @@
           "microphone", "memory_card", "dance_mat", "dk_bongos", "racing_wheel",
           "sd_gecko", "sd2sp2", "m2_loader", "mmce",
           "bba", "modem", "eth2gc",
-          "gcloader", "flippydrive", "picoboot", "usb_gecko"
+          "gcloader", "cubeode", "flippydrive", "picoboot", "usb_gecko"
         ]
       }
     },
