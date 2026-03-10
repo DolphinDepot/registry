@@ -1,0 +1,26 @@
+{
+  "name": "Eye Dropped",
+  "author": "Aionmagan",
+  "description_short": "A first-person shooter where you blast eyeballs before they push you off the platform",
+  "description_long": "Eye Dropped is a fast-paced FPS for the Nintendo GameCube. The goal is to shoot as many eyeballs as possible before they push you off the platform. Built with a custom engine exclusively for the GameCube.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q", "dolphin"],
+  "peripherals": ["controller"],
+  "source": {
+    "type": "itchio",
+    "creator": "aionmagan",
+    "game": "eye-dropped",
+    "upload": "DropKiller GAMECUBE (dol).zip",
+    "format": "zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["eye-dropped.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["*.dol", "apps/eye-dropped/default.dol"]
+    }
+  ]
+}
