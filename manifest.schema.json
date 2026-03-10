@@ -1,39 +1,55 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://dolphindepot.org/schemas/manifest.schema.json",
+  "title": "Dolphin Depot Application Manifest Schema",
   "type": "object",
   "required": ["name", "author", "description_short", "category", "source", "treatments"],
   "properties": {
     "name": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "Display name of the homebrew application as shown in the catalog.",
+      "examples": ["Swiss", "CleanRip", "Nicky Boum"]
     },
     "author": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "Name of the application author or primary maintainer.",
+      "examples": ["Extrems", "emu_kidid"]
     },
     "description_short": {
       "type": "string",
       "minLength": 1,
-      "maxLength": 160
+      "maxLength": 160,
+      "description": "Brief one-line summary of the application, up to 160 characters. Displayed in catalog listings.",
+      "examples": ["The swiss army knife of GameCube homebrew", "Disc Backup Tool for GC/Wii Discs"]
     },
     "description_long": {
       "type": "string",
-      "maxLength": 500
+      "maxLength": 500,
+      "description": "Extended description of the application, up to 500 characters. Displayed on the application detail page.",
+      "examples": ["Swiss is an all-in-one homebrew utility for the Nintendo GameCube. It allows browsing and loading DOL executables and GCM disc images from various storage devices."]
     },
     "category": {
       "type": "string",
-      "enum": ["games", "emulators", "utilities", "demos", "media"]
+      "enum": ["games", "emulators", "utilities", "demos", "media"],
+      "description": "Category the application belongs to. Must be one of: games, emulators, utilities, demos, media."
     },
     "platforms": {
       "type": "array",
+      "description": "List of compatible hardware platforms. If omitted, no platform compatibility is specified.",
       "items": {
         "type": "string",
         "enum": ["gamecube", "panasonic_q", "triforce", "tdev", "gdev", "wii_nintendont", "wii_swiss", "dolphin"]
-      }
+      },
+      "examples": [
+        ["gamecube", "panasonic_q"],
+        ["gamecube", "panasonic_q", "dolphin"]
+      ]
     },
     "peripherals": {
       "type": "array",
+      "description": "List of supported or required peripherals and accessories.",
       "items": {
         "type": "string",
         "enum": [
@@ -44,52 +60,127 @@
           "bba", "modem", "eth2gc",
           "gcloader", "cubeode", "flippydrive", "picoboot", "usb_gecko"
         ]
-      }
+      },
+      "examples": [
+        ["controller", "sd_gecko", "bba"],
+        ["controller", "sd_gecko", "sd2sp2", "m2_loader", "mmce"]
+      ]
     },
     "source": {
       "type": "object",
+      "description": "Defines where to download the application binary. Supports GitHub releases, GitLab releases, or a direct URL.",
       "oneOf": [
         {
+          "description": "Download from a GitHub release asset.",
           "properties": {
             "type": { "const": "github_release" },
-            "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
-            "asset_pattern": { "type": "string", "minLength": 1 },
+            "repository": {
+              "type": "string",
+              "pattern": "^[^/]+/[^/]+$",
+              "description": "GitHub repository in owner/repo format.",
+              "examples": ["emukidid/swiss-gc", "emukidid/cleanrip"]
+            },
+            "asset_pattern": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Glob pattern to match the desired release asset filename.",
+              "examples": ["swiss_r*.7z", "CleanRip-*-gc.zip", "gchttpserver-*.dol"]
+            },
             "ignore_versions": {
               "type": "array",
               "items": { "type": "string", "minLength": 1 },
-              "uniqueItems": true
+              "uniqueItems": true,
+              "description": "List of release tag names to skip when resolving the latest version.",
+              "examples": [["v1.0-beta", "nightly"]]
             }
           },
           "required": ["type", "repository", "asset_pattern"],
           "additionalProperties": false
         },
         {
+          "description": "Download from a direct URL. Used when the application is not hosted on a Git forge.",
           "properties": {
             "type": { "const": "direct_url" },
-            "url": { "type": "string", "format": "uri" },
-            "file_name": { "type": "string", "minLength": 1 }
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "Direct download URL of the application binary or archive.",
+              "examples": ["https://example.com/app.zip"]
+            },
+            "file_name": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Override the filename derived from the URL. Useful when the URL does not contain a meaningful filename.",
+              "examples": ["app-v1.0.zip"]
+            }
           },
           "required": ["type", "url"],
           "additionalProperties": false
         },
         {
+          "description": "Download from a GitLab release asset.",
           "properties": {
             "type": { "const": "gitlab_release" },
-            "repository": { "type": "string", "pattern": "^[^/]+/[^/]+$" },
-            "asset_pattern": { "type": "string", "minLength": 1 },
+            "repository": {
+              "type": "string",
+              "pattern": "^[^/]+/[^/]+$",
+              "description": "GitLab repository in owner/repo format.",
+              "examples": ["group/project"]
+            },
+            "asset_pattern": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Glob pattern to match the desired release asset filename.",
+              "examples": ["build-*.tar.gz"]
+            },
             "ignore_versions": {
               "type": "array",
               "items": { "type": "string", "minLength": 1 },
-              "uniqueItems": true
+              "uniqueItems": true,
+              "description": "List of release tag names to skip when resolving the latest version.",
+              "examples": [["v1.0-beta", "nightly"]]
             }
           },
           "required": ["type", "repository", "asset_pattern"],
+          "additionalProperties": false
+        },
+        {
+          "description": "Download from itch.io. Used for applications and games hosted on the itch.io platform.",
+          "properties": {
+            "type": { "const": "itchio" },
+            "creator": {
+              "type": "string",
+              "minLength": 1,
+              "description": "itch.io username of the creator. Appears in the URL as https://[creator].itch.io/[game].",
+              "examples": ["artemiourbina"]
+            },
+            "game": {
+              "type": "string",
+              "minLength": 1,
+              "description": "itch.io game/project slug. Appears in the URL as https://[creator].itch.io/[game].",
+              "examples": ["240p-test-suite"]
+            },
+            "upload": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Display name of the upload to download, as shown on the itch.io download page.",
+              "examples": ["240p Test Suite for Wii 1.19"]
+            },
+            "format": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Expected file format of the download.",
+              "examples": ["zip"]
+            }
+          },
+          "required": ["type", "creator", "game", "upload", "format"],
           "additionalProperties": false
         }
       ]
     },
     "treatments": {
       "type": "array",
+      "description": "Ordered list of post-download processing steps applied to the downloaded asset. Treatments are executed sequentially.",
       "items": {
         "type": "object",
         "required": ["treatment", "arguments"],
@@ -97,11 +188,18 @@
         "properties": {
           "treatment": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Name of the treatment operation to apply. Common treatments: archive.extract (extract an archive), contents.move (move/rename files).",
+            "examples": ["archive.extract", "contents.move"]
           },
           "arguments": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": { "type": "string" },
+            "description": "Arguments passed to the treatment. The meaning depends on the treatment type. For archive.extract: [source_pattern, destination]. For contents.move: [source_pattern, destination].",
+            "examples": [
+              ["swiss_r*.7z", "."],
+              ["cleanrip-gc.dol", "apps/cleanrip/default.dol"]
+            ]
           }
         }
       }
