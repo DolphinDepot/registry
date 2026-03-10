@@ -1,0 +1,22 @@
+{
+  "name": "Mike Visor",
+  "author": "Aionmagan",
+  "description_short": "A 10-level puzzle game where you guide Mike through enemies and crystal patterns to escape",
+  "description_long": "Mike is trying to escape but doesn't know where he is. As the observer, you can see the reality he can't. Avoid enemies, solve crystal patterns that turn blue when correct, and navigate 10 levels to help Mike find his way out. Note: the GameCube version is missing sound effects.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q", "dolphin"],
+  "peripherals": ["controller"],
+  "source": {
+    "type": "itchio",
+    "creator": "aionmagan",
+    "game": "mike-visor",
+    "upload": "MikeVisor GAMECUBE (dol)",
+    "format": "dol"
+  },
+  "treatments": [
+    {
+      "treatment": "contents.move",
+      "arguments": ["mike-visor.dol", "apps/mike-visor/default.dol"]
+    }
+  ]
+}
