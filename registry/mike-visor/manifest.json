@@ -11,12 +11,16 @@
     "creator": "aionmagan",
     "game": "mike-visor",
     "upload": "MikeVisor GAMECUBE (dol)",
-    "format": "dol"
+    "format": "zip"
   },
   "treatments": [
     {
+      "treatment": "archive.extract",
+      "arguments": ["mike-visor.zip", "."]
+    },
+    {
       "treatment": "contents.move",
-      "arguments": ["mike-visor.dol", "apps/mike-visor/default.dol"]
+      "arguments": ["MikeVisor_GCN.dol", "apps/mike-visor/default.dol"]
     }
   ]
 }
