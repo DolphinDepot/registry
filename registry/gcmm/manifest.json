@@ -1,8 +1,8 @@
 {
   "name": "GCMM",
   "author": "suloku",
-  "description_short": "Disc Backup Tool for GC/Wii Discs",
-  "description_long": "A tool to backup your Gamecube/Wii Discs via IOS58 Create 1:1 backups of your GC/Wii discs for archival purposes without any requirements for custom IOS (cIOS). Supports USB 2.0 / NTFS / exFAT & Front SD.",
+  "description_short": "A GC/Wii Memory Card Manager",
+  "description_long": "GCMM (GameCube Memory Manager) is a tool for GameCube memory cards. It allows the user to backup and restore GameCube saves and memory card .raw files.",
   "category": "utilities",
   "platforms": ["gamecube", "panasonic_q"],
   "peripherals": ["controller", "sd_gecko", "sd2sp2", "gcloader"],
