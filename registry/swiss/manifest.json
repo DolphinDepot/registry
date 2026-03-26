@@ -14,23 +14,19 @@
   "treatments": [
     {
       "treatment": "archive.extract",
-      "arguments": ["swiss_r*.7z", "."]
+      "arguments": ["swiss_r*.7z", "./"]
     },
     {
       "treatment": "archive.extract",
-      "arguments": ["Apploader/EXTRACT_TO_ROOT.zip", "Apploader/"]
+      "arguments": ["swiss_r*/Apploader/EXTRACT_TO_ROOT.zip", "Apploader/"]
     },
     {
       "treatment": "contents.move",
-      "arguments": ["DOL/swiss_r*.dol", "apps/swiss/default.dol"]
+      "arguments": ["swiss_r*/DOL/swiss_r*.dol", "apps/swiss/default.dol"]
     },
     {
       "treatment": "contents.move",
-      "arguments": ["Apploader/swiss", "swiss"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/swiss/opening.bnr"]
+      "arguments": ["Apploader/*", "./"]
     }
   ]
 }
