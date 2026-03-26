@@ -20,6 +20,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["ClassiCube-gc.dol", "apps/classicube/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/classicube/opening.bnr"]
     }
   ]
 }
