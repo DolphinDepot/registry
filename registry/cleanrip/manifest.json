@@ -19,6 +19,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["cleanrip-gc.dol", "apps/cleanrip/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/cleanrip/opening.bnr"]
     }
   ]
 }
