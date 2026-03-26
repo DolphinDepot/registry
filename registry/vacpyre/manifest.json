@@ -17,6 +17,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["vacpyre.dol", "apps/vacpyre/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/vacpyre/opening.bnr"]
     }
   ]
 }
