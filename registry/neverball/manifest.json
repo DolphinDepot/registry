@@ -1,0 +1,32 @@
+{
+  "name": "Neverball",
+  "author": "Neverball Team",
+  "description_short": "Tilt the floor to roll a ball through an obstacle course before time runs out",
+  "description_long": "Tilt the floor to roll a ball through an obstacle course before time runs out. Neverball is part puzzle game, part action game, and entirely a test of skill.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": [
+    "controller",
+    "sd_gecko",
+    "sd2sp2"
+  ],
+  "source": {
+    "type": "github_release",
+    "repository": "extremscorner/neverball",
+    "asset_pattern": "gamecube-neverball.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["gamecube-neverball.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["./*", "apps/neverball/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/neverball/opening.bnr"]
+    }
+  ]
+}
