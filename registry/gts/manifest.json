@@ -15,6 +15,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["GTS_GC.dol", "apps/gts/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/gts/opening.bnr"]
     }
   ]
 }
