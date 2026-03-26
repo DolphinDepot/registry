@@ -20,6 +20,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["gcmm_*/gamecube/gcmm_*.dol", "apps/gcmm/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/gcmm/opening.bnr"]
     }
   ]
 }
