@@ -1,8 +1,8 @@
 {
   "name": "Swiss",
-  "author": "Extrems",
+  "author": "Extrems & emu_kidid",
   "description_short": "The swiss army knife of GameCube homebrew",
-  "description_long": "Swiss is an all-in-one homebrew utility for the Nintendo GameCube. It allows browsing and loading DOL executables and GCM disc images from various storage devices including SD Gecko, SD2SP2, GC Loader, IDE-EXI, M.2 Loader, USB Gecko, Broadband Adapter (via SMB/FTP/FSP), DVD-R, memory cards, and many more. It also provides hardware emulation for the DVD Interface, Broadband Adapter, and Processor Interface.",
+  "description_long": "Swiss is an all-in-one homebrew utility for the Nintendo GameCube. It allows browsing and loading DOL executables and GCM disc images from various storage devices including SD Gecko, SD2SP2, GC Loader, IDE-EXI, M.2 Loader, USB Gecko, Broadband Adapter (via SMB/FTP/FSP), DVD-R, memory cards, and many more.",
   "category": "utilities",
   "platforms": ["gamecube", "panasonic_q"],
   "peripherals": ["controller", "sd_gecko", "bba"],
@@ -27,6 +27,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["Apploader/swiss", "swiss"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/swiss/opening.bnr"]
     }
   ]
 }
