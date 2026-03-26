@@ -189,13 +189,13 @@
           "treatment": {
             "type": "string",
             "minLength": 1,
-            "description": "Name of the treatment operation to apply. Common treatments: archive.extract (extract an archive), contents.move (move/rename files).",
-            "examples": ["archive.extract", "contents.move"]
+            "description": "Name of the treatment operation to apply. Common treatments: archive.extract (extract an archive), contents.move (move/rename files), registry.copy (copy files from app registry directory).",
+            "examples": ["archive.extract", "contents.move", "registry.copy"]
           },
           "arguments": {
             "type": "array",
             "items": { "type": "string" },
-            "description": "Arguments passed to the treatment. The meaning depends on the treatment type. For archive.extract: [source_pattern, destination]. For contents.move: [source_pattern, destination].",
+            "description": "Arguments passed to the treatment. The meaning depends on the treatment type. For archive.extract: [source_pattern, destination]. For contents.move: [source_pattern, destination]. For registry.copy: [source_pattern, destination].",
             "examples": [
               ["swiss_r*.7z", "."],
               ["cleanrip-gc.dol", "apps/cleanrip/default.dol"]
