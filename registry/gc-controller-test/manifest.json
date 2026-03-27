@@ -1,0 +1,28 @@
+{
+  "name": "GC Controller Test",
+  "author": "corenting",
+  "description_short": "A simple homebrew to test your GameCube controllers.",
+  "category": "utilities",
+  "platforms": [
+    "gamecube",
+    "panasonic_q"
+  ],
+  "peripherals": [
+    "controller"
+  ],
+  "source": {
+    "type": "github_release",
+    "repository": "corenting/GC-Controller-Test",
+    "asset_pattern": "gc-*.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["gc-*.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["GC-Controller-Test.dol", "apps/gc-controller-test/default.dol"]
+    }
+  ]
+}
