@@ -1,0 +1,58 @@
+{
+  "name": "Not64",
+  "author": "Extrems & Team Wii64",
+  "description_short": "Nintendo 64 emulator for GameCube based on Mupen64.",
+  "description_long": "Plays Nintendo 64 ROMs in .V64, .Z64, and .N64 formats up to 512Mbit. Supports hardware-accelerated graphics, save states, native game saves to Memory Card, customizable button mapping, and up to 4 players. Choose between dynamic recompilation for speed or pure interpreter for better compatibility.",
+  "category": "emulators",
+  "platforms": [
+    "gamecube",
+    "panasonic_q"
+  ],
+  "peripherals": [
+    "controller",
+    "memory_card",
+    "sd_gecko",
+    "sd2sp2",
+    "m2_loader",
+    "mmce"
+  ],
+  "source": {
+    "type": "github_release",
+    "repository": "extremscorner/not64",
+    "asset_pattern": "mupen64-*.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["mupen64-*.zip", "."]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["apps/not64/boot.dol"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["apps/not64/meta.xml"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["apps/not64/icon.png"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["apps/not64/data.iso"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["apps/not64/not64.dol", "apps/not64/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["apps/not64/", "apps/not64/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["not64/", "not64/"]
+    }
+  ]
+}
