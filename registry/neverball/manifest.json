@@ -1,0 +1,50 @@
+{
+  "name": "Neverball",
+  "author": "Neverball Team",
+  "description_short": "Tilt the floor to roll a ball through an obstacle course before time runs out",
+  "description_long": "Tilt the floor to roll a ball through an obstacle course before time runs out. Neverball is part puzzle game, part action game, and entirely a test of skill.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": [
+    "controller",
+    "sd_gecko",
+    "sd2sp2"
+  ],
+  "license": {
+    "spdx": "GPL-2.0-or-later",
+    "url": "https://github.com/extremscorner/neverball/blob/debian-wii/LICENSE.md"
+  },
+  "source": {
+    "type": "github_actions",
+    "repository": "extremscorner/neverball",
+    "workflow": "build.yml",
+    "branch": "debian-wii",
+    "artifact_pattern": "gamecube-neverball"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["gamecube-neverball", "."]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["gamecube-neverball"]
+    },
+    {
+      "treatment": "archive.extract",
+      "arguments": ["neverball.zip", "."]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["neverball.zip"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["neverball/", "apps/neverball/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/neverball/opening.bnr"]
+    }
+  ]
+}

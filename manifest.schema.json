@@ -276,6 +276,52 @@
           ]
         },
         {
+          "title": "GitHub Actions artifact",
+          "description": "Download an artifact produced by the latest successful run of a GitHub Actions workflow on a given branch.",
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "github_actions",
+              "description": "Discriminator identifying this source as a GitHub Actions artifact."
+            },
+            "repository": {
+              "type": "string",
+              "pattern": "^[^/]+/[^/]+$",
+              "description": "GitHub repository in `owner/repo` format.",
+              "examples": ["emukidid/swiss-gc"]
+            },
+            "workflow": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Workflow filename (e.g. `build.yml`) located under `.github/workflows/`.",
+              "examples": ["build.yml", "release.yml"]
+            },
+            "branch": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Branch whose latest successful run will be picked.",
+              "examples": ["main", "master"]
+            },
+            "artifact_pattern": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Picomatch glob pattern matched against the artifact name as exposed by the GitHub Actions API. The matched artifact's name becomes the saved filename — include any extension you want as part of the pattern.",
+              "examples": ["swiss-nightly", "build-*"]
+            }
+          },
+          "required": ["type", "repository", "workflow", "branch", "artifact_pattern"],
+          "additionalProperties": false,
+          "examples": [
+            {
+              "type": "github_actions",
+              "repository": "emukidid/swiss-gc",
+              "workflow": "build.yml",
+              "branch": "master",
+              "artifact_pattern": "swiss-nightly"
+            }
+          ]
+        },
+        {
           "title": "GitLab release",
           "description": "Download an asset from a GitLab release.",
           "type": "object",
