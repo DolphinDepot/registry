@@ -42,14 +42,10 @@ while IFS= read -r manifest; do
 
   if [ -n "$DIST_TREE" ]; then
     COMMENT="${COMMENT}
-<details>
-<summary>Distribution package contents</summary>
-
+Distribution package contents:
 \`\`\`
 ${DIST_TREE}
 \`\`\`
-
-</details>
 "
   fi
 
