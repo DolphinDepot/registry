@@ -21,7 +21,6 @@ while IFS= read -r manifest; do
 
   PASSED=true
   OUTPUT=$(docker run --rm \
-    ${DOCKER_PLATFORM:+--platform "$DOCKER_PLATFORM"} \
     -e GITHUB_TOKEN="${GITHUB_TOKEN:-}" \
     -v "${WORKSPACE}:/workspace:ro" \
     "$IMAGE" \
