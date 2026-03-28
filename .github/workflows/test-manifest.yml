@@ -1,0 +1,77 @@
+name: Test Manifest
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "registry/**/manifest.json"
+
+jobs:
+  test-manifest:
+    runs-on: ubuntu-latest
+
+    permissions:
+      packages: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Login to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Pull indexer image
+        run: docker pull ghcr.io/dolphindepot/indexer:latest
+
+      - name: Find changed manifests
+        id: changed
+        run: |
+          MANIFESTS=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD -- 'registry/**/manifest.json')
+          echo "manifests<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$MANIFESTS" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Test manifests
+        if: steps.changed.outputs.manifests != ''
+        id: test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./.github/scripts/test-manifests.sh "${{ steps.changed.outputs.manifests }}" "${{ github.workspace }}" "$GITHUB_OUTPUT"
+
+      - name: Comment on PR
+        if: steps.test.outputs.comment != ''
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const marker = '<!-- test-manifest-results -->';
+            const body = `${marker}\n## Manifest Test Results\n\n${{ steps.test.outputs.comment }}`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.body?.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Fail if any manifest test failed
+        if: steps.test.outputs.failed == '1'
+        run: exit 1
