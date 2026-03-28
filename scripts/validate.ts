@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 import { manifestExists } from "./checks/manifest-exists.js";
 import { manifestValid } from "./checks/manifest-valid.js";
-import { slugUnique } from "./checks/slug-unique.js";
+import { slugValid } from "./checks/slug-valid.js";
 import { reportEntry, reportSummary } from "./lib/reporter.js";
 import type { CheckContext, CheckResult } from "./lib/types.js";
 
@@ -53,7 +53,7 @@ async function validateEntry(
     const results: CheckResult[] = [
         await manifestExists(ctx),
         manifestValid(ctx),
-        slugUnique(ctx),
+        slugValid(ctx),
     ];
 
     reportEntry(slug, results);
