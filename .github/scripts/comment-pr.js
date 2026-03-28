@@ -1,10 +1,19 @@
 const marker = "<!-- test-manifest-results -->";
 
 module.exports = async ({ github, context }) => {
-    const comment = process.env.COMMENT_BODY;
-    if (!comment) return;
+    const testResults = process.env.COMMENT_BODY;
+    if (!testResults) return;
 
-    const body = `${marker}\n## Manifest Test Results\n\n${comment}`;
+    const validateOutput = process.env.VALIDATE_OUTPUT || "";
+
+    let body = `${marker}\n## Manifest Validation Results\n\n`;
+
+    if (validateOutput) {
+        body += `### Schema Validation\n\n\`\`\`\n${validateOutput}\n\`\`\`\n\n`;
+    }
+
+    body += `### Build Test\n\n`;
+    body += testResults;
 
     const { data: comments } = await github.rest.issues.listComments({
         owner: context.repo.owner,

@@ -26,10 +26,18 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run validate
+      - name: Validate manifests
+        id: validate
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_REF: ${{ github.event.pull_request.base.ref }}
+        run: |
+          OUTPUT=$(npm run validate 2>&1) && PASSED=true || PASSED=false
+          echo "$OUTPUT"
+          echo "output<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$OUTPUT" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          if [ "$PASSED" = false ]; then exit 1; fi
 
       - name: Login to GHCR
         uses: docker/login-action@v4
@@ -61,6 +69,7 @@ jobs:
         uses: actions/github-script@v8
         env:
           COMMENT_BODY: ${{ steps.test.outputs.comment }}
+          VALIDATE_OUTPUT: ${{ steps.validate.outputs.output }}
         with:
           script: |
             const script = require('./.github/scripts/comment-pr.js');

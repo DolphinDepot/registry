@@ -21,6 +21,7 @@ while IFS= read -r manifest; do
 
   PASSED=true
   OUTPUT=$(docker run --rm \
+    ${DOCKER_PLATFORM:+--platform "$DOCKER_PLATFORM"} \
     -e GITHUB_TOKEN="${GITHUB_TOKEN:-}" \
     -v "${WORKSPACE}:/workspace:ro" \
     "$IMAGE" \
@@ -29,7 +30,7 @@ while IFS= read -r manifest; do
   echo "$OUTPUT"
   echo "::endgroup::"
 
-  DIST_TREE=$(echo "$OUTPUT" | sed -n '/^--- distDir/,/^---$/p' | sed '1d;$d')
+  DIST_TREE=$(echo "$OUTPUT" | sed -n '/^--- distDir contents ---$/,/^---$/p' | sed '1d;$d')
 
   if [ "$PASSED" = true ]; then
     COMMENT="${COMMENT}### ✓ \`${SLUG}\`
@@ -41,9 +42,14 @@ while IFS= read -r manifest; do
 
   if [ -n "$DIST_TREE" ]; then
     COMMENT="${COMMENT}
+<details>
+<summary>Distribution package contents</summary>
+
 \`\`\`
 ${DIST_TREE}
 \`\`\`
+
+</details>
 "
   fi
 
