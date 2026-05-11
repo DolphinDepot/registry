@@ -1,14 +1,13 @@
 {
   "name": "Nicky Boum",
   "author": "emu_kidid",
-  "description_short": "Nicky Boom port to GameCube",
+  "description_short": "Help little Nicky save his grandfather from the evil sorceress Zoldrane in a fantastical platformer through swamps and castle.",
   "description_long": "Nicky Boum is a classic platformer game initially designed for the Amiga. The game was published by Microids in 1992 and was also ported to the Atari ST and PC EGA platforms.",
   "category": "games",
   "platforms": ["gamecube", "panasonic_q"],
   "peripherals": ["controller", "sd_gecko", "sd2sp2"],
   "license": {
-    "spdx": "NOASSERTION",
-    "notes": "Repository ships no LICENSE file. Engine derived from a third-party reverse-engineering project (cyxdown.free.fr/nicky); original Nicky Boum game data is copyrighted by Microids and must be supplied by the user."
+    "spdx": "NOASSERTION"
   },
   "source": {
     "type": "github_release",
@@ -25,8 +24,16 @@
       "arguments": ["apps/nicky/Nicky-Boum.dol", "apps/nicky/default.dol"]
     },
     {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/nicky/opening.bnr"]
+    },
+    {
       "treatment": "contents.move",
-      "arguments": ["apps/nicky/*", "apps/nicky/"]
+      "arguments": ["apps/nicky/nicky1/", "apps/nicky/nicky1/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["apps/nicky/nicky2/", "apps/nicky/nicky2/"]
     }
   ]
 }
