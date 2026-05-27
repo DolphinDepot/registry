@@ -1,0 +1,101 @@
+{
+  "name": "Enhanced mGBA",
+  "author": "Extrems",
+  "description_short": "Enhanced Game Boy Advance emulator port based on Game Boy Interface Standard Edition.",
+  "description_long": "Enhanced mGBA (emGBA) is a GameCube port of the mGBA Game Boy Advance emulator with enhancements derived from Game Boy Interface Standard Edition. Adds configurable aspect ratio, zoom, rotation, overlay frames and cursor textures via texture palettes, controller polling rate adjustment, and rendering profiles (sRGB, GBA, GBA SP, GBC, GBI, NDS, PSP, and more). Requires the extra package for overlay frame textures.",
+  "category": "emulators",
+  "platforms": [
+    "gamecube",
+    "panasonic_q"
+  ],
+  "peripherals": [
+    "controller",
+    "memory_card",
+    "sd_gecko",
+    "sd2sp2",
+    "m2loader",
+    "mmce",
+    "gcloader",
+    "cubeode",
+    "flippydrive"
+  ],
+  "license": {
+    "spdx": "MPL-2.0",
+    "url": "https://github.com/extremscorner/emgba/blob/main/LICENSE"
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "extremscorner/emgba",
+    "asset_pattern": "mgba-*.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["mgba-*.zip", "."]
+    },
+    {
+      "treatment": "web.download",
+      "arguments": ["https://files.extremscorner.org/gamecube/apps/mgba/latest-extra", "mgba-extra.7z"]
+    },
+    {
+      "treatment": "archive.extract",
+      "arguments": ["mgba-extra.7z", "."]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["apps/emGBA/boot.dol"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["apps/emGBA/icon.png"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["apps/emGBA/meta.xml"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["MCBACKUP/"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["boot.gcm"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["boot.iso"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["dol2gci.exe"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["dol2gci.cpp"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["apps/emGBA/emGBA.dol", "apps/emgba/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["apps/emGBA/", "apps/emgba/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["mGBA/", "mGBA/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["controller-*.gba", "./"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["controller-*.bmp", "./"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/emgba/opening.bnr"]
+    }
+  ]
+}
