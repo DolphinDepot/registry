@@ -22,7 +22,7 @@
     },
     {
       "treatment": "contents.move",
-      "arguments": ["Trogdor-Reburninated-gamecube/Trogdor-RB/Trogdor-Reburninated.dol", "apps/trogdor-reburninated/default.dol"]
+      "arguments": ["Trogdor-Reburninated-gamecube/Trogdor-RB/*.dol", "apps/trogdor-reburninated/default.dol"]
     },
     {
       "treatment": "contents.move",
