@@ -1,0 +1,46 @@
+{
+  "name": "StellaGC",
+  "author": "nuvalo & The Stella Team",
+  "description_short": "Atari 2600 VCS emulator port for GameCube based on Stella.",
+  "description_long": "GameCube port of the cross-platform Stella emulator. Plays Atari 2600 VCS ROMs with the original Stella core, including the standard Stella launcher, state saves, and customizable button mapping. Reads ROMs and configuration from SD card.",
+  "category": "emulators",
+  "platforms": [
+    "gamecube",
+    "panasonic_q"
+  ],
+  "peripherals": [
+    "controller",
+    "sd_gecko",
+    "sd2sp2"
+  ],
+  "license": {
+    "spdx": "GPL-2.0-or-later",
+    "url": "https://github.com/stella-emu/stella/blob/master/License.txt"
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://dlf.emu-land.net/a26/stellagc.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["stellagc.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["stellaGC/stellaGC.dol", "apps/stellagc/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["stellaGC/aramfs.bz2", "aramfs.bz2"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["stellaGC/stella/", "stella/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/stellagc/opening.bnr"]
+    }
+  ]
+}
