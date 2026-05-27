@@ -1,0 +1,37 @@
+{
+  "name": "Super Methane Brothers",
+  "author": "carstene1ns",
+  "description_short": "Suck up baddies with your gas gun and throw them at the walls. GameCube port of the classic Amiga arcade game. ",
+  "description_long": "Super Methane Brothers is a single-screen platformer originally released for the Commodore Amiga by Apache Software. Use your gas gun to stun, suck up and hurl monsters at the walls across colourful levels. Supports single player or two-player co-op.",
+  "category": "games",
+  "platforms": [
+    "gamecube",
+    "panasonic_q"
+  ],
+  "peripherals": [
+    "controller"
+  ],
+  "license": {
+    "spdx": "GPL-2.0-or-later",
+    "url": "https://github.com/carstene1ns/super-methane-brothers/blob/master/COPYING"
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "carstene1ns/super-methane-brothers",
+    "asset_pattern": "super-methane-brothers_gamecube_*.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["super-methane-brothers_gamecube_*.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["super-methane-brothers/methane.dol", "apps/super-methane-brothers/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/super-methane-brothers/opening.bnr"]
+    }
+  ]
+}
