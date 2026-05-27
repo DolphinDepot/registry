@@ -22,7 +22,7 @@
     },
     {
       "treatment": "contents.move",
-      "arguments": ["SuDokuL-gamecube/SuDokuL/SuDokuL.dol", "apps/sudokul/default.dol"]
+      "arguments": ["SuDokuL-gamecube/SuDokuL/*.dol", "apps/sudokul/default.dol"]
     },
     {
       "treatment": "registry.copy",
