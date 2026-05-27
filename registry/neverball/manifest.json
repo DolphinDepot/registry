@@ -40,6 +40,10 @@
     },
     {
       "treatment": "contents.move",
+      "arguments": ["neverball/neverball.dol", "apps/neverball/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
       "arguments": ["neverball/", "apps/neverball/"]
     },
     {
