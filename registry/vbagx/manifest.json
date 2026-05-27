@@ -1,0 +1,42 @@
+{
+  "name": "Visual Boy Advance GX",
+  "author": "dborth & Tantric",
+  "description_short": "Game Boy Advance, Game Boy Color, and Game Boy emulator for GameCube based on VBA-M.",
+  "description_long": "Plays GBA, GBC, and original Game Boy ROMs on GameCube. Supports SRAM and state saving, IPS/UPS patches, custom controller configurations, turbo speed, video zooming, widescreen, unfiltered video, fixed pixel ratio modes, custom borders, 240p output, native Goomba ROM/SRAM loading, editable 14-colour palettes for monochrome games, and more.",
+  "category": "emulators",
+  "platforms": [
+    "gamecube",
+    "panasonic_q",
+    "dolphin"
+  ],
+  "peripherals": [
+    "controller",
+    "gcloader",
+    "mmce",
+    "sd2sp2",
+    "sd_gecko"
+  ],
+  "license": {
+    "spdx": "GPL-2.0-or-later",
+    "notes": "Repository README states \"Under GPL License\"; project is a port of VBA-M which is GPL-2.0-or-later. No top-level LICENSE file in the repo."
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "dborth/vbagx",
+    "asset_pattern": "VisualBoyAdvanceGX-*-GameCube.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["VisualBoyAdvanceGX-*-GameCube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["vbagx-gc.dol", "apps/vbagx/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/vbagx/opening.bnr"]
+    }
+  ]
+}
