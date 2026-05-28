@@ -1,0 +1,28 @@
+{
+  "name": "Hu-Go! GX",
+  "author": "Eke-Eke",
+  "description_short": "PC Engine / TurboGrafx-16 emulator.",
+  "description_long": "Hu-Go! GX is a port of the Hu-Go! emulator for the Nintendo GameCube. It plays PC Engine / TurboGrafx-16 games with 16-bit stereo 32kHz audio, ROMs up to 2.5MB, battery RAM saves to memory card or SD, and ROM loading from SD card or DVD.",
+  "category": "emulators",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2", "disc"],
+  "license": {
+    "spdx": "GPL-2.0-only",
+    "notes": "Inherited from upstream Hu-Go! by David Michel (GPL-2.0); no LICENSE file shipped in the GameCube port repository."
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "emukidid/hugo-gx",
+    "asset_pattern": "hugo_cube.dol"
+  },
+  "treatments": [
+    {
+      "treatment": "contents.move",
+      "arguments": ["hugo_cube.dol", "apps/hugo-gx/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/hugo-gx/opening.bnr"]
+    }
+  ]
+}
