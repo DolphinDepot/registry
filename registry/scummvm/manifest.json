@@ -1,0 +1,35 @@
+{
+  "name": "ScummVM",
+  "author": "The ScummVM Team",
+  "description_short": "Interpreter for classic point-and-click adventure games and role-playing games.",
+  "description_long": "ScummVM is a program that lets you run a wide variety of classic graphical point-and-click adventure games and role-playing games on modern hardware. The original game data files are required and read from SD card. Supports hundreds of titles including Monkey Island, Day of the Tentacle, King's Quest, Simon the Sorcerer, Broken Sword, and many more.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
+  "license": {
+    "spdx": "GPL-3.0-or-later",
+    "url": "https://github.com/scummvm/scummvm/blob/master/COPYING"
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://downloads.scummvm.org/frs/scummvm/2.7.1/scummvm-2.7.1-gamecube.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["scummvm-2.7.1-gamecube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["scummvm-*-gamecube/scummvm.dol", "apps/scummvm/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["scummvm-*-gamecube/", "apps/scummvm/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/scummvm/opening.bnr"]
+    }
+  ]
+}
