@@ -1,0 +1,36 @@
+{
+  "name": "CubeSX",
+  "author": "emu_kidid",
+  "description_short": "PlayStation 1 emulator for GameCube.",
+  "description_long": "CubeSX is the GameCube build of the WiiSX/CubeSX PlayStation 1 emulator (based on PCSX). Loads ISOs from SD card (GCLoader, SD2SP2, Slot A/B), supports multitap up to 4 players, PSX mouse, fully configurable controls, native save and save state support.",
+  "category": "emulators",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2", "m2loader", "gcloader"],
+  "license": {
+    "spdx": "GPL-2.0-only",
+    "url": "https://github.com/emukidid/pcsxgc/blob/master/README"
+  },
+  "external_resources": [
+    {
+      "type": "assets",
+      "label": "PlayStation 1 BIOS (SCPH1001.BIN)",
+      "url": "https://github.com/emukidid/pcsxgc/blob/master/README",
+      "notes": "Required to run games. Place SCPH1001.BIN under /wiisx/bios on the SD card. The BIOS is copyrighted by Sony and must be supplied by the user from their own console."
+    }
+  ],
+  "source": {
+    "type": "github_release",
+    "repository": "emukidid/pcsxgc",
+    "asset_pattern": "CubeSX-*.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["CubeSX-*.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["CubeSX.dol", "apps/cubesx/default.dol"]
+    }
+  ]
+}
