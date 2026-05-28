@@ -1,8 +1,8 @@
 {
   "name": "Not64",
-  "author": "Extrems & Team Wii64",
-  "description_short": "Nintendo 64 emulator for GameCube based on Mupen64.",
-  "description_long": "Plays Nintendo 64 ROMs in .V64, .Z64, and .N64 formats up to 512Mbit. Supports hardware-accelerated graphics, save states, native game saves to Memory Card, customizable button mapping, and up to 4 players. Choose between dynamic recompilation for speed or pure interpreter for better compatibility.",
+  "author": "Extrems",
+  "description_short": "Nintendo 64 emulator for GameCube, Extrems' modernized fork of Mupen64GC/Wii64.",
+  "description_long": "Not64 is Extrems' actively maintained Nintendo 64 emulator for GameCube, sharing the Mupen64GC/Wii64 lineage with Cube64 but consolidated into a single optimized build with updated toolchain and bug fixes. Loads .V64/.Z64/.N64 ROMs up to 512Mbit, supports dynamic recompilation or interpreter cores, hardware-accelerated graphics, native saves to Memory Card, save states, customizable button mapping, and up to 4 players.",
   "category": "emulators",
   "platforms": [
     "gamecube",
@@ -18,6 +18,7 @@
   ],
   "license": {
     "spdx": "GPL-2.0-or-later",
+    "url": "https://github.com/extremscorner/not64",
     "notes": "Source files carry GPL-2.0-or-later headers; repository has no top-level LICENSE file."
   },
   "source": {
@@ -57,6 +58,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["not64/", "not64/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/not64/opening.bnr"]
     }
   ]
 }
