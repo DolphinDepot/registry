@@ -1,0 +1,24 @@
+{
+  "name": "Multi-Controller Tester",
+  "author": "Drewworks",
+  "description_short": "Test multiple GameCube controller inputs at the same time.",
+  "description_long": "Multi-Controller Tester is a GameCube utility for checking multiple controller inputs at the same time on real hardware. Emulator support is not tested or supported upstream.",
+  "category": "utilities",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller"],
+  "license": {
+    "spdx": "NOASSERTION",
+    "notes": "Upstream repository contains only README.md and the DOL release asset, with no LICENSE file or explicit license declaration."
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "andrew171717/GameCube-Multi-Controller-Tester",
+    "asset_pattern": "GameCube.Controller.Tester.*.Drewworks.dol"
+  },
+  "treatments": [
+    {
+      "treatment": "contents.move",
+      "arguments": ["GameCube.Controller.Tester.*.Drewworks.dol", "apps/multi-controller-tester/default.dol"]
+    }
+  ]
+}
