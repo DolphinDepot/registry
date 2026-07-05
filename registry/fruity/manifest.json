@@ -5,7 +5,7 @@
   "description_long": "Although tiger mum forbids little Sheran to play with edibles, there is simply no way to stop him from playing with fruits found inside the deep jungle. Being shiny, smelling wonderful and tasting even better Sheran can't be kept away. So let's do the best we could do: Support him!",
   "category": "games",
   "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "gba_link_cable", "sd_gecko", "sd2sp2"],
+  "peripherals": ["controller", "sd_gecko"],
   "license": {
     "spdx": "NOASSERTION",
     "notes": "Fruit'Y is a homebrew software and not endorsed or approved by Nintendo. All rights reserved by Retroguru."
