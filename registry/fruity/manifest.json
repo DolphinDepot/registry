@@ -1,0 +1,36 @@
+{
+  "name": "FruitY",
+  "author": "Retroguru",
+  "description_short": "Playing with edibles, heavily inspired by the Kaiko classic GemX",
+  "description_long": "Although tiger mum forbids little Sheran to play with edibles, there is simply no way to stop him from playing with fruits found inside the deep jungle. Being shiny, smelling wonderful and tasting even better Sheran can't be kept away. So let's do the best we could do: Support him!",
+  "category": "utilities",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "gba_link_cable", "sd_gecko", "sd2sp2"],
+  "license": {
+    "spdx": "NOASSERTION",
+    "notes": "Fruit'Y is a homebrew software and not endorsed or approved by Nintendo. All rights reserved by Retroguru."
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://www.retroguru.com/fruity/fruity-v.latest-gamecube.zip",
+    "version": "1.0.0"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["fruity-v.latest-gamecube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["fruity/fruity-gc.dol", "apps/fruity/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["fruity/data/", "apps/fruity/data/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/fruity/opening.bnr"]
+    }
+  ]
+}
