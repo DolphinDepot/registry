@@ -1,0 +1,24 @@
+{
+  "name": "Spout",
+  "author": "RedBeesRGD",
+  "description_short": "System information tool for the GameCube",
+  "description_long": "Spout displays GameCube system details, including detected console type, Gekko CPU revision, Flipper chipset revision, and MEM1 RAM size.",
+  "category": "utilities",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller"],
+  "license": {
+    "spdx": "AGPL-3.0-only",
+    "url": "https://github.com/RedBeesRGD/spout/blob/main/LICENSE"
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://archive.dolphindepot.org/apps/spout/0.0.1/spout.dol",
+    "version": "0.0.1"
+  },
+  "treatments": [
+    {
+      "treatment": "contents.move",
+      "arguments": ["spout.dol", "apps/spout/default.dol"]
+    }
+  ]
+}
