@@ -11,14 +11,14 @@
     "url": "https://github.com/RedBeesRGD/spout/blob/main/LICENSE"
   },
   "source": {
-    "type": "direct_url",
-    "url": "https://archive.dolphindepot.org/apps/spout/0.0.1/spout.dol",
-    "version": "0.0.1"
+    "type": "github_release",
+    "repository": "RedBeesRGD/spout",
+    "asset_pattern": "main.gc.dol"
   },
   "treatments": [
     {
       "treatment": "contents.move",
-      "arguments": ["spout.dol", "apps/spout/default.dol"]
+      "arguments": ["main.gc.dol", "apps/spout/default.dol"]
     }
   ]
 }
