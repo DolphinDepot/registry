@@ -1,0 +1,36 @@
+{
+  "name": "Piero's Wiicross",
+  "author": "gameblabla",
+  "description_short": "Picture-logic puzzle game for GameCube with normal and free-play modes.",
+  "description_long": "Piero's Wiicross is a picture-logic puzzle game where you fill grid cells according to numbered clues to reveal hidden images. It includes normal mode, which penalizes mistakes, and free mode, which checks the completed puzzle on demand. The GameCube build supports custom OGG music and themes stored on an SD card.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
+  "license": {
+    "spdx": "NOASSERTION",
+    "notes": "The upstream repository and release do not include a license declaration."
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "gameblabla/wiicross",
+    "asset_pattern": "Wiicross_Gamecube_build.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["Wiicross_Gamecube_build.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["wiicross_gc.dol", "apps/wiicross/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["res/", "res/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/wiicross/opening.bnr"]
+    }
+  ]
+}
