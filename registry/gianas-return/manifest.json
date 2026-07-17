@@ -1,0 +1,39 @@
+{
+  "name": "Giana's Return",
+  "author": "Rodolphe Boixel (Thor)",
+  "description_short": "Free unofficial sequel to The Great Giana Sisters, where Giana rescues her sister Maria.",
+  "description_long": "Evil Swampy has stolen the magic ruby and kidnapped Giana's sister Maria. Play as Giana in this free, unofficial sequel to The Great Giana Sisters: recover the ruby, save Maria, and find your way home across seven worlds of platforming action.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
+  "license": {
+    "spdx": "NOASSERTION",
+    "notes": "The official release is freeware but does not declare an SPDX-compatible license. The included README requires written permission for redistribution."
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://www.retroguru.com/gianas-return/gianas-return-v.latest-gamecube.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["gianas-return-v.latest-gamecube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["giana/giana-gc.dol", "apps/gianas-return/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["giana/config.txt", "apps/gianas-return/config.txt"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["giana/data/", "apps/gianas-return/data/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/gianas-return/opening.bnr"]
+    }
+  ]
+}
