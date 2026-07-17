@@ -11,10 +11,9 @@
     "notes": "The upstream repository and release do not declare a license for Meese Engine."
   },
   "source": {
-    "type": "github_release",
-    "repository": "meese4/meese-engine",
-    "asset_pattern": "meese_engine_*-gcn.zip",
-    "ignore_versions": ["*-wii"]
+    "type": "direct_url",
+    "url": "https://github.com/meese4/meese-engine/releases/download/indev-v0.1.1-gcn/meese_engine_indev-v0.1.1-gcn.zip",
+    "version": "v0.1.1"
   },
   "treatments": [
     {
