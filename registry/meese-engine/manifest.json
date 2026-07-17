@@ -1,0 +1,33 @@
+{
+  "name": "Meese Engine",
+  "author": "Meese",
+  "description_short": "Minecraft-inspired open-world voxel game for GameCube.",
+  "description_long": "Meese Engine is an in-development, Minecraft-inspired open-world voxel game built for the GameCube. Explore a block-based world, place and break blocks, and use the standard GameCube controller to play. This GameCube build is an early indev release rather than a full Minecraft port.",
+  "category": "games",
+  "platforms": ["gamecube"],
+  "peripherals": ["controller"],
+  "license": {
+    "spdx": "NOASSERTION",
+    "notes": "The upstream repository and release do not declare a license for Meese Engine."
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "meese4/meese-engine",
+    "asset_pattern": "meese_engine_*-gcn.zip",
+    "ignore_versions": ["*-wii"]
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["meese_engine_*-gcn.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["meese_engine_*-gcn/game.dol", "apps/meese-engine/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/meese-engine/opening.bnr"]
+    }
+  ]
+}
