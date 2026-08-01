@@ -1,0 +1,28 @@
+{
+  "name": "Crafti",
+  "author": "Fabian Vogt, gameblabla",
+  "description_short": "A lightweight Minecraft-inspired block-building sandbox powered by the nGL 3D engine",
+  "description_long": "Crafti is a block-building sandbox game originally created by Fabian Vogt for TI-Nspire calculators and ported to GameCube by gameblabla. Built on the fixed-point nGL engine, it features procedurally generated 3D terrain, block placement and destruction, and an inventory system without relying on floating-point math. The GameCube alpha runs in 480i; progressive scan can be forced through Swiss.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller"],
+  "license": {
+    "spdx": "GPL-3.0-only",
+    "url": "https://github.com/gameblabla/crafti/blob/dreamcast_xbox_ps2_new_branch/license.txt"
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "gameblabla/crafti",
+    "asset_pattern": "crafti-gc.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["crafti-gc.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["crafti-gc.dol", "apps/crafti/default.dol"]
+    }
+  ]
+}
