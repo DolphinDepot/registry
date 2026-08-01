@@ -1,0 +1,36 @@
+{
+  "name": "3D Pinball: Space Cadet",
+  "author": "Gameblabla",
+  "description_short": "A GameCube port of the classic 3D Pinball: Space Cadet table",
+  "description_long": "Launch the ball, work the flippers, and nudge the table in this GameCube port of 3D Pinball: Space Cadet. The port supports sound effects and optional OGG music, but requires the original PC game's copyrighted graphics and audio assets, which are not included.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/gameblabla/SpaceCadetPinballGC/blob/gc/LICENSE"
+  },
+  "external_resources": [
+    {
+      "type": "assets",
+      "label": "Original 3D Pinball: Space Cadet assets",
+      "url": "https://github.com/gameblabla/SpaceCadetPinballGC#how-to-run",
+      "notes": "Required copyrighted graphics and sound assets are not distributed with the port. Supply them from a legally obtained copy of the original PC game and place all files in /apps/SpaceCadetPinball/Data/. Optional music must be named PINBALL.OGG and placed in the same directory."
+    }
+  ],
+  "source": {
+    "type": "github_release",
+    "repository": "gameblabla/SpaceCadetPinballGC",
+    "asset_pattern": "SpaceCadetPinball-gc.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["SpaceCadetPinball-gc.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["SpaceCadetPinball-gc.dol", "apps/space-cadet-pinball/default.dol"]
+    }
+  ]
+}
