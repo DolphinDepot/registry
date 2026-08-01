@@ -19,6 +19,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["gchttpserver-*.dol", "apps/gchttpserver/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/gchttpserver/opening.bnr"]
     }
   ]
 }
