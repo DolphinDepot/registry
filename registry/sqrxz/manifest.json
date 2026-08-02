@@ -1,0 +1,36 @@
+{
+  "name": "Sqrxz",
+  "author": "Retroguru",
+  "description_short": "A demanding platform puzzle game built around fast reflexes and precise movement.",
+  "description_long": "Guide Sqrxz through 16 challenging levels, collecting every item to unlock each exit while avoiding creatures and hazards. This remake includes classic and deluxe graphics, 18 chiptunes, a top-ten high-score table, unlimited continues, and a hidden easter egg.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko"],
+  "license": {
+    "spdx": "LicenseRef-Proprietary",
+    "url": "https://www.retroguru.com/legal/"
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://www.retroguru.com/sqrxz/sqrxz-v.latest-gamecube.zip",
+    "version": "v1.0b"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["sqrxz-v.latest-gamecube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["sqrxz/sqrxz-gc.dol", "apps/sqrxz/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["sqrxz/data/", "apps/sqrxz/data/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/sqrxz/opening.bnr"]
+    }
+  ]
+}
