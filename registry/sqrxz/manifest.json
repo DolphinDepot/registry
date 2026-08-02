@@ -26,7 +26,7 @@
     },
     {
       "treatment": "contents.move",
-      "arguments": ["sqrxz/data/", "apps/sqrxz/data/"]
+      "arguments": ["sqrxz/data/", "sqrxz/data/"]
     },
     {
       "treatment": "registry.copy",
