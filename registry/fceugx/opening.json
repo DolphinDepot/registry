@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "FCE Ultra GX",
+        "developerNameShort": "Tantric, dborth",
+        "gameTitle": "FCE Ultra GX",
+        "developerName": "Tantric, dborth",
+        "description": "NES emulator for GameCube based on FCE Ultra and FCEUX."
+    }
+}

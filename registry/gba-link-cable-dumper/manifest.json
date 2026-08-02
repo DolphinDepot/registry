@@ -1,6 +1,6 @@
 {
   "name": "GBA Link Cable Dumper",
-  "author": "Pinkietron and FIX94",
+  "author": "FIX94, Pinkietron",
   "description_short": "Dump GBA BIOS, ROMs, and saves via the GBA Link Cable.",
   "description_long": "GBA Link Cable Dumper can dump GBA BIOS, ROM, and save data through the GameCube GBA Link Cable. On GameCube, it uses a controller in Port 1, the GBA Link Cable in Port 2, and writes dumped files to a dumps folder on SD Gecko.",
   "category": "utilities",

@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "ClassiCube",
+        "developerNameShort": "AndrewPH",
+        "gameTitle": "ClassiCube",
+        "developerName": "AndrewPH",
+        "description": "Custom Minecraft Classic compatible client"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Snes9x GX",
+        "developerNameShort": "Tantric, dborth",
+        "gameTitle": "Snes9x GX",
+        "developerName": "Tantric, dborth",
+        "description": "Super Nintendo emulator for GameCube, port of Snes9x."
+    }
+}

@@ -1,6 +1,6 @@
 {
   "name": "CubeSX",
-  "author": "emu_kidid",
+  "author": "emu_kidid, sepp256, tehpola",
   "description_short": "PlayStation 1 emulator for GameCube.",
   "description_long": "CubeSX is the GameCube build of the WiiSX/CubeSX PlayStation 1 emulator (based on PCSX). Loads ISOs from SD card (GCLoader, SD2SP2, Slot A/B), supports multitap up to 4 players, PSX mouse, fully configurable controls, native save and save state support.",
   "category": "emulators",

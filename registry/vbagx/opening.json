@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Visual Boy Advance GX",
+        "developerNameShort": "Tantric, dborth",
+        "gameTitle": "Visual Boy Advance GX",
+        "developerName": "Tantric, dborth",
+        "description": "GBA, GBC, and Game Boy emulator based on VBA-M."
+    }
+}

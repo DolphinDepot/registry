@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "CubeSX",
+        "developerNameShort": "emu_kidid, sepp256, tehpola",
+        "gameTitle": "CubeSX",
+        "developerName": "emu_kidid, sepp256, tehpola",
+        "description": "PlayStation 1 emulator for GameCube."
+    }
+}

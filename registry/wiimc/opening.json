@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "WiiMC-GCN",
+        "developerNameShort": "Tantric, rodries, SuperrSonic",
+        "gameTitle": "WiiMC-GCN",
+        "developerName": "Tantric, rodries, SuperrSonic",
+        "description": "WiiMC music player for GameCube with low-memory optimizations"
+    }
+}

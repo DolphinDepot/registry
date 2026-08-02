@@ -1,6 +1,6 @@
 {
   "name": "Visual Boy Advance GX",
-  "author": "dborth & Tantric",
+  "author": "Tantric, dborth",
   "description_short": "Game Boy Advance, Game Boy Color, and Game Boy emulator for GameCube based on VBA-M.",
   "description_long": "Plays GBA, GBC, and original Game Boy ROMs on GameCube. Supports SRAM and state saving, IPS/UPS patches, custom controller configurations, turbo speed, video zooming, widescreen, unfiltered video, fixed pixel ratio modes, custom borders, 240p output, native Goomba ROM/SRAM loading, editable 14-colour palettes for monochrome games, and more.",
   "category": "emulators",

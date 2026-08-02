@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "FCEUX TX",
+        "developerNameShort": "Tantric, dborth, FCEUX TX Team",
+        "gameTitle": "FCEUX TX",
+        "developerName": "Tantric, dborth, Tanooki16, SaulFabre",
+        "description": "An enhanced NES and Famicom emulator for GameCube"
+    }
+}

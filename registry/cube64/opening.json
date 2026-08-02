@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Cube64",
+        "developerNameShort": "tehpola, sepp256, emu_kidid",
+        "gameTitle": "Cube64",
+        "developerName": "tehpola, sepp256, emu_kidid",
+        "description": "Nintendo 64 emulator for GameCube."
+    }
+}

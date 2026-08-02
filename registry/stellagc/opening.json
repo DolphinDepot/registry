@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "StellaGC",
+        "developerNameShort": "nuvalo",
+        "gameTitle": "StellaGC",
+        "developerName": "nuvalo",
+        "description": "Atari 2600 VCS emulator port for GameCube based on Stella"
+    }
+}

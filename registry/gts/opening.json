@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "GCC Test Suite",
+        "developerNameShort": "greenwave-1",
+        "gameTitle": "GCC Test Suite",
+        "developerName": "greenwave-1",
+        "description": "Open source GCC test program"
+    }
+}

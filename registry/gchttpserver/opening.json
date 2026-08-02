@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "GC HTTP Server",
+        "developerNameShort": "emu_kidid",
+        "gameTitle": "GC HTTP Server",
+        "developerName": "emu_kidid",
+        "description": "A small HTTP server for the GameCube & Wii"
+    }
+}

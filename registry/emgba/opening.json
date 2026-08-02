@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Enhanced mGBA",
+        "developerNameShort": "Extrems",
+        "gameTitle": "Enhanced mGBA",
+        "developerName": "Extrems",
+        "description": "Enhanced port of mGBA Game Boy Advance emulator"
+    }
+}

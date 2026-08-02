@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "ScummVM",
+        "developerNameShort": "The ScummVM Team",
+        "gameTitle": "ScummVM",
+        "developerName": "The ScummVM Team",
+        "description": "Classic adventure & role-playing game interpreter."
+    }
+}

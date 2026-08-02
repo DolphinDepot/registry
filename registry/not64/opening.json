@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Not64",
+        "developerNameShort": "Extrems",
+        "gameTitle": "Not64",
+        "developerName": "Extrems",
+        "description": "Nintendo 64 emulator for GameCube, fork of Mupen64GC/Wii64."
+    }
+}

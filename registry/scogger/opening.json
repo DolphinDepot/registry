@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Scogger",
+        "developerNameShort": "Scognito",
+        "gameTitle": "Scogger",
+        "developerName": "Scognito",
+        "description": "Arcade-style frog-jumping game where you cross tree trunks."
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "GBA Link Cable Dumper",
+        "developerNameShort": "FIX94, Pinkietron",
+        "gameTitle": "GBA Link Cable Dumper",
+        "developerName": "FIX94, Pinkietron",
+        "description": "Dump GBA BIOS, ROMs, and saves via the GBA Link Cable."
+    }
+}
