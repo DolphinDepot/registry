@@ -1,0 +1,33 @@
+{
+  "name": "FCEUX TX",
+  "author": "Tanooki16, Tantric, SaulFabre",
+  "description_short": "An enhanced FCE Ultra GX fork for playing NES and Famicom games on GameCube",
+  "description_long": "FCEUX TX combines an updated FCEUX emulation core with the GameCube interface of FCE Ultra GX. It adds expanded mapper support, regional color handling, multiple palettes, 240p and progressive PAL output, bilinear filtering, PPU overclocking, save states, cheats, screenshots, and configurable controls.",
+  "category": "emulators",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "disc", "sd_gecko", "sd2sp2"],
+  "license": {
+    "spdx": "GPL-2.0-or-later",
+    "url": "https://github.com/saulfabregwiivc/FCEUXTX/blob/main/README.txt",
+    "notes": "The repository README states that FCEUX TX is under the GPL; source files inherited from FCEUX declare GPL-2.0-or-later. The repository has no top-level license file."
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "saulfabregwiivc/FCEUXTX",
+    "asset_pattern": "FCEUXTX-*-GameCube.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["FCEUXTX-*-GameCube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["fceuxtx-gc.dol", "apps/fceuxtx/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/fceuxtx/opening.bnr"]
+    }
+  ]
+}
