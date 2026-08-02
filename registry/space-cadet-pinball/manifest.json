@@ -31,6 +31,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["SpaceCadetPinball-gc.dol", "apps/space-cadet-pinball/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/space-cadet-pinball/opening.bnr"]
     }
   ]
 }
