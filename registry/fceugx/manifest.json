@@ -23,6 +23,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["fceugx-gc.dol", "apps/fceugx/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/fceugx/opening.bnr"]
     }
   ]
 }
