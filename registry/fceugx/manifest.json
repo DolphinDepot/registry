@@ -1,6 +1,6 @@
 {
   "name": "FCE Ultra GX",
-  "author": "Tantric",
+  "author": "Tantric, dborth",
   "description_short": "Nintendo Entertainment System emulator for GameCube, based on FCE Ultra and FCEUX.",
   "description_long": "FCE Ultra GX is a GameCube port of the FCE Ultra/FCEUX NES emulator. It supports iNES, FDS, VS, UNIF, and NSF formats, up to four players, Zapper input, save states, cheats, and ROM loading from SD storage. Preferences and game saves can be stored on an SD card or memory card.",
   "category": "emulators",
