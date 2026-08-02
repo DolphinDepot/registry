@@ -23,6 +23,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["wiimc_gcn_xfb1.dol", "apps/wiimc/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/wiimc/opening.bnr"]
     }
   ]
 }
