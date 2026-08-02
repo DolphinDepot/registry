@@ -1,0 +1,35 @@
+{
+  "name": "Xump - The Final Run",
+  "author": "Retroguru",
+  "description_short": "A single-screen puzzle game about clearing dissolving tiles and disarming mines.",
+  "description_long": "Guide the headbot Xump across 48 single-screen levels, clearing every dissolving tile while avoiding falls and dealing with minefields. The game features nine chiptune tracks, a high-score list, a password system, and hidden themes and classic levels.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko"],
+  "license": {
+    "spdx": "LicenseRef-Proprietary",
+    "url": "https://www.retroguru.com/legal/"
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://www.retroguru.com/xump/xump-v.latest-gamecube.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["xump-v.latest-gamecube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["xump/xump-gc.dol", "apps/xump/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["xump/data/", "apps/xump/data/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/xump/opening.bnr"]
+    }
+  ]
+}
