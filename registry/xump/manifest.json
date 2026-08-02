@@ -12,7 +12,8 @@
   },
   "source": {
     "type": "direct_url",
-    "url": "https://www.retroguru.com/xump/xump-v.latest-gamecube.zip"
+    "url": "https://www.retroguru.com/xump/xump-v.latest-gamecube.zip",
+    "version": "v1.01"
   },
   "treatments": [
     {
