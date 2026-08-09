@@ -19,11 +19,11 @@
   "treatments": [
     {
       "treatment": "archive.extract",
-      "arguments": ["cube64-*.7z", "."]
+      "arguments": ["cube64-*.7z", "cube64/"]
     },
     {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/cube64/opening.bnr"]
+      "treatment": "contents.move",
+      "arguments": ["cube64/*", "./"]
     }
   ]
 }
