@@ -14,6 +14,14 @@
     "repository": "emukidid/Nicky-Boum",
     "asset_pattern": "nicky-boum-*-gamecube.zip"
   },
+  "external_resources": [
+    {
+      "type": "assets",
+      "label": "Nicky Boom and Nicky 2 game assets",
+      "url": "https://github.com/emukidid/Nicky-Boum/blob/main/README#L26",
+      "notes": "You need the original DOS version data files, easily found by searching for \"Nicky Boom PC DOS\" or \"Nicky 2 PC DOS\"."
+    }
+  ],
   "treatments": [
     {
       "treatment": "archive.extract",
