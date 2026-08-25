@@ -2,7 +2,7 @@
   "name": "ftpii",
   "author": "joedj, leo60228",
   "description_short": "An FTP server for the GameCube",
-  "description_long": "An FTP server for the GameCube",
+  "description_long": "ftpii turns a GameCube with a Broadband Adapter or compatible network adapter into an FTP server, letting you access files on supported storage devices from a computer over the network. It supports SD Gecko and SD2SP2 storage, optional password protection, device remounting, and standard FTP file operations without repeatedly moving the storage card between devices.",
   "category": "utilities",
   "platforms": ["gamecube", "panasonic_q"],
   "peripherals": ["controller", "sd_gecko", "sd2sp2", "bba", "eth2gc"],

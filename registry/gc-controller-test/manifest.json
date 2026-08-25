@@ -2,6 +2,7 @@
   "name": "GC Controller Test",
   "author": "corenting",
   "description_short": "A simple homebrew to test your GameCube controllers.",
+  "description_long": "GC Controller Test displays live input from up to four connected GameCube controllers. It reports every digital button, analog L/R trigger values, and the X/Y positions and directions of both the main stick and C-stick. Press a button on any port to switch the active controller, and use A+B to verify the rumble motor.",
   "category": "utilities",
   "platforms": [
     "gamecube",
