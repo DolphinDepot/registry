@@ -26,11 +26,15 @@
   "treatments": [
     {
       "treatment": "archive.extract",
-      "arguments": ["EXTRACT_TO_ROOT.zip", "."]
+      "arguments": ["EXTRACT_TO_ROOT.zip", "cubiboot/"]
+    },
+    {
+      "treatment": "contents.delete",
+      "arguments": ["cubiboot/config.ini"]
     },
     {
       "treatment": "contents.move",
-      "arguments": ["*", "./"]
+      "arguments": ["cubiboot/*", "./"]
     }
   ]
 }
