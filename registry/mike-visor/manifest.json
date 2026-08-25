@@ -25,6 +25,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["MikeVisor_GCN.dol", "apps/mike-visor/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/mike-visor/opening.bnr"]
     }
   ]
 }

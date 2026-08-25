@@ -23,6 +23,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["crafti-gc.dol", "apps/crafti/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/crafti/opening.bnr"]
     }
   ]
 }

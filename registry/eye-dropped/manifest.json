@@ -25,6 +25,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["*.dol", "apps/eye-dropped/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/eye-dropped/opening.bnr"]
     }
   ]
 }

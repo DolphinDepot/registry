@@ -27,6 +27,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["mplayer.dol", "apps/mplayer-ce/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/mplayer-ce/opening.bnr"]
     }
   ]
 }

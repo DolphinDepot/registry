@@ -18,6 +18,10 @@
     {
       "treatment": "contents.move",
       "arguments": ["mamabearpuzzle.dol", "apps/mama-bear-puzzle/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/mama-bear-puzzle/opening.bnr"]
     }
   ]
 }
