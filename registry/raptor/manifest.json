@@ -15,7 +15,7 @@
       "type": "assets",
       "label": "Raptor: Call of the Shadows GLB assets",
       "url": "https://github.com/RetroGamer02/raptor-consoles",
-      "notes": "Requires the original GLB asset files (FILE0002.GLB, FILE0003.GLB, FILE0004.GLB) from Raptor: Call of the Shadows DOS v1.2 (shareware or full). Place them in apps/raptor/ next to default.dol after install. You must obtain these files yourself — the registry cannot redistribute them."
+      "notes": "Requires the original GLB asset files (FILE0002.GLB, FILE0003.GLB, FILE0004.GLB) from Raptor: Call of the Shadows DOS v1.2 (shareware or full). Place them in apps/raptor/ next to default.dol after install. You must obtain these files yourself - the registry cannot redistribute them."
     }
   ],
   "source": {
