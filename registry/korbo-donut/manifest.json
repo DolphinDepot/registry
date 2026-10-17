@@ -1,0 +1,40 @@
+{
+  "name": "Korbo's Donut Shop",
+  "author": "Korbosoft",
+  "description_short": "Korbo's spinning donut!",
+  "description_long": "Korbo's world-famous* donut shop is always open!\n\n*Donut shop might not actually be \"world-famous\".\nNone of this would have ever happened without \"Wii Donut\" by emilydaemon, and\nxOx-Liy-Codez-XD-oXo helped me a ton getting the rewrite to initially work.\n\nMusic can be changed by adding a mod/it/s3m/xm/whatever tracker module in the music directory.\nThis program supports *most* tracker music formats; https://modarchive.org is a good source.",
+  "category": "games",
+  "platforms": [
+    "dolphin",
+    "wii_nintendont",
+    "wii_swiss",
+    "gamecube"
+  ],
+  "peripherals": [
+    "gcloader",
+    "cubeode",
+    "flippydrive",
+    "picoboot",
+    "sd_gecko",
+    "sd2sp2",
+    "controller"
+  ],
+  "license": {
+    "spdx": "GPL-3.0-or-later",
+    "url": "https://github.com/korbosoft/korbo-donut/blob/main/LICENSE"
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "korbosoft/korbo-donut",
+    "asset_pattern": "donut-gamecube.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": [
+        "donut-gamecube.zip",
+        "."
+      ]
+    }
+  ]
+}
