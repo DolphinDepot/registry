@@ -35,6 +35,13 @@
         "donut-gamecube.zip",
         "."
       ]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": [
+        "korbo-donut/",
+        "apps/korbo-donut/"
+      ]
     }
   ]
 }
