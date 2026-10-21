@@ -1,7 +1,7 @@
 {
   "name": "Blueretro Companion",
   "author": "LaserBearIndustries",
-  "description_short": "Utility for managing the LBI Blueretro Adapter.",
+  "description_short": "Utility for managing the LBI BlueRetro adapter",
   "description_long": "The BlueRetro Companion is a GameCube program that talks to the adapter through a controller port. Everything it does remapping, updating, diagnostics goes over that port, so it works with no computer attached, no serial cable, and even when Bluetooth on the adapter is not behaving.",
   "category": "utilities",
   "platforms": [
