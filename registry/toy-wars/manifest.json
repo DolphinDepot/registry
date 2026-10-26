@@ -28,6 +28,10 @@
       "arguments": ["toywars/toywars.gc.data", "toywars/toywars.gc.data"]
     },
     {
+      "treatment": "contents.mkdir",
+      "arguments": ["toywars/profiles"]
+    },
+    {
       "treatment": "registry.copy",
       "arguments": ["opening.bnr", "apps/toy-wars/opening.bnr"]
     }
