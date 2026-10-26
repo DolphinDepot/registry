@@ -31,6 +31,22 @@
     {
       "treatment": "contents.move",
       "arguments": ["CubeSX.dol", "apps/cubesx/default.dol"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/cubesx/opening.bnr"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["wiisx/bios"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["wiisx/isos"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["wiisx/saves"]
     }
   ]
 }
