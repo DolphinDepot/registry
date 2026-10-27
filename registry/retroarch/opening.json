@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "RetroArch",
+        "developerNameShort": "libretro",
+        "gameTitle": "RetroArch",
+        "developerName": "libretro",
+        "description": "Frontend for emulators and game engines, with libretro cores."
+    }
+}
