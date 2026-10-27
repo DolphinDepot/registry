@@ -1,37 +1,105 @@
 {
-  "name": "RetroArch",
-  "author": "libretro",
-  "description_short": "Frontend for emulators and game engines, bundling the libretro cores built for GameCube.",
-  "description_long": "RetroArch is a frontend for emulators, game engines and media players built on the libretro API. The GameCube port ships each core as a standalone DOL in /apps/retroarch: launch the one for the system you want to play. Cores cover NES, SNES, Game Boy, GBA, Mega Drive, Master System, PC Engine, PlayStation, arcade and more. Config, cheats, filters, saves and save states live under /retroarch on the SD card in SD Gecko slot A.",
+  "name": "RetroArch (RA-GCN)",
+  "author": "SuperrSonic",
+  "description_short": "SuperrSonic's GameCube fork of RetroArch with libogc2 support, shipping each libretro core as a standalone DOL.",
+  "description_long": "RA-GCN is SuperrSonic's hard fork of a 2015 RetroArch (libretro) build, rebuilt for GameCube with libogc2. Each core is a standalone DOL in /apps/retroarch: NES, SNES, GB/GBC, GBA, Mega Drive, PC Engine, Neo Geo CD, Lynx, arcade and more, plus bonus builds. Reads and writes the SD card in SD2SP2 or GC Loader; config, saves, save states and BIOS files live in /private/other.",
   "category": "emulators",
   "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko"],
+  "peripherals": ["controller", "sd2sp2", "gcloader"],
   "license": {
     "spdx": "GPL-3.0-or-later",
-    "url": "https://github.com/libretro/RetroArch/blob/v1.22.2/COPYING",
-    "notes": "Covers the RetroArch frontend. Each bundled core keeps its own license (see the license field in retroarch/info/*.info)."
+    "url": "https://github.com/SuperrSonic/RA-GCN/blob/main/COPYING",
+    "notes": "Covers the RetroArch frontend fork. Each bundled libretro core keeps its own license."
   },
+  "external_resources": [
+    {
+      "type": "assets",
+      "label": "BIOS files for cores that need them",
+      "url": "https://github.com/SuperrSonic/RA-GCN/releases",
+      "notes": "Supplied by the user: neocd.bin in /private/other/system/neocd (the only file there) for neocd.dol, lynxboot.img in /private/other/system for handy.dol, optional gba_bios.bin in /private/other/system for gpsp.dol."
+    }
+  ],
   "source": {
-    "type": "direct_url",
-    "url": "https://buildbot.libretro.com/stable/1.22.2/nintendo/ngc/RetroArch.7z",
-    "version": "1.22.2"
+    "type": "github_release",
+    "repository": "SuperrSonic/RA-GCN",
+    "asset_pattern": "RA-GCN-release*.7z",
+    "ignore_versions": ["v1.2"]
   },
   "treatments": [
     {
       "treatment": "archive.extract",
-      "arguments": ["RetroArch.7z", "."]
+      "arguments": ["RA-GCN-release*.7z", "."]
+    },
+    {
+      "treatment": "web.download",
+      "arguments": [
+        "https://github.com/SuperrSonic/RA-GCN/releases/download/v1.2/RA-GCN_rel2.7z",
+        "RA-GCN_rel2.7z"
+      ]
+    },
+    {
+      "treatment": "archive.extract",
+      "arguments": ["RA-GCN_rel2.7z", "extra-cores/"]
     },
     {
       "treatment": "contents.move",
-      "arguments": ["retroarch/*_libretro_ngc.dol", "apps/retroarch/"]
+      "arguments": ["RA-GCN-release/RA-cores/*.dol", "apps/retroarch/"]
     },
     {
       "treatment": "contents.move",
-      "arguments": ["retroarch/", "retroarch/"]
+      "arguments": ["RA-GCN-release/RA-cores/bonus/", "apps/retroarch/bonus/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["RA-GCN-release/readme.txt", "apps/retroarch/readme.txt"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["extra-cores/*.dol", "apps/retroarch/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["extra-cores/readme.txt", "apps/retroarch/readme-extra-cores.txt"]
     },
     {
       "treatment": "registry.copy",
       "arguments": ["opening.bnr", "apps/retroarch/opening.bnr"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/audiofilters"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/videofilters"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/screenshots"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/overlays"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/savefiles"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/savestates"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/system/temp"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/system/neogeo"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/system/neocd"]
     }
   ]
 }
