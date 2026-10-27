@@ -2,10 +2,10 @@
   "name": "RetroArch (RA-GCN)",
   "author": "SuperrSonic",
   "description_short": "Unofficial RetroArch for GameCube that plays NES, SNES, Game Boy, GBA, Mega Drive, PC Engine, Neo Geo CD, arcade games and more.",
-  "description_long": "An unofficial fork of RetroArch made by SuperrSonic, not an official libretro release. Each system is a separate app in /apps/ra-gcn: NES, SNES, Game Boy and Game Boy Color, Game Boy Advance, Mega Drive and Master System, PC Engine and SuperGrafx, Neo Geo CD, Neo Geo Pocket, WonderSwan, Virtual Boy, Atari 2600, Atari Lynx, Vectrex, Pokemon Mini and arcade games. Games, saves and settings are kept on an SD card in SD2SP2 or GC Loader.",
+  "description_long": "An unofficial fork of RetroArch made by SuperrSonic, not an official libretro release. Each system is a separate app in /apps/ra-gcn: NES, SNES, Game Boy and Game Boy Color, Game Boy Advance, Mega Drive and Master System, PC Engine and SuperGrafx, Neo Geo CD, Neo Geo Pocket, WonderSwan, Virtual Boy, Atari 2600, Atari Lynx, Vectrex, Pokemon Mini and arcade games. Games, saves and settings are kept on an SD card in SD2SP2, GC Loader or CubeODE.",
   "category": "emulators",
   "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd2sp2", "gcloader"],
+  "peripherals": ["controller", "sd2sp2", "gcloader", "cubeode"],
   "license": {
     "spdx": "GPL-3.0-or-later",
     "url": "https://github.com/SuperrSonic/RA-GCN/blob/main/COPYING",
