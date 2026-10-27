@@ -5,6 +5,6 @@
         "developerNameShort": "SuperrSonic",
         "gameTitle": "RetroArch (RA-GCN)",
         "developerName": "SuperrSonic, RetroArch by libretro",
-        "description": "GameCube fork of RetroArch with libogc2, one DOL per core."
+        "description": "Plays NES, SNES, Game Boy, GBA, Mega Drive, arcade and more."
     }
 }

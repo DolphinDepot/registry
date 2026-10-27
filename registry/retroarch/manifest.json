@@ -1,8 +1,8 @@
 {
   "name": "RetroArch (RA-GCN)",
   "author": "SuperrSonic",
-  "description_short": "SuperrSonic's GameCube fork of RetroArch with libogc2 support, shipping each libretro core as a standalone DOL.",
-  "description_long": "RA-GCN is SuperrSonic's hard fork of a 2015 RetroArch (libretro) build, rebuilt for GameCube with libogc2. Each core is a standalone DOL in /apps/retroarch: NES, SNES, GB/GBC, GBA, Mega Drive, PC Engine, Neo Geo CD, Lynx, arcade and more, plus bonus builds. Reads and writes the SD card in SD2SP2 or GC Loader; config, saves, save states and BIOS files live in /private/other.",
+  "description_short": "Unofficial RetroArch for GameCube that plays NES, SNES, Game Boy, GBA, Mega Drive, PC Engine, Neo Geo CD, arcade games and more.",
+  "description_long": "An unofficial fork of RetroArch made by SuperrSonic, not an official libretro release. Each system is a separate app in /apps/retroarch: NES, SNES, Game Boy and Game Boy Color, Game Boy Advance, Mega Drive and Master System, PC Engine and SuperGrafx, Neo Geo CD, Neo Geo Pocket, WonderSwan, Virtual Boy, Atari 2600, Atari Lynx, Vectrex, Pokemon Mini and arcade games. Games, saves and settings are kept on an SD card in SD2SP2 or GC Loader.",
   "category": "emulators",
   "platforms": ["gamecube", "panasonic_q"],
   "peripherals": ["controller", "sd2sp2", "gcloader"],
