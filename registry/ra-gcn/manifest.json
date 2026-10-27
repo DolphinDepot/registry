@@ -16,7 +16,7 @@
       "type": "assets",
       "label": "BIOS files for cores that need them",
       "url": "https://github.com/SuperrSonic/RA-GCN/releases",
-      "notes": "Supplied by the user: neocd.bin in /private/other/system/neocd (the only file there) for neocd.dol, lynxboot.img in /private/other/system for handy.dol, optional gba_bios.bin in /private/other/system for gpsp.dol."
+      "notes": "Place in /private/other/system: lynxboot.img (Lynx), optional gba_bios.bin (GBA), and neocd.bin as the only file in its neocd subfolder (Neo Geo CD)."
     }
   ],
   "source": {
