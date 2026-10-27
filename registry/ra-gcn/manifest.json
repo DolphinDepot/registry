@@ -1,0 +1,105 @@
+{
+  "name": "RetroArch (RA-GCN)",
+  "author": "SuperrSonic",
+  "description_short": "Unofficial RetroArch for GameCube that plays NES, SNES, Game Boy, GBA, Mega Drive, PC Engine, Neo Geo CD, arcade games and more.",
+  "description_long": "An unofficial fork of RetroArch made by SuperrSonic, not an official libretro release. Each system is a separate app in /apps/ra-gcn: NES, SNES, Game Boy and Game Boy Color, Game Boy Advance, Mega Drive and Master System, PC Engine and SuperGrafx, Neo Geo CD, Neo Geo Pocket, WonderSwan, Virtual Boy, Atari 2600, Atari Lynx, Vectrex, Pokemon Mini and arcade games. Games, saves and settings are kept on an SD card in SD2SP2 or GC Loader.",
+  "category": "emulators",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd2sp2", "gcloader"],
+  "license": {
+    "spdx": "GPL-3.0-or-later",
+    "url": "https://github.com/SuperrSonic/RA-GCN/blob/main/COPYING",
+    "notes": "Covers the RetroArch frontend fork. Each bundled libretro core keeps its own license."
+  },
+  "external_resources": [
+    {
+      "type": "assets",
+      "label": "BIOS files for cores that need them",
+      "url": "https://github.com/SuperrSonic/RA-GCN/releases",
+      "notes": "Supplied by the user: neocd.bin in /private/other/system/neocd (the only file there) for neocd.dol, lynxboot.img in /private/other/system for handy.dol, optional gba_bios.bin in /private/other/system for gpsp.dol."
+    }
+  ],
+  "source": {
+    "type": "github_release",
+    "repository": "SuperrSonic/RA-GCN",
+    "asset_pattern": "RA-GCN-release*.7z",
+    "ignore_versions": ["v1.2"]
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["RA-GCN-release*.7z", "."]
+    },
+    {
+      "treatment": "web.download",
+      "arguments": [
+        "https://github.com/SuperrSonic/RA-GCN/releases/download/v1.2/RA-GCN_rel2.7z",
+        "RA-GCN_rel2.7z"
+      ]
+    },
+    {
+      "treatment": "archive.extract",
+      "arguments": ["RA-GCN_rel2.7z", "extra-cores/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["RA-GCN-release/RA-cores/*.dol", "apps/ra-gcn/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["RA-GCN-release/RA-cores/bonus/", "apps/ra-gcn/bonus/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["RA-GCN-release/readme.txt", "apps/ra-gcn/readme.txt"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["extra-cores/*.dol", "apps/ra-gcn/"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["extra-cores/readme.txt", "apps/ra-gcn/readme-extra-cores.txt"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/ra-gcn/opening.bnr"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/audiofilters"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/videofilters"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/screenshots"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/overlays"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/savefiles"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/savestates"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/system/temp"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/system/neogeo"]
+    },
+    {
+      "treatment": "contents.mkdir",
+      "arguments": ["private/other/system/neocd"]
+    }
+  ]
+}

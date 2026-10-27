@@ -1,10 +1,10 @@
 {
     "type": "BNR1",
     "text": {
-        "gameNameShort": "RetroArch (RA-GCN)",
-        "developerNameShort": "SuperrSonic",
-        "gameTitle": "RetroArch (RA-GCN)",
-        "developerName": "SuperrSonic, RetroArch by libretro",
-        "description": "Plays NES, SNES, Game Boy, GBA, Mega Drive, arcade and more."
+        "gameNameShort": "RetroArch",
+        "developerNameShort": "libretro",
+        "gameTitle": "RetroArch",
+        "developerName": "libretro",
+        "description": "Frontend for emulators and game engines, with libretro cores."
     }
 }
