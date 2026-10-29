@@ -22,7 +22,7 @@
     },
     {
       "treatment": "contents.move",
-      "arguments": ["sqrxz2/sqrxz2-gc.dol", "apps/sqrxz-2/default.dol"]
+      "arguments": ["sqrxz2/sqrxz2-gc.dol", "apps/sqrxz2/default.dol"]
     },
     {
       "treatment": "contents.move",
@@ -30,7 +30,7 @@
     },
     {
       "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/sqrxz-2/opening.bnr"]
+      "arguments": ["opening.bnr", "apps/sqrxz2/opening.bnr"]
     }
   ]
 }
