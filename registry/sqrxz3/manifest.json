@@ -1,0 +1,36 @@
+{
+  "name": "Sqrxz 3",
+  "author": "Retroguru",
+  "description_short": "A demanding and almost impossible jump'n'run for hardcore gamers that needs fast fingers and a fast brain.",
+  "description_long": "Sqrxz 3 - Adventure for Love brings a retro look straight from 1990 with 10 knotty levels, secrets to discover, 11 chiptunes, a top-ten high-score table and an infinite continue mode.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko"],
+  "license": {
+    "spdx": "LicenseRef-Proprietary",
+    "url": "https://www.retroguru.com/legal/"
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://www.retroguru.com/sqrxz3/sqrxz3-v.latest-gamecube.zip",
+    "version": "v1.05r"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["sqrxz3-v.latest-gamecube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["sqrxz3/sqrxz3-gc.dol", "apps/sqrxz3/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["sqrxz3/data/", "sqrxz3/data/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/sqrxz3/opening.bnr"]
+    }
+  ]
+}
