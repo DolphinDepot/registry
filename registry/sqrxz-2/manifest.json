@@ -1,0 +1,36 @@
+{
+  "name": "Sqrxz 2",
+  "author": "Retroguru",
+  "description_short": "An extremely difficult jump'n'run sequel that demands a sharp mind and fast reflexes.",
+  "description_long": "The sequel to Sqrxz brings 10 tricky and hard levels with hidden passages to discover, retro graphics, 11 chiptunes, a top-ten high-score table and an infinite continue mode for practising. High frustration is guaranteed.",
+  "category": "games",
+  "platforms": ["gamecube", "panasonic_q"],
+  "peripherals": ["controller", "sd_gecko"],
+  "license": {
+    "spdx": "LicenseRef-Proprietary",
+    "url": "https://www.retroguru.com/legal/"
+  },
+  "source": {
+    "type": "direct_url",
+    "url": "https://www.retroguru.com/sqrxz2/sqrxz2-v.latest-gamecube.zip",
+    "version": "v1.10"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": ["sqrxz2-v.latest-gamecube.zip", "."]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["sqrxz2/sqrxz2-gc.dol", "apps/sqrxz-2/default.dol"]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": ["sqrxz2/data/", "sqrxz2/data/"]
+    },
+    {
+      "treatment": "registry.copy",
+      "arguments": ["opening.bnr", "apps/sqrxz-2/opening.bnr"]
+    }
+  ]
+}
