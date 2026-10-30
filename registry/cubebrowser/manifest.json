@@ -13,24 +13,16 @@
   "source": {
     "type": "github_release",
     "repository": "Arial-Bold/Cubebrowser",
-    "asset_pattern": "cubebrowser.*.zip"
+    "asset_pattern": "cubebrowser*.zip"
   },
   "treatments": [
     {
       "treatment": "archive.extract",
-      "arguments": ["cubebrowser.*.zip", "."]
+      "arguments": ["cubebrowser*.zip", "."]
     },
     {
       "treatment": "contents.move",
-      "arguments": ["cubebrowser.dol", "apps/cubebrowser/default.dol"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["gcbrowser/", "apps/cubebrowser/gcbrowser/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/cubebrowser/opening.bnr"]
+      "arguments": ["cubebrowser/", "apps/cubebrowser/"]
     }
   ]
 }
