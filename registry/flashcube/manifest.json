@@ -13,24 +13,16 @@
   "source": {
     "type": "github_release",
     "repository": "Arial-Bold/Flashcube",
-    "asset_pattern": "flashcube.*.zip"
+    "asset_pattern": "flashcube*.zip"
   },
   "treatments": [
     {
       "treatment": "archive.extract",
-      "arguments": ["flashcube.*.zip", "."]
+      "arguments": ["flashcube*.zip", "."]
     },
     {
       "treatment": "contents.move",
-      "arguments": ["flashcube.dol", "apps/flashcube/default.dol"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["flashcube/", "flashcube/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/flashcube/opening.bnr"]
+      "arguments": ["flashcube/", "apps/flashcube/"]
     }
   ]
 }
