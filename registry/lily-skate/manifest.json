@@ -1,0 +1,37 @@
+{
+  "name": "Lily Skate",
+  "author": "lliy",
+  "description_short": "Best skate game EVER",
+  "description_long": "Introducing: LILY SKATE. The blood pumpingly muscleflexingly sick as shit superfucking cool SKATING GAME featuring the infamous LIYL where yuo can skate arond and do awesome fucking tricks and skate its LILY SKATE wher eyou can skate around Hi im lily and welcome to LILY SKATE wher eyou can SKATE AROUND and do TRICKS \n\nInusruction: press R TRIGGER ON GAMECUE CONTROLLER to do TRICKS!!!!!!!!!",
+  "category": "games",
+  "platforms": [
+    "panasonic_q",
+    "gamecube",
+    "dolphin"
+  ],
+  "peripherals": [
+    "controller",
+    "picoboot",
+    "flippydrive",
+    "cubeode",
+    "gcloader"
+  ],
+  "license": {
+    "spdx": "NONE",
+    "notes": "Redistribution, use, and viewing of binaries, pictures and other shipped files is permitted."
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "xOx-Liy-Codez-XD-oXo/lilyskategc",
+    "asset_pattern": "lysk_r*.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": [
+        "lysk_r*.zip",
+        "."
+      ]
+    }
+  ]
+}
