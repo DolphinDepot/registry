@@ -10,27 +10,13 @@
     "spdx": "LicenseRef-Proprietary",
     "url": "https://www.retroguru.com/legal/"
   },
-  "source": {
-    "type": "direct_url",
-    "url": "https://retroguru.com/sqrxz4/sqrxz4-v.latest-gamecube.zip",
-    "version": "v1.01"
-  },
-  "treatments": [
+  "external_resources": [
     {
-      "treatment": "archive.extract",
-      "arguments": ["sqrxz4-v.latest-gamecube.zip", "."]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["sqrxz4/sqrxz4-gc.dol", "apps/sqrxz4/default.dol"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["sqrxz4/data/", "sqrxz4/data/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/sqrxz4/opening.bnr"]
+      "type": "download",
+      "label": "Download from Retroguru",
+      "url": "https://www.retroguru.com/sqrxz4/",
+      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
     }
-  ]
+  ],
+  "treatments": []
 }

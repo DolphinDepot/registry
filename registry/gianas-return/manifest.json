@@ -10,30 +10,13 @@
     "spdx": "NOASSERTION",
     "notes": "The official release is freeware but does not declare an SPDX-compatible license. The included README requires written permission for redistribution."
   },
-  "source": {
-    "type": "direct_url",
-    "url": "https://www.retroguru.com/gianas-return/gianas-return-v.latest-gamecube.zip"
-  },
-  "treatments": [
+  "external_resources": [
     {
-      "treatment": "archive.extract",
-      "arguments": ["gianas-return-v.latest-gamecube.zip", "."]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["giana/giana-gc.dol", "apps/gianas-return/default.dol"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["giana/config.txt", "giana/config.txt"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["giana/data/", "giana/data/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/gianas-return/opening.bnr"]
+      "type": "download",
+      "label": "Download from Retroguru",
+      "url": "https://www.retroguru.com/gianas-return/",
+      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
     }
-  ]
+  ],
+  "treatments": []
 }

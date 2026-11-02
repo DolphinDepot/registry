@@ -10,27 +10,13 @@
     "spdx": "NOASSERTION",
     "notes": "Fruit'Y is a homebrew software and not endorsed or approved by Nintendo. All rights reserved by Retroguru."
   },
-  "source": {
-    "type": "direct_url",
-    "url": "https://www.retroguru.com/fruity/fruity-v.latest-gamecube.zip",
-    "version": "1.0.0"
-  },
-  "treatments": [
+  "external_resources": [
     {
-      "treatment": "archive.extract",
-      "arguments": ["fruity-v.latest-gamecube.zip", "."]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["fruity/fruity-gc.dol", "apps/fruity/default.dol"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["fruity/data/", "apps/fruity/data/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/fruity/opening.bnr"]
+      "type": "download",
+      "label": "Download from Retroguru",
+      "url": "https://www.retroguru.com/fruity/",
+      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
     }
-  ]
+  ],
+  "treatments": []
 }

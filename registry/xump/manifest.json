@@ -10,27 +10,13 @@
     "spdx": "LicenseRef-Proprietary",
     "url": "https://www.retroguru.com/legal/"
   },
-  "source": {
-    "type": "direct_url",
-    "url": "https://www.retroguru.com/xump/xump-v.latest-gamecube.zip",
-    "version": "v1.01"
-  },
-  "treatments": [
+  "external_resources": [
     {
-      "treatment": "archive.extract",
-      "arguments": ["xump-v.latest-gamecube.zip", "."]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["xump/xump-gc.dol", "apps/xump/default.dol"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["xump/data/", "xump/data/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/xump/opening.bnr"]
+      "type": "download",
+      "label": "Download from Retroguru",
+      "url": "https://www.retroguru.com/xump/",
+      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
     }
-  ]
+  ],
+  "treatments": []
 }
