@@ -16,7 +16,7 @@ jobs:
 
     steps:
       # Checks out the default branch, never the PR code.
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Download PR comment
         id: download
