@@ -30,7 +30,7 @@ jobs:
 
       - name: Comment on PR
         if: steps.download.outcome == 'success'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const script = require('./.github/scripts/comment-pr.js');
