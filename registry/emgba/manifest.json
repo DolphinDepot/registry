@@ -6,18 +6,22 @@
   "category": "emulators",
   "platforms": [
     "gamecube",
-    "panasonic_q"
+    "panasonic_q",
+    "tdev",
+    "gdev"
   ],
   "peripherals": [
     "controller",
-    "memory_card",
+    "gba_link_cable",
+    "action_pad",
+    "dk_bongos",
+    "steering_wheel",
     "sd_gecko",
     "sd2sp2",
-    "m2loader",
     "mmce",
-    "gcloader",
-    "cubeode",
-    "flippydrive"
+    "bba",
+    "eth2gc",
+    "gcloader"
   ],
   "license": {
     "spdx": "MPL-2.0",

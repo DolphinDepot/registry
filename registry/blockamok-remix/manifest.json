@@ -5,7 +5,7 @@
   "description_long": "Blockamok Remix is a 3D action-survival game where you pilot a spaceship with a broken throttle and dodge incoming blocks at ever-increasing speed. This remake adds widescreen support, configurable settings, controller support, audio, menus, scoring, and performance optimizations over the original Blockamok.",
   "category": "games",
   "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
   "license": {
     "spdx": "MIT",
     "url": "https://github.com/Mode8fx/Blockamok/blob/main/LICENSE"

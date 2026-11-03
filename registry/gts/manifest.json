@@ -5,7 +5,7 @@
   "description_long": "GCC Test Suite (GTS) is an open source GameCube controller tester, and an alternative to SmashScope.",
   "category": "utilities",
   "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
   "license": {
     "spdx": "GPL-3.0-only",
     "url": "https://github.com/greenwave-1/GTS/blob/main/LICENSE"

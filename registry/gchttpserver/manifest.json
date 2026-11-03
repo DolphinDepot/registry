@@ -5,7 +5,7 @@
   "description_long": "A small HTTP Server for the GameCube/Wii, smashed together using picohttpparser and the network example from libogc2",
   "category": "utilities",
   "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2", "bba", "eth2gc"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2", "mmce", "bba", "eth2gc", "gcloader"],
   "license": {
     "spdx": "GPL-2.0-or-later",
     "url": "https://github.com/emukidid/gchttpserver/blob/main/LICENSE"

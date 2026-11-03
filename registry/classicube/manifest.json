@@ -4,13 +4,15 @@
   "description_short": "Custom Minecraft Classic compatible client",
   "description_long": "A sandbox block game inspired by other such sandbox block games, ClassiCube brings you back to the days of 2009 where one block game ruled them all.",
   "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
+  "platforms": ["gamecube", "panasonic_q", "tdev", "gdev"],
   "peripherals": [
     "controller",
     "sd_gecko",
     "sd2sp2",
+    "mmce",
     "bba",
-    "eth2gc"
+    "eth2gc",
+    "gcloader"
   ],
   "license": {
     "spdx": "BSD-3-Clause",

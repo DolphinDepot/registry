@@ -5,7 +5,7 @@
   "description_long": "Faithful recreation of the original Flash game Trogdor, expanded with new features: configurable gameplay settings, difficulty presets, level select and shuffle, save data with mid-game progress and high score, new cheats alongside the original Konami code, optional Stinkoman 20X6 soundtrack, screen scaling options, bug fixes from the original game, and big head mode.",
   "category": "games",
   "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
+  "peripherals": ["controller", "gba_link_cable", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
   "license": {
     "spdx": "MIT",
     "url": "https://github.com/Mode8fx/Trogdor-Reburninated/blob/main/LICENSE"

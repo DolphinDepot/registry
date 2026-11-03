@@ -5,7 +5,7 @@
   "description_long": "Genesis Plus GX is an enhanced port of Charles MacDonald's Genesis Plus emulator, focused on accuracy and portability. Supports Sega Genesis/Mega Drive, Sega/Mega CD, Master System, Game Gear, and SG-1000, including unlicensed and pirate dumps with backwards-compatibility modes. ROM loading from SD cards via libfat (SD Gecko and SD2SP2).",
   "category": "emulators",
   "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
+  "peripherals": ["controller", "memory_card", "disc", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
   "license": {
     "spdx": "NOASSERTION",
     "url": "https://github.com/ekeeke/Genesis-Plus-GX/blob/master/LICENSE.txt",

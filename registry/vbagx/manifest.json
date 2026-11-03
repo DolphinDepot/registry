@@ -11,10 +11,13 @@
   ],
   "peripherals": [
     "controller",
-    "gcloader",
-    "mmce",
+    "disc",
+    "sd_gecko",
     "sd2sp2",
-    "sd_gecko"
+    "mmce",
+    "bba",
+    "eth2gc",
+    "gcloader"
   ],
   "license": {
     "spdx": "GPL-2.0-or-later",

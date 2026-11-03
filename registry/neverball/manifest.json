@@ -8,7 +8,9 @@
   "peripherals": [
     "controller",
     "sd_gecko",
-    "sd2sp2"
+    "sd2sp2",
+    "mmce",
+    "gcloader"
   ],
   "license": {
     "spdx": "GPL-2.0-or-later",

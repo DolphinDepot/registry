@@ -4,8 +4,8 @@
   "description_short": "Disc Backup Tool for GC/Wii Discs",
   "description_long": "A tool to backup your Gamecube/Wii Discs via IOS58 Create 1:1 backups of your GC/Wii discs for archival purposes without any requirements for custom IOS (cIOS). Supports USB 2.0 / NTFS / exFAT & Front SD.",
   "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2", "m2loader", "mmce"],
+  "platforms": ["gamecube", "panasonic_q", "nr_reader"],
+  "peripherals": ["controller", "disc", "sd_gecko", "sd2sp2", "m2loader", "mmce"],
   "license": {
     "spdx": "GPL-2.0-or-later",
     "url": "https://github.com/emukidid/cleanrip/blob/master/LICENSE"

@@ -5,7 +5,7 @@
   "description_long": "Nicky Boum is a classic platformer game initially designed for the Amiga. The game was published by Microids in 1992 and was also ported to the Atari ST and PC EGA platforms.",
   "category": "games",
   "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
   "license": {
     "spdx": "NOASSERTION"
   },

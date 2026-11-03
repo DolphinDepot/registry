@@ -11,10 +11,16 @@
   "peripherals": [
     "controller",
     "memory_card",
+    "disc",
+    "steering_wheel",
     "sd_gecko",
     "sd2sp2",
     "m2loader",
-    "mmce"
+    "mmce",
+    "bba",
+    "eth2gc",
+    "gcloader",
+    "flippydrive"
   ],
   "license": {
     "spdx": "GPL-2.0-or-later",

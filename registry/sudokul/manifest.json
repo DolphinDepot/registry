@@ -5,7 +5,7 @@
   "description_long": "Multiplatform Sudoku game with four difficulty levels (Easy, Normal, Hard, Very Hard). Built in C++ and SDL2. Save data is created in the same directory as the executable.",
   "category": "games",
   "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
+  "peripherals": ["controller", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
   "license": {
     "spdx": "MIT",
     "url": "https://github.com/Mode8fx/SuDokuL/blob/main/LICENSE"
