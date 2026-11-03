@@ -10,11 +10,7 @@
     "dolphin"
   ],
   "peripherals": [
-    "controller",
-    "picoboot",
-    "flippydrive",
-    "cubeode",
-    "gcloader"
+    "controller"
   ],
   "license": {
     "spdx": "NONE",
