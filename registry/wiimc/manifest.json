@@ -1,32 +1,50 @@
 {
-  "name": "WiiMC-GCN",
-  "author": "Tantric, rodries, SuperrSonic",
-  "description_short": "WiiMC music player adapted for GameCube with low-memory optimizations and controller-friendly playback controls",
-  "description_long": "WiiMC-GCN reworks WiiMC-SS 3.0.0 into a music-only player for GameCube. It reduces GUI memory use, improves FLAC and MP3 seeking, reads cover art, offers audio filters and screensavers, and adds controller shortcuts for seeking and playback. Media is loaded from the first detected device: GC Loader/CUBEODE, SD2SP2, then an SD adapter in memory card slot B or A. Dolphin Depot distributes the XFB1 single-buffer build, which saves memory but may show minor screen tearing.",
-  "category": "media",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2", "gcloader", "cubeode"],
-  "license": {
-    "spdx": "GPL-3.0-only",
-    "url": "https://github.com/SuperrSonic/WiiMC-GCN/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "SuperrSonic/WiiMC-GCN",
-    "asset_pattern": "WiiMC-GCN.7z"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["WiiMC-GCN.7z", "."]
+    "name": "WiiMC-GCN",
+    "author": "Tantric, rodries, SuperrSonic",
+    "description_short": "WiiMC music player adapted for GameCube with low-memory optimizations and controller-friendly playback controls",
+    "description_long": "WiiMC-GCN reworks WiiMC-SS 3.0.0 into a music-only player for GameCube. It reduces GUI memory use, improves FLAC and MP3 seeking, reads cover art, offers audio filters and screensavers, and adds controller shortcuts for seeking and playback. Media is loaded from the first detected device: GC Loader/CUBEODE, SD2SP2, then an SD adapter in memory card slot B or A. Dolphin Depot distributes the XFB1 single-buffer build, which saves memory but may show minor screen tearing.",
+    "category": "media",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2",
+        "gcloader",
+        "cubeode"
+    ],
+    "license": {
+        "spdx": "GPL-3.0-only",
+        "url": "https://github.com/SuperrSonic/WiiMC-GCN/blob/main/LICENSE"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["wiimc_gcn_xfb1.dol", "apps/wiimc/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "SuperrSonic/WiiMC-GCN",
+        "asset_pattern": "WiiMC-GCN.7z"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/wiimc/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "WiiMC-GCN.7z",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "wiimc_gcn_xfb1.dol",
+                "apps/wiimc/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/wiimc/opening.bnr"
+            ]
+        }
+    ]
 }

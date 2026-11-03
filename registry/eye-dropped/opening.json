@@ -1,10 +1,10 @@
 {
-  "type": "BNR1",
-  "text": {
-    "gameNameShort": "Eye Dropped",
-    "developerNameShort": "Aionmagan",
-    "gameTitle": "Eye Dropped",
-    "developerName": "Aionmagan",
-    "description": "Blast eyeballs before they push you off the platform."
-  }
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Eye Dropped",
+        "developerNameShort": "Aionmagan",
+        "gameTitle": "Eye Dropped",
+        "developerName": "Aionmagan",
+        "description": "Blast eyeballs before they push you off the platform."
+    }
 }

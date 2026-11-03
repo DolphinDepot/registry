@@ -1,47 +1,47 @@
 {
-  "name": "Lily Skate",
-  "author": "lliy",
-  "description_short": "Best skate game EVER",
-  "description_long": "The blood pumpingly muscleflexingly sick skating game featuring the infamous LILY. You can skate around and do awesome tricks and skate. Press R trigger to do tricks.",
-  "category": "games",
-  "platforms": [
-    "panasonic_q",
-    "gamecube",
-    "dolphin"
-  ],
-  "peripherals": [
-    "controller"
-  ],
-  "license": {
-    "spdx": "NONE",
-    "notes": "Redistribution, use, and viewing of binaries, pictures and other shipped files is permitted."
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "xOx-Liy-Codez-XD-oXo/lilyskategc",
-    "asset_pattern": "lysk_r*.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": [
-        "lysk_r*.zip",
-        "lysk/"
-      ]
+    "name": "Lily Skate",
+    "author": "lliy",
+    "description_short": "Best skate game EVER",
+    "description_long": "The blood pumpingly muscleflexingly sick skating game featuring the infamous LILY. You can skate around and do awesome tricks and skate. Press R trigger to do tricks.",
+    "category": "games",
+    "platforms": [
+        "panasonic_q",
+        "gamecube",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller"
+    ],
+    "license": {
+        "spdx": "NONE",
+        "notes": "Redistribution, use, and viewing of binaries, pictures and other shipped files is permitted."
     },
-    {
-      "treatment": "contents.move",
-      "arguments": [
-        "lysk/default.dol",
-        "apps/lily-skate/default.dol"
-      ]
+    "source": {
+        "type": "github_release",
+        "repository": "xOx-Liy-Codez-XD-oXo/lilyskategc",
+        "asset_pattern": "lysk_r*.zip"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": [
-        "lysk/opening.bnr",
-        "apps/lily-skate/opening.bnr"
-      ]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "lysk_r*.zip",
+                "lysk/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "lysk/default.dol",
+                "apps/lily-skate/default.dol"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "lysk/opening.bnr",
+                "apps/lily-skate/opening.bnr"
+            ]
+        }
+    ]
 }

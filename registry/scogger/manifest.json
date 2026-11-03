@@ -1,32 +1,46 @@
 {
-  "name": "Scogger",
-  "author": "Scognito",
-  "description_short": "Arcade-style frog-jumping game where you cross tree trunks.",
-  "description_long": "Scogger is an arcade-style puzzle game where you guide a frog across tree trunks. Each playthrough selects ten levels at random from a pool of one hundred. The frog can jump forward, left, and right, but never backward. Clear each stage to advance to the next level.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "notes": "The original release and its GitHub mirror do not include a license declaration."
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "GameCubeHomebrew/game-scogger",
-    "asset_pattern": "scoggergc*.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["scoggergc*.zip", "."]
+    "name": "Scogger",
+    "author": "Scognito",
+    "description_short": "Arcade-style frog-jumping game where you cross tree trunks.",
+    "description_long": "Scogger is an arcade-style puzzle game where you guide a frog across tree trunks. Each playthrough selects ten levels at random from a pool of one hundred. The frog can jump forward, left, and right, but never backward. Clear each stage to advance to the next level.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "The original release and its GitHub mirror do not include a license declaration."
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["scogger.dol", "apps/scogger/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "GameCubeHomebrew/game-scogger",
+        "asset_pattern": "scoggergc*.zip"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/scogger/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "scoggergc*.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "scogger.dol",
+                "apps/scogger/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/scogger/opening.bnr"
+            ]
+        }
+    ]
 }

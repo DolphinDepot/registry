@@ -1,32 +1,49 @@
 {
-  "name": "GBA Link Cable Dumper",
-  "author": "FIX94, Pinkietron",
-  "description_short": "Dump GBA BIOS, ROMs, and saves via the GBA Link Cable.",
-  "description_long": "GBA Link Cable Dumper can dump GBA BIOS, ROM, and save data through the GameCube GBA Link Cable. On GameCube, it uses a controller in Port 1, the GBA Link Cable in Port 2, and writes dumped files to a dumps folder on SD Gecko.",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "gba_link_cable", "sd_gecko", "sd2sp2"],
-  "license": {
-    "spdx": "MIT",
-    "url": "https://github.com/ColdStoneSys/gba-link-cable-dumper/blob/master/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "ColdStoneSys/gba-link-cable-dumper",
-    "asset_pattern": "gba-link-cable-dumper-*.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["gba-link-cable-dumper-*.zip", "."]
+    "name": "GBA Link Cable Dumper",
+    "author": "FIX94, Pinkietron",
+    "description_short": "Dump GBA BIOS, ROMs, and saves via the GBA Link Cable.",
+    "description_long": "GBA Link Cable Dumper can dump GBA BIOS, ROM, and save data through the GameCube GBA Link Cable. On GameCube, it uses a controller in Port 1, the GBA Link Cable in Port 2, and writes dumped files to a dumps folder on SD Gecko.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "gba_link_cable",
+        "sd_gecko",
+        "sd2sp2"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/ColdStoneSys/gba-link-cable-dumper/blob/master/LICENSE"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["gba-link-cable-dumper-*/GC/boot.dol", "apps/gba-link-cable-dumper/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "ColdStoneSys/gba-link-cable-dumper",
+        "asset_pattern": "gba-link-cable-dumper-*.zip"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/gba-link-cable-dumper/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "gba-link-cable-dumper-*.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "gba-link-cable-dumper-*/GC/boot.dol",
+                "apps/gba-link-cable-dumper/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/gba-link-cable-dumper/opening.bnr"
+            ]
+        }
+    ]
 }

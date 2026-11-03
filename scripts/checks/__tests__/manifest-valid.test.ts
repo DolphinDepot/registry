@@ -216,4 +216,35 @@ describe("manifestValid", () => {
         expect(result.passed).toBe(false);
         expect(result.message).toMatch(/url|uri/);
     });
+
+    it("fails when a text field has leading or trailing whitespace", () => {
+        const result = manifestValid(
+            makeCtx({ ...validManifest, description_short: "A test app " }),
+        );
+
+        expect(result.passed).toBe(false);
+        expect(result.message).toMatch(/description_short/);
+    });
+
+    it("accepts multi-line text without surrounding whitespace", () => {
+        const result = manifestValid(
+            makeCtx({ ...validManifest, name: "Test\nApp" }),
+        );
+
+        expect(result.passed).toBe(true);
+    });
+
+    it("fails when platforms or peripherals contain duplicates", () => {
+        const result = manifestValid(
+            makeCtx({
+                ...validManifest,
+                platforms: ["gamecube", "gamecube"],
+                peripherals: ["controller", "controller"],
+            } as any),
+        );
+
+        expect(result.passed).toBe(false);
+        expect(result.message).toMatch(/platforms.*duplicate/);
+        expect(result.message).toMatch(/peripherals.*duplicate/);
+    });
 });

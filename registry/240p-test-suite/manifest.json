@@ -1,34 +1,52 @@
 {
-  "name": "240p Test Suite",
-  "author": "Artemio Urbina",
-  "description_short": "Homebrew suite to evaluate capture cards, upscalers, line doublers and TV processing of 240p video signals.",
-  "description_long": "Test patterns (PLUGE, color bars, grids, monoscope) and interactive tests (drop shadow, lag, scroll, striped sprites) for calibrating colors, geometry, overscan, and black/white levels. Includes MDFourier for audio signature analysis. The GameCube build also supports 480i, 288p, 576i and 480p evaluation modes.",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller", "sd2sp2", "sd_gecko", "gba_link_cable"],
-  "license": {
-    "spdx": "GPL-3.0-only",
-    "url": "https://github.com/ArtemioUrbina/240pTestSuite/blob/master/LICENSE"
-  },
-  "source": {
-    "type": "itchio",
-    "creator": "artemiourbina",
-    "game": "240p-test-suite",
-    "upload": "240p Test Suite for GameCube*",
-    "format": "zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["240p-test-suite.zip", "."]
+    "name": "240p Test Suite",
+    "author": "Artemio Urbina",
+    "description_short": "Homebrew suite to evaluate capture cards, upscalers, line doublers and TV processing of 240p video signals.",
+    "description_long": "Test patterns (PLUGE, color bars, grids, monoscope) and interactive tests (drop shadow, lag, scroll, striped sprites) for calibrating colors, geometry, overscan, and black/white levels. Includes MDFourier for audio signature analysis. The GameCube build also supports 480i, 288p, 576i and 480p evaluation modes.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller",
+        "sd2sp2",
+        "sd_gecko",
+        "gba_link_cable"
+    ],
+    "license": {
+        "spdx": "GPL-3.0-only",
+        "url": "https://github.com/ArtemioUrbina/240pTestSuite/blob/master/LICENSE"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["GameCube-240pSuite-*.dol", "apps/240p-test-suite/default.dol"]
+    "source": {
+        "type": "itchio",
+        "creator": "artemiourbina",
+        "game": "240p-test-suite",
+        "upload": "240p Test Suite for GameCube*",
+        "format": "zip"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/240p-test-suite/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "240p-test-suite.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "GameCube-240pSuite-*.dol",
+                "apps/240p-test-suite/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/240p-test-suite/opening.bnr"
+            ]
+        }
+    ]
 }

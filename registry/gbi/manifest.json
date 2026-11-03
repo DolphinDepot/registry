@@ -1,40 +1,40 @@
 {
-  "name": "Game Boy Interface",
-  "author": "Extrems",
-  "description_short": "Free alternative to the Game Boy Player Start-up Disc",
-  "description_long": "Game Boy Interface (GBI) is a free replacement for Nintendo's Game Boy Player Start-up Disc, available in three editions: Standard, Speedrunning, and High-Fidelity. Features faithful emulation of the handheld experience, GBA-as-controller via the Game Boy Advance Cable, a built-in GBA ROM/BIOS/save dumper, and TAS movie playback.",
-  "category": "utilities",
-  "platforms": [
-    "gamecube",
-    "panasonic_q"
-  ],
-  "peripherals": [
-    "controller",
-    "gb_player",
-    "gba_link_cable",
-    "action_pad",
-    "dk_bongos",
-    "steering_wheel",
-    "sd_gecko",
-    "sd2sp2",
-    "mmce",
-    "bba",
-    "eth2gc",
-    "gcloader",
-    "picoboot",
-    "usb_gecko"
-  ],
-  "license": {
-    "spdx": "NOASSERTION",
-    "notes": "Proprietary: \"Copyright (c) 2014-2026, Extrems' Corner.org. All rights reserved. You may not sell or redistribute this software.\" Distributed exclusively from the author's site; redistribution through the registry is not permitted."
-  },
-  "external_resources": [
-    {
-      "type": "download",
-      "label": "Download from GC-Forever Wiki",
-      "url": "https://www.gc-forever.com/wiki/index.php?title=Game_Boy_Interface",
-      "notes": "Redistribution is not permitted by the author. Download the main and extra packages directly from the developer's wiki page."
-    }
-  ],
-  "treatments": []
+    "name": "Game Boy Interface",
+    "author": "Extrems",
+    "description_short": "Free alternative to the Game Boy Player Start-up Disc",
+    "description_long": "Game Boy Interface (GBI) is a free replacement for Nintendo's Game Boy Player Start-up Disc, available in three editions: Standard, Speedrunning, and High-Fidelity. Features faithful emulation of the handheld experience, GBA-as-controller via the Game Boy Advance Cable, a built-in GBA ROM/BIOS/save dumper, and TAS movie playback.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "gb_player",
+        "gba_link_cable",
+        "action_pad",
+        "dk_bongos",
+        "steering_wheel",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "bba",
+        "eth2gc",
+        "gcloader",
+        "picoboot",
+        "usb_gecko"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "Proprietary: \"Copyright (c) 2014-2026, Extrems' Corner.org. All rights reserved. You may not sell or redistribute this software.\" Distributed exclusively from the author's site; redistribution through the registry is not permitted."
+    },
+    "external_resources": [
+        {
+            "type": "download",
+            "label": "Download from GC-Forever Wiki",
+            "url": "https://www.gc-forever.com/wiki/index.php?title=Game_Boy_Interface",
+            "notes": "Redistribution is not permitted by the author. Download the main and extra packages directly from the developer's wiki page."
+        }
+    ],
+    "treatments": []
 }

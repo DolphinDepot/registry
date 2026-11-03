@@ -1,36 +1,57 @@
 {
-  "name": "MPlayer CE",
-  "author": "Extrems, SuperrSonic",
-  "description_short": "The media player for GameCube",
-  "description_long": "MPlayer CE is a media player for the GameCube, allowing you to play various audio and video formats.",
-  "category": "media",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2", "cubeode", "gcloader"],
-  "license": {
-    "spdx": "GPL-2.0-or-later",
-    "notes": "Inherited from upstream MPlayer (GPL-2.0-or-later); this fork ships no top-level LICENSE file."
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "SuperrSonic/mplayer-ce-libogc2",
-    "asset_pattern": "mplayer-gcn-libogc2.7z"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["mplayer-gcn-libogc2.7z", "."]
+    "name": "MPlayer CE",
+    "author": "Extrems, SuperrSonic",
+    "description_short": "The media player for GameCube",
+    "description_long": "MPlayer CE is a media player for the GameCube, allowing you to play various audio and video formats.",
+    "category": "media",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2",
+        "cubeode",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-or-later",
+        "notes": "Inherited from upstream MPlayer (GPL-2.0-or-later); this fork ships no top-level LICENSE file."
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["mplayer-ce/", "apps/mplayer-ce/"]
+    "source": {
+        "type": "github_release",
+        "repository": "SuperrSonic/mplayer-ce-libogc2",
+        "asset_pattern": "mplayer-gcn-libogc2.7z"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["mplayer.dol", "apps/mplayer-ce/default.dol"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/mplayer-ce/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "mplayer-gcn-libogc2.7z",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "mplayer-ce/",
+                "apps/mplayer-ce/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "mplayer.dol",
+                "apps/mplayer-ce/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/mplayer-ce/opening.bnr"
+            ]
+        }
+    ]
 }

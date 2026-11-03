@@ -1,30 +1,42 @@
 {
-  "name": "Terri-Fried",
-  "author": "PolyMars",
-  "description_short": "Launch an egg between falling platforms, collect coins, and stay above the lava",
-  "description_long": "Terri-Fried is a score-chasing action game for the Nintendo GameCube. Use the control stick and A button to set the egg's trajectory, land on falling platforms, and collect as many coins as possible without plunging into the lava. Created in 72 hours for Ludum Dare 46.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "notes": "Upstream permits noncommercial use but does not declare a standard software license."
-  },
-  "source": {
-    "type": "itchio",
-    "creator": "polymars",
-    "game": "terri-fried",
-    "upload": "Terri-Fried.dol (Nintendo GameCube)",
-    "format": "dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": ["terri-fried.dol", "apps/terri-fried/default.dol"]
+    "name": "Terri-Fried",
+    "author": "PolyMars",
+    "description_short": "Launch an egg between falling platforms, collect coins, and stay above the lava",
+    "description_long": "Terri-Fried is a score-chasing action game for the Nintendo GameCube. Use the control stick and A button to set the egg's trajectory, land on falling platforms, and collect as many coins as possible without plunging into the lava. Created in 72 hours for Ludum Dare 46.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "Upstream permits noncommercial use but does not declare a standard software license."
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/terri-fried/opening.bnr"]
-    }
-  ]
+    "source": {
+        "type": "itchio",
+        "creator": "polymars",
+        "game": "terri-fried",
+        "upload": "Terri-Fried.dol (Nintendo GameCube)",
+        "format": "dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "terri-fried.dol",
+                "apps/terri-fried/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/terri-fried/opening.bnr"
+            ]
+        }
+    ]
 }

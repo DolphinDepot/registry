@@ -1,29 +1,49 @@
 {
-  "name": "Cube64",
-  "author": "tehpola, sepp256, emu_kidid",
-  "description_short": "Nintendo 64 emulator for GameCube.",
-  "description_long": "Cube64 is the Nintendo 64 emulator based on Wii64. Loads ROMs (.z64/.v64/.n64) from SD card. Three variants are shipped: 'basic' (smaller build without boxart, set as default), the standard build with boxart support, and an expansion pak variant for memory-hungry titles. Per-game saves and save states go to /wii64/saves on the SD card.",
-  "category": "emulators",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "disc", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
-  "license": {
-    "spdx": "GPL-2.0-only",
-    "url": "https://github.com/emukidid/Wii64/blob/master/LICENCE.TXT"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "emukidid/Wii64",
-    "asset_pattern": "cube64-*.7z",
-    "ignore_versions": ["HiResTest", "texturepacker_1.2", "boxart.bin"]
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["cube64-*.7z", "cube64/"]
+    "name": "Cube64",
+    "author": "tehpola, sepp256, emu_kidid",
+    "description_short": "Nintendo 64 emulator for GameCube.",
+    "description_long": "Cube64 is the Nintendo 64 emulator based on Wii64. Loads ROMs (.z64/.v64/.n64) from SD card. Three variants are shipped: 'basic' (smaller build without boxart, set as default), the standard build with boxart support, and an expansion pak variant for memory-hungry titles. Per-game saves and save states go to /wii64/saves on the SD card.",
+    "category": "emulators",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "disc",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-only",
+        "url": "https://github.com/emukidid/Wii64/blob/master/LICENCE.TXT"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["cube64/*", "./"]
-    }
-  ]
+    "source": {
+        "type": "github_release",
+        "repository": "emukidid/Wii64",
+        "asset_pattern": "cube64-*.7z",
+        "ignore_versions": [
+            "HiResTest",
+            "texturepacker_1.2",
+            "boxart.bin"
+        ]
+    },
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "cube64-*.7z",
+                "cube64/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "cube64/*",
+                "./"
+            ]
+        }
+    ]
 }

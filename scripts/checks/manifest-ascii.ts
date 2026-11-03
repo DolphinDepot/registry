@@ -2,10 +2,18 @@ import type { CheckContext, CheckResult } from "../lib/types.js";
 
 function collectNonAscii(value: unknown, path: string, out: string[]): void {
     if (typeof value === "string") {
-        const bad = [...new Set([...value].filter((ch) => ch.codePointAt(0)! > 127))];
+        const bad = [
+            ...new Set([...value].filter((ch) => ch.codePointAt(0)! > 127)),
+        ];
         for (const ch of bad) {
-            const code = ch.codePointAt(0)!.toString(16).toUpperCase().padStart(4, "0");
-            out.push(`${path || "/"} contains non-ASCII character U+${code} (${ch})`);
+            const code = ch
+                .codePointAt(0)!
+                .toString(16)
+                .toUpperCase()
+                .padStart(4, "0");
+            out.push(
+                `${path || "/"} contains non-ASCII character U+${code} (${ch})`,
+            );
         }
     } else if (Array.isArray(value)) {
         value.forEach((item, i) => collectNonAscii(item, `${path}[${i}]`, out));

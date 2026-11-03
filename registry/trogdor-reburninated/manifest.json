@@ -1,36 +1,58 @@
 {
-  "name": "Trogdor: Reburninated",
-  "author": "Mode8fx",
-  "description_short": "Enhanced GameCube port of the classic Homestar Runner Flash game. Burninate the countryside as Trogdor the dragon.",
-  "description_long": "Faithful recreation of the original Flash game Trogdor, expanded with new features: configurable gameplay settings, difficulty presets, level select and shuffle, save data with mid-game progress and high score, new cheats alongside the original Konami code, optional Stinkoman 20X6 soundtrack, screen scaling options, bug fixes from the original game, and big head mode.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "gba_link_cable", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
-  "license": {
-    "spdx": "MIT",
-    "url": "https://github.com/Mode8fx/Trogdor-Reburninated/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "Mode8fx/Trogdor-Reburninated",
-    "asset_pattern": "Trogdor-Reburninated-*-gamecube.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["Trogdor-Reburninated-*-gamecube.zip", "."]
+    "name": "Trogdor: Reburninated",
+    "author": "Mode8fx",
+    "description_short": "Enhanced GameCube port of the classic Homestar Runner Flash game. Burninate the countryside as Trogdor the dragon.",
+    "description_long": "Faithful recreation of the original Flash game Trogdor, expanded with new features: configurable gameplay settings, difficulty presets, level select and shuffle, save data with mid-game progress and high score, new cheats alongside the original Konami code, optional Stinkoman 20X6 soundtrack, screen scaling options, bug fixes from the original game, and big head mode.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "gba_link_cable",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/Mode8fx/Trogdor-Reburninated/blob/main/LICENSE"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["Trogdor-Reburninated-gamecube/Trogdor-RB/*.dol", "apps/trogdor-reburninated/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "Mode8fx/Trogdor-Reburninated",
+        "asset_pattern": "Trogdor-Reburninated-*-gamecube.zip"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["Trogdor-Reburninated-gamecube/Trogdor-RB/", "apps/trogdor-reburninated/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/trogdor-reburninated/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "Trogdor-Reburninated-*-gamecube.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "Trogdor-Reburninated-gamecube/Trogdor-RB/*.dol",
+                "apps/trogdor-reburninated/default.dol"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "Trogdor-Reburninated-gamecube/Trogdor-RB/",
+                "apps/trogdor-reburninated/"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/trogdor-reburninated/opening.bnr"
+            ]
+        }
+    ]
 }

@@ -1,22 +1,28 @@
 {
-  "name": "Sqrxz",
-  "author": "Retroguru",
-  "description_short": "A demanding platform puzzle game built around fast reflexes and precise movement.",
-  "description_long": "Guide Sqrxz through 16 challenging levels, collecting every item to unlock each exit while avoiding creatures and hazards. This remake includes classic and deluxe graphics, 18 chiptunes, a top-ten high-score table, unlimited continues, and a hidden easter egg.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko"],
-  "license": {
-    "spdx": "LicenseRef-Proprietary",
-    "url": "https://www.retroguru.com/legal/"
-  },
-  "external_resources": [
-    {
-      "type": "download",
-      "label": "Download from Retroguru",
-      "url": "https://www.retroguru.com/sqrxz/",
-      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
-    }
-  ],
-  "treatments": []
+    "name": "Sqrxz",
+    "author": "Retroguru",
+    "description_short": "A demanding platform puzzle game built around fast reflexes and precise movement.",
+    "description_long": "Guide Sqrxz through 16 challenging levels, collecting every item to unlock each exit while avoiding creatures and hazards. This remake includes classic and deluxe graphics, 18 chiptunes, a top-ten high-score table, unlimited continues, and a hidden easter egg.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko"
+    ],
+    "license": {
+        "spdx": "LicenseRef-Proprietary",
+        "url": "https://www.retroguru.com/legal/"
+    },
+    "external_resources": [
+        {
+            "type": "download",
+            "label": "Download from Retroguru",
+            "url": "https://www.retroguru.com/sqrxz/",
+            "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
+        }
+    ],
+    "treatments": []
 }

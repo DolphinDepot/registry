@@ -1,73 +1,96 @@
 {
-  "name": "Not64",
-  "author": "Extrems",
-  "description_short": "Nintendo 64 emulator for GameCube, Extrems' modernized fork of Mupen64GC/Wii64.",
-  "description_long": "Not64 is Extrems' actively maintained Nintendo 64 emulator for GameCube, sharing the Mupen64GC/Wii64 lineage with Cube64 but consolidated into a single optimized build with updated toolchain and bug fixes. Loads .V64/.Z64/.N64 ROMs up to 512Mbit, supports dynamic recompilation or interpreter cores, hardware-accelerated graphics, native saves to Memory Card, save states, customizable button mapping, and up to 4 players.",
-  "category": "emulators",
-  "platforms": [
-    "gamecube",
-    "panasonic_q"
-  ],
-  "peripherals": [
-    "controller",
-    "memory_card",
-    "disc",
-    "steering_wheel",
-    "sd_gecko",
-    "sd2sp2",
-    "m2loader",
-    "mmce",
-    "bba",
-    "eth2gc",
-    "gcloader",
-    "flippydrive"
-  ],
-  "license": {
-    "spdx": "GPL-2.0-or-later",
-    "url": "https://github.com/extremscorner/not64",
-    "notes": "Source files carry GPL-2.0-or-later headers; repository has no top-level LICENSE file."
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "extremscorner/not64",
-    "asset_pattern": "mupen64-*.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["mupen64-*.zip", "."]
+    "name": "Not64",
+    "author": "Extrems",
+    "description_short": "Nintendo 64 emulator for GameCube, Extrems' modernized fork of Mupen64GC/Wii64.",
+    "description_long": "Not64 is Extrems' actively maintained Nintendo 64 emulator for GameCube, sharing the Mupen64GC/Wii64 lineage with Cube64 but consolidated into a single optimized build with updated toolchain and bug fixes. Loads .V64/.Z64/.N64 ROMs up to 512Mbit, supports dynamic recompilation or interpreter cores, hardware-accelerated graphics, native saves to Memory Card, save states, customizable button mapping, and up to 4 players.",
+    "category": "emulators",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "memory_card",
+        "disc",
+        "steering_wheel",
+        "sd_gecko",
+        "sd2sp2",
+        "m2loader",
+        "mmce",
+        "bba",
+        "eth2gc",
+        "gcloader",
+        "flippydrive"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-or-later",
+        "url": "https://github.com/extremscorner/not64",
+        "notes": "Source files carry GPL-2.0-or-later headers; repository has no top-level LICENSE file."
     },
-    {
-      "treatment": "contents.delete",
-      "arguments": ["apps/not64/boot.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "extremscorner/not64",
+        "asset_pattern": "mupen64-*.zip"
     },
-    {
-      "treatment": "contents.delete",
-      "arguments": ["apps/not64/meta.xml"]
-    },
-    {
-      "treatment": "contents.delete",
-      "arguments": ["apps/not64/icon.png"]
-    },
-    {
-      "treatment": "contents.delete",
-      "arguments": ["apps/not64/data.iso"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["apps/not64/not64.dol", "apps/not64/default.dol"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["apps/not64/", "apps/not64/"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["not64/", "not64/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/not64/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "mupen64-*.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.delete",
+            "arguments": [
+                "apps/not64/boot.dol"
+            ]
+        },
+        {
+            "treatment": "contents.delete",
+            "arguments": [
+                "apps/not64/meta.xml"
+            ]
+        },
+        {
+            "treatment": "contents.delete",
+            "arguments": [
+                "apps/not64/icon.png"
+            ]
+        },
+        {
+            "treatment": "contents.delete",
+            "arguments": [
+                "apps/not64/data.iso"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "apps/not64/not64.dol",
+                "apps/not64/default.dol"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "apps/not64/",
+                "apps/not64/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "not64/",
+                "not64/"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/not64/opening.bnr"
+            ]
+        }
+    ]
 }

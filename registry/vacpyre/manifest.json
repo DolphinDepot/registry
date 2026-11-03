@@ -1,30 +1,42 @@
 {
-  "name": "Vacpyre",
-  "author": "Solarscape Games",
-  "description_short": "A puzzle shooter where you use a vacuum to suck up and shoot out red objects",
-  "description_long": "Vacpyre is a puzzle FPS where you use a vacuum to suck up red objects, then release it to shoot them out. Created for Octave Jam 2026.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "notes": "Distributed via itch.io without an explicit license declaration."
-  },
-  "source": {
-    "type": "itchio",
-    "creator": "solarscapegames",
-    "game": "vacpyre",
-    "upload": "Vacpyre_GameCube.dol",
-    "format": "dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": ["vacpyre.dol", "apps/vacpyre/default.dol"]
+    "name": "Vacpyre",
+    "author": "Solarscape Games",
+    "description_short": "A puzzle shooter where you use a vacuum to suck up and shoot out red objects",
+    "description_long": "Vacpyre is a puzzle FPS where you use a vacuum to suck up red objects, then release it to shoot them out. Created for Octave Jam 2026.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "Distributed via itch.io without an explicit license declaration."
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/vacpyre/opening.bnr"]
-    }
-  ]
+    "source": {
+        "type": "itchio",
+        "creator": "solarscapegames",
+        "game": "vacpyre",
+        "upload": "Vacpyre_GameCube.dol",
+        "format": "dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "vacpyre.dol",
+                "apps/vacpyre/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/vacpyre/opening.bnr"
+            ]
+        }
+    ]
 }

@@ -1,33 +1,53 @@
 {
-  "name": "GCMM",
-  "author": "suloku",
-  "description_short": "A GC/Wii Memory Card Manager",
-  "description_long": "GCMM (GameCube Memory Manager) is a tool for GameCube memory cards. It allows the user to backup and restore GameCube saves and memory card .raw files.",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2", "gcloader"],
-  "license": {
-    "spdx": "GPL-3.0-only",
-    "url": "https://github.com/suloku/gcmm/blob/master/COPYING"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "suloku/gcmm",
-    "asset_pattern": "gcmm_*.zip",
-    "ignore_versions": ["1.4*", "1.5"]
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["gcmm_*.zip", "."]
+    "name": "GCMM",
+    "author": "suloku",
+    "description_short": "A GC/Wii Memory Card Manager",
+    "description_long": "GCMM (GameCube Memory Manager) is a tool for GameCube memory cards. It allows the user to backup and restore GameCube saves and memory card .raw files.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "GPL-3.0-only",
+        "url": "https://github.com/suloku/gcmm/blob/master/COPYING"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["gcmm_*/gamecube/gcmm_GC.dol", "apps/gcmm/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "suloku/gcmm",
+        "asset_pattern": "gcmm_*.zip",
+        "ignore_versions": [
+            "1.4*",
+            "1.5"
+        ]
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/gcmm/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "gcmm_*.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "gcmm_*/gamecube/gcmm_GC.dol",
+                "apps/gcmm/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/gcmm/opening.bnr"
+            ]
+        }
+    ]
 }

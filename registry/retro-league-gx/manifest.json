@@ -1,28 +1,41 @@
 {
-  "name": "Retro League GX",
-  "author": "mholtkamp",
-  "description_short": "A Rocket League demake for older game consoles",
-  "description_long": "Retro League GX is a demake of Rocket League built with the Octave game engine for older consoles. It features a single-player mode, local multiplayer, and online multiplayer via LAN or the Internet.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "bba", "eth2gc"],
-  "license": {
-    "spdx": "MIT",
-    "url": "https://github.com/mholtkamp/retro-league/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "mholtkamp/retro-league",
-    "asset_pattern": "RetroLeague_GCN.dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": ["RetroLeague_GCN.dol", "apps/retro-league-gx/default.dol"]
+    "name": "Retro League GX",
+    "author": "mholtkamp",
+    "description_short": "A Rocket League demake for older game consoles",
+    "description_long": "Retro League GX is a demake of Rocket League built with the Octave game engine for older consoles. It features a single-player mode, local multiplayer, and online multiplayer via LAN or the Internet.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "bba",
+        "eth2gc"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/mholtkamp/retro-league/blob/main/LICENSE"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/retro-league-gx/opening.bnr"]
-    }
-  ]
+    "source": {
+        "type": "github_release",
+        "repository": "mholtkamp/retro-league",
+        "asset_pattern": "RetroLeague_GCN.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "RetroLeague_GCN.dol",
+                "apps/retro-league-gx/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/retro-league-gx/opening.bnr"
+            ]
+        }
+    ]
 }

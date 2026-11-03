@@ -1,32 +1,49 @@
 {
-  "name": "Blockamok Remix",
-  "author": "Mode8fx",
-  "description_short": "3D survival game where you pilot a spaceship and dodge blocks at ever-increasing speed.",
-  "description_long": "Blockamok Remix is a 3D action-survival game where you pilot a spaceship with a broken throttle and dodge incoming blocks at ever-increasing speed. This remake adds widescreen support, configurable settings, controller support, audio, menus, scoring, and performance optimizations over the original Blockamok.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2"],
-  "license": {
-    "spdx": "MIT",
-    "url": "https://github.com/Mode8fx/Blockamok/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "Mode8fx/Blockamok",
-    "asset_pattern": "BlockamokRemix-*-gamecube.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["BlockamokRemix-*-gamecube.zip", "."]
+    "name": "Blockamok Remix",
+    "author": "Mode8fx",
+    "description_short": "3D survival game where you pilot a spaceship and dodge blocks at ever-increasing speed.",
+    "description_long": "Blockamok Remix is a 3D action-survival game where you pilot a spaceship with a broken throttle and dodge incoming blocks at ever-increasing speed. This remake adds widescreen support, configurable settings, controller support, audio, menus, scoring, and performance optimizations over the original Blockamok.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/Mode8fx/Blockamok/blob/main/LICENSE"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["BlockamokRemix/*.dol", "apps/blockamok-remix/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "Mode8fx/Blockamok",
+        "asset_pattern": "BlockamokRemix-*-gamecube.zip"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/blockamok-remix/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "BlockamokRemix-*-gamecube.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "BlockamokRemix/*.dol",
+                "apps/blockamok-remix/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/blockamok-remix/opening.bnr"
+            ]
+        }
+    ]
 }

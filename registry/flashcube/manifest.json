@@ -1,28 +1,44 @@
 {
-  "name": "Flashcube",
-  "author": "Arial-Bold",
-  "description_short": "A photo album for the GameCube in the spirit of the Wii Photo Channel, with slideshows, phone transfer and Melee snapshot import",
-  "description_long": "Flashcube shows your SD card photos as an album with year, folder and favorite tabs, a zooming photo viewer and slideshows with MIDI music. Photos can be sent from a phone or computer over the network adapter, and Super Smash Bros. Melee snapshots can be copied from a memory card as PNG pictures. Playtime adds a photo puzzle, doodles and color looks. The menu is a glass cube you turn with the Control Stick.",
-  "category": "media",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "memory_card", "bba", "eth2gc", "sd2sp2", "sd_gecko"],
-  "license": {
-    "spdx": "MIT",
-    "url": "https://github.com/Arial-Bold/Flashcube/blob/main/LICENSE.txt"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "Arial-Bold/Flashcube",
-    "asset_pattern": "flashcube*.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["flashcube*.zip", "."]
+    "name": "Flashcube",
+    "author": "Arial-Bold",
+    "description_short": "A photo album for the GameCube in the spirit of the Wii Photo Channel, with slideshows, phone transfer and Melee snapshot import",
+    "description_long": "Flashcube shows your SD card photos as an album with year, folder and favorite tabs, a zooming photo viewer and slideshows with MIDI music. Photos can be sent from a phone or computer over the network adapter, and Super Smash Bros. Melee snapshots can be copied from a memory card as PNG pictures. Playtime adds a photo puzzle, doodles and color looks. The menu is a glass cube you turn with the Control Stick.",
+    "category": "media",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "memory_card",
+        "bba",
+        "eth2gc",
+        "sd2sp2",
+        "sd_gecko"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/Arial-Bold/Flashcube/blob/main/LICENSE.txt"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["flashcube/", "apps/flashcube/"]
-    }
-  ]
+    "source": {
+        "type": "github_release",
+        "repository": "Arial-Bold/Flashcube",
+        "asset_pattern": "flashcube*.zip"
+    },
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "flashcube*.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "flashcube/",
+                "apps/flashcube/"
+            ]
+        }
+    ]
 }

@@ -1,24 +1,32 @@
 {
-  "name": "Spout",
-  "author": "RedBeesRGD",
-  "description_short": "System information tool for the GameCube",
-  "description_long": "Spout displays GameCube system details, including detected console type, Gekko CPU revision, Flipper chipset revision, and MEM1 RAM size.",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller"],
-  "license": {
-    "spdx": "AGPL-3.0-only",
-    "url": "https://github.com/RedBeesRGD/spout/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "RedBeesRGD/spout",
-    "asset_pattern": "main.gc.dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": ["main.gc.dol", "apps/spout/default.dol"]
-    }
-  ]
+    "name": "Spout",
+    "author": "RedBeesRGD",
+    "description_short": "System information tool for the GameCube",
+    "description_long": "Spout displays GameCube system details, including detected console type, Gekko CPU revision, Flipper chipset revision, and MEM1 RAM size.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller"
+    ],
+    "license": {
+        "spdx": "AGPL-3.0-only",
+        "url": "https://github.com/RedBeesRGD/spout/blob/main/LICENSE"
+    },
+    "source": {
+        "type": "github_release",
+        "repository": "RedBeesRGD/spout",
+        "asset_pattern": "main.gc.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "main.gc.dol",
+                "apps/spout/default.dol"
+            ]
+        }
+    ]
 }

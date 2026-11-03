@@ -1,28 +1,43 @@
 {
-  "name": "GCC Test Suite",
-  "author": "greenwave-1",
-  "description_short": "Open source GCC test program",
-  "description_long": "GCC Test Suite (GTS) is an open source GameCube controller tester, and an alternative to SmashScope.",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
-  "license": {
-    "spdx": "GPL-3.0-only",
-    "url": "https://github.com/greenwave-1/GTS/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "greenwave-1/GTS",
-    "asset_pattern": "GTS_GC.dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": ["GTS_GC.dol", "apps/gts/default.dol"]
+    "name": "GCC Test Suite",
+    "author": "greenwave-1",
+    "description_short": "Open source GCC test program",
+    "description_long": "GCC Test Suite (GTS) is an open source GameCube controller tester, and an alternative to SmashScope.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "GPL-3.0-only",
+        "url": "https://github.com/greenwave-1/GTS/blob/main/LICENSE"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/gts/opening.bnr"]
-    }
-  ]
+    "source": {
+        "type": "github_release",
+        "repository": "greenwave-1/GTS",
+        "asset_pattern": "GTS_GC.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "GTS_GC.dol",
+                "apps/gts/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/gts/opening.bnr"
+            ]
+        }
+    ]
 }

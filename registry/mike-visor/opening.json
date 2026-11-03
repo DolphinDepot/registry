@@ -1,10 +1,10 @@
 {
-  "type": "BNR1",
-  "text": {
-    "gameNameShort": "Mike Visor",
-    "developerNameShort": "Aionmagan",
-    "gameTitle": "Mike Visor",
-    "developerName": "Aionmagan",
-    "description": "Guide Mike through crystal puzzles to escape."
-  }
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Mike Visor",
+        "developerNameShort": "Aionmagan",
+        "gameTitle": "Mike Visor",
+        "developerName": "Aionmagan",
+        "description": "Guide Mike through crystal puzzles to escape."
+    }
 }

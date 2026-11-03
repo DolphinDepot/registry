@@ -1,22 +1,28 @@
 {
-  "name": "Giana's Return",
-  "author": "Retroguru",
-  "description_short": "Free unofficial sequel to The Great Giana Sisters, where Giana rescues her sister Maria.",
-  "description_long": "Evil Swampy has stolen the magic ruby and kidnapped Giana's sister Maria. Play as Giana in this free, unofficial sequel to The Great Giana Sisters: recover the ruby, save Maria, and find your way home across seven worlds of platforming action.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "notes": "The official release is freeware but does not declare an SPDX-compatible license. The included README requires written permission for redistribution."
-  },
-  "external_resources": [
-    {
-      "type": "download",
-      "label": "Download from Retroguru",
-      "url": "https://www.retroguru.com/gianas-return/",
-      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
-    }
-  ],
-  "treatments": []
+    "name": "Giana's Return",
+    "author": "Retroguru",
+    "description_short": "Free unofficial sequel to The Great Giana Sisters, where Giana rescues her sister Maria.",
+    "description_long": "Evil Swampy has stolen the magic ruby and kidnapped Giana's sister Maria. Play as Giana in this free, unofficial sequel to The Great Giana Sisters: recover the ruby, save Maria, and find your way home across seven worlds of platforming action.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "The official release is freeware but does not declare an SPDX-compatible license. The included README requires written permission for redistribution."
+    },
+    "external_resources": [
+        {
+            "type": "download",
+            "label": "Download from Retroguru",
+            "url": "https://www.retroguru.com/gianas-return/",
+            "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
+        }
+    ],
+    "treatments": []
 }

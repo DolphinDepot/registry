@@ -1,22 +1,28 @@
 {
-  "name": "Sqrxz 4",
-  "author": "Retroguru",
-  "description_short": "The fourth hard-as-nails jump'n'think Sqrxz game, set on a cold icy island full of marbles, evil penguins and ghosts.",
-  "description_long": "Sqrxz 4 - Cold Cash takes Sqrxz to a cold icy island with shiny marbles, evil penguins, ghosts, underwater creatures and more. It brings authentic retro graphics, 10 die-hard levels, 11 tunes, hidden passages, cheat codes for those who find them, a top-ten high-score table and unlimited continues.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko"],
-  "license": {
-    "spdx": "LicenseRef-Proprietary",
-    "url": "https://www.retroguru.com/legal/"
-  },
-  "external_resources": [
-    {
-      "type": "download",
-      "label": "Download from Retroguru",
-      "url": "https://www.retroguru.com/sqrxz4/",
-      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
-    }
-  ],
-  "treatments": []
+    "name": "Sqrxz 4",
+    "author": "Retroguru",
+    "description_short": "The fourth hard-as-nails jump'n'think Sqrxz game, set on a cold icy island full of marbles, evil penguins and ghosts.",
+    "description_long": "Sqrxz 4 - Cold Cash takes Sqrxz to a cold icy island with shiny marbles, evil penguins, ghosts, underwater creatures and more. It brings authentic retro graphics, 10 die-hard levels, 11 tunes, hidden passages, cheat codes for those who find them, a top-ten high-score table and unlimited continues.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko"
+    ],
+    "license": {
+        "spdx": "LicenseRef-Proprietary",
+        "url": "https://www.retroguru.com/legal/"
+    },
+    "external_resources": [
+        {
+            "type": "download",
+            "label": "Download from Retroguru",
+            "url": "https://www.retroguru.com/sqrxz4/",
+            "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
+        }
+    ],
+    "treatments": []
 }

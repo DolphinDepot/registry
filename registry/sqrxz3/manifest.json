@@ -1,22 +1,28 @@
 {
-  "name": "Sqrxz 3",
-  "author": "Retroguru",
-  "description_short": "A demanding and almost impossible jump'n'run for hardcore gamers that needs fast fingers and a fast brain.",
-  "description_long": "Sqrxz 3 - Adventure for Love brings a retro look straight from 1990 with 10 knotty levels, secrets to discover, 11 chiptunes, a top-ten high-score table and an infinite continue mode.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko"],
-  "license": {
-    "spdx": "LicenseRef-Proprietary",
-    "url": "https://www.retroguru.com/legal/"
-  },
-  "external_resources": [
-    {
-      "type": "download",
-      "label": "Download from Retroguru",
-      "url": "https://www.retroguru.com/sqrxz3/",
-      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
-    }
-  ],
-  "treatments": []
+    "name": "Sqrxz 3",
+    "author": "Retroguru",
+    "description_short": "A demanding and almost impossible jump'n'run for hardcore gamers that needs fast fingers and a fast brain.",
+    "description_long": "Sqrxz 3 - Adventure for Love brings a retro look straight from 1990 with 10 knotty levels, secrets to discover, 11 chiptunes, a top-ten high-score table and an infinite continue mode.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko"
+    ],
+    "license": {
+        "spdx": "LicenseRef-Proprietary",
+        "url": "https://www.retroguru.com/legal/"
+    },
+    "external_resources": [
+        {
+            "type": "download",
+            "label": "Download from Retroguru",
+            "url": "https://www.retroguru.com/sqrxz3/",
+            "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
+        }
+    ],
+    "treatments": []
 }

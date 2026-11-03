@@ -1,43 +1,43 @@
 {
-  "name": "Blueretro Companion",
-  "author": "LaserBearIndustries",
-  "description_short": "Utility for managing the LBI BlueRetro adapter",
-  "description_long": "The BlueRetro Companion is a GameCube program that talks to the adapter through a controller port. Everything it does remapping, updating, diagnostics goes over that port, so it works with no computer attached, no serial cable, and even when Bluetooth on the adapter is not behaving.",
-  "category": "utilities",
-  "platforms": [
-    "gamecube"
-  ],
-  "peripherals": [
-    "controller",
-    "sd2sp2",
-    "sd_gecko",
-    "mmce",
-    "bba",
-    "eth2gc"
-  ],
-  "license": {
-    "spdx": "Apache-2.0",
-    "url": "https://github.com/LaserBearIndustries/BlueRetro_LBI/blob/master/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "LaserBearIndustries/BlueRetro_LBI",
-    "asset_pattern": "blueretro_companion.dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": [
-        "blueretro_companion.dol",
-        "apps/blueretro-companion/default.dol"
-      ]
+    "name": "Blueretro Companion",
+    "author": "LaserBearIndustries",
+    "description_short": "Utility for managing the LBI BlueRetro adapter",
+    "description_long": "The BlueRetro Companion is a GameCube program that talks to the adapter through a controller port. Everything it does remapping, updating, diagnostics goes over that port, so it works with no computer attached, no serial cable, and even when Bluetooth on the adapter is not behaving.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube"
+    ],
+    "peripherals": [
+        "controller",
+        "sd2sp2",
+        "sd_gecko",
+        "mmce",
+        "bba",
+        "eth2gc"
+    ],
+    "license": {
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/LaserBearIndustries/BlueRetro_LBI/blob/master/LICENSE"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": [
-        "opening.bnr",
-        "apps/blueretro-companion/opening.bnr"
-      ]
-    }
-  ]
+    "source": {
+        "type": "github_release",
+        "repository": "LaserBearIndustries/BlueRetro_LBI",
+        "asset_pattern": "blueretro_companion.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "blueretro_companion.dol",
+                "apps/blueretro-companion/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/blueretro-companion/opening.bnr"
+            ]
+        }
+    ]
 }

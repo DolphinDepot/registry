@@ -1,10 +1,10 @@
 {
-  "type": "BNR1",
-  "text": {
-    "gameNameShort": "Sqrxz 2",
-    "developerNameShort": "Retroguru",
-    "gameTitle": "Sqrxz 2",
-    "developerName": "Retroguru",
-    "description": "An extremely difficult jump'n'run sequel."
-  }
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Sqrxz 2",
+        "developerNameShort": "Retroguru",
+        "gameTitle": "Sqrxz 2",
+        "developerName": "Retroguru",
+        "description": "An extremely difficult jump'n'run sequel."
+    }
 }

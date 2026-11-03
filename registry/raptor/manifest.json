@@ -1,45 +1,65 @@
 {
-  "name": "Raptor: Call of the Shadows",
-  "author": "Scott Host, Skynettx, RetroGamer02",
-  "description_short": "Vertical-scrolling shooter - fly the super-tech Raptor on interplanetary contracts for MegaCorp, upgrading 14 hard-core weapons.",
-  "description_long": "Kill for cash! As a mercenary flying the super-tech Raptor, fly interplanetary missions to knock off top competitors of MegaCorp. Upgrade with 14 hard-core weapons. Jaw-dropping VGA animation & cinematics. Originally developed by Cygnus Studios.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller"],
-  "license": {
-    "spdx": "GPL-2.0-only",
-    "url": "https://github.com/RetroGamer02/raptor-consoles/blob/multi-sys/LICENSE"
-  },
-  "external_resources": [
-    {
-      "type": "assets",
-      "label": "Raptor: Call of the Shadows GLB assets",
-      "url": "https://github.com/RetroGamer02/raptor-consoles",
-      "notes": "Requires the original GLB asset files (FILE0002.GLB, FILE0003.GLB, FILE0004.GLB) from Raptor: Call of the Shadows DOS v1.2 (shareware or full). Place them in apps/raptor/ next to default.dol after install. You must obtain these files yourself - the registry cannot redistribute them."
-    }
-  ],
-  "source": {
-    "type": "github_release",
-    "repository": "RetroGamer02/raptor-consoles",
-    "asset_pattern": "RAPTOR-GC-*.zip",
-    "ignore_versions": ["MultiSys-*", "N64-*"]
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["RAPTOR-GC-*.zip", "."]
+    "name": "Raptor: Call of the Shadows",
+    "author": "Scott Host, Skynettx, RetroGamer02",
+    "description_short": "Vertical-scrolling shooter - fly the super-tech Raptor on interplanetary contracts for MegaCorp, upgrading 14 hard-core weapons.",
+    "description_long": "Kill for cash! As a mercenary flying the super-tech Raptor, fly interplanetary missions to knock off top competitors of MegaCorp. Upgrade with 14 hard-core weapons. Jaw-dropping VGA animation & cinematics. Originally developed by Cygnus Studios.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-only",
+        "url": "https://github.com/RetroGamer02/raptor-consoles/blob/multi-sys/LICENSE"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["boot.dol", "apps/raptor/default.dol"]
+    "external_resources": [
+        {
+            "type": "assets",
+            "label": "Raptor: Call of the Shadows GLB assets",
+            "url": "https://github.com/RetroGamer02/raptor-consoles",
+            "notes": "Requires the original GLB asset files (FILE0002.GLB, FILE0003.GLB, FILE0004.GLB) from Raptor: Call of the Shadows DOS v1.2 (shareware or full). Place them in apps/raptor/ next to default.dol after install. You must obtain these files yourself - the registry cannot redistribute them."
+        }
+    ],
+    "source": {
+        "type": "github_release",
+        "repository": "RetroGamer02/raptor-consoles",
+        "asset_pattern": "RAPTOR-GC-*.zip",
+        "ignore_versions": [
+            "MultiSys-*",
+            "N64-*"
+        ]
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["SETUP.INI", "apps/raptor/SETUP.INI"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/raptor/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "RAPTOR-GC-*.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "boot.dol",
+                "apps/raptor/default.dol"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "SETUP.INI",
+                "apps/raptor/SETUP.INI"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/raptor/opening.bnr"
+            ]
+        }
+    ]
 }

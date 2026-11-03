@@ -1,28 +1,45 @@
 {
-  "name": "GC HTTP Server",
-  "author": "emu_kidid",
-  "description_short": "A small HTTP server for the GameCube & Wii",
-  "description_long": "A small HTTP Server for the GameCube/Wii, smashed together using picohttpparser and the network example from libogc2",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2", "mmce", "bba", "eth2gc", "gcloader"],
-  "license": {
-    "spdx": "GPL-2.0-or-later",
-    "url": "https://github.com/emukidid/gchttpserver/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "emukidid/gchttpserver",
-    "asset_pattern": "gchttpserver-*.dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": ["gchttpserver-*.dol", "apps/gchttpserver/default.dol"]
+    "name": "GC HTTP Server",
+    "author": "emu_kidid",
+    "description_short": "A small HTTP server for the GameCube & Wii",
+    "description_long": "A small HTTP Server for the GameCube/Wii, smashed together using picohttpparser and the network example from libogc2",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "bba",
+        "eth2gc",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-or-later",
+        "url": "https://github.com/emukidid/gchttpserver/blob/main/LICENSE"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/gchttpserver/opening.bnr"]
-    }
-  ]
+    "source": {
+        "type": "github_release",
+        "repository": "emukidid/gchttpserver",
+        "asset_pattern": "gchttpserver-*.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "gchttpserver-*.dol",
+                "apps/gchttpserver/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/gchttpserver/opening.bnr"
+            ]
+        }
+    ]
 }

@@ -1,22 +1,28 @@
 {
-  "name": "Sqrxz 2",
-  "author": "Retroguru",
-  "description_short": "An extremely difficult jump'n'run sequel that demands a sharp mind and fast reflexes.",
-  "description_long": "The sequel to Sqrxz brings 10 tricky and hard levels with hidden passages to discover, retro graphics, 11 chiptunes, a top-ten high-score table and an infinite continue mode for practising. High frustration is guaranteed.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko"],
-  "license": {
-    "spdx": "LicenseRef-Proprietary",
-    "url": "https://www.retroguru.com/legal/"
-  },
-  "external_resources": [
-    {
-      "type": "download",
-      "label": "Download from Retroguru",
-      "url": "https://www.retroguru.com/sqrxz2/",
-      "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
-    }
-  ],
-  "treatments": []
+    "name": "Sqrxz 2",
+    "author": "Retroguru",
+    "description_short": "An extremely difficult jump'n'run sequel that demands a sharp mind and fast reflexes.",
+    "description_long": "The sequel to Sqrxz brings 10 tricky and hard levels with hidden passages to discover, retro graphics, 11 chiptunes, a top-ten high-score table and an infinite continue mode for practising. High frustration is guaranteed.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko"
+    ],
+    "license": {
+        "spdx": "LicenseRef-Proprietary",
+        "url": "https://www.retroguru.com/legal/"
+    },
+    "external_resources": [
+        {
+            "type": "download",
+            "label": "Download from Retroguru",
+            "url": "https://www.retroguru.com/sqrxz2/",
+            "notes": "Redistribution is not permitted by Retroguru. Download the GameCube version directly from the developer's website."
+        }
+    ],
+    "treatments": []
 }

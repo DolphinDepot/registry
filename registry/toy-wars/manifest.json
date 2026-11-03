@@ -1,39 +1,59 @@
 {
-  "name": "Toy Wars",
-  "author": "David GF",
-  "description_short": "Cross-platform action game inspired by Toy Commander, featuring realistic physics, stencil shadows, and 3D audio effects.",
-  "description_long": "Toy Wars is a 3D action game inspired by Toy Commander for the Dreamcast. It features realistic physics via the ODE library, stencil shadows, custom level scripting, and 3D audio. Originally developed for the PSP, the game was designed to run on minimal hardware, requiring as little as 24MB of RAM. Winner of multiple homebrew competitions including Scenery Beta 2011.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "notes": "Distributed as freeware from the author's website without an explicit license declaration."
-  },
-  "source": {
-    "type": "direct_url",
-    "url": "https://www.davidgf.net/downloads/toywars/toywars.gc.7.0.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["toywars.gc.7.0.zip", "."]
+    "name": "Toy Wars",
+    "author": "David GF",
+    "description_short": "Cross-platform action game inspired by Toy Commander, featuring realistic physics, stencil shadows, and 3D audio effects.",
+    "description_long": "Toy Wars is a 3D action game inspired by Toy Commander for the Dreamcast. It features realistic physics via the ODE library, stencil shadows, custom level scripting, and 3D audio. Originally developed for the PSP, the game was designed to run on minimal hardware, requiring as little as 24MB of RAM. Winner of multiple homebrew competitions including Scenery Beta 2011.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "Distributed as freeware from the author's website without an explicit license declaration."
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["toywars/toywars.gc.dol", "apps/toy-wars/default.dol"]
+    "source": {
+        "type": "direct_url",
+        "url": "https://www.davidgf.net/downloads/toywars/toywars.gc.7.0.zip"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["toywars/toywars.gc.data", "toywars/toywars.gc.data"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["toywars/profiles"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/toy-wars/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "toywars.gc.7.0.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "toywars/toywars.gc.dol",
+                "apps/toy-wars/default.dol"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "toywars/toywars.gc.data",
+                "toywars/toywars.gc.data"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "toywars/profiles"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/toy-wars/opening.bnr"
+            ]
+        }
+    ]
 }

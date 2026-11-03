@@ -1,85 +1,130 @@
 {
-  "name": "RetroArch",
-  "author": "libretro",
-  "description_short": "Frontend for emulators and game engines, bundling the libretro cores built for GameCube.",
-  "description_long": "RetroArch is a frontend for emulators, game engines and media players built on the libretro API. The GameCube port ships each core as a standalone DOL in /apps/retroarch: launch the one for the system you want to play. Cores cover NES, SNES, Game Boy, GBA, Mega Drive, Master System, PC Engine, PlayStation, arcade and more. Config, saves and save states live under /retroarch on the SD card in SD Gecko slot A.",
-  "category": "emulators",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko"],
-  "license": {
-    "spdx": "GPL-3.0-or-later",
-    "url": "https://github.com/libretro/RetroArch/blob/v1.22.2/COPYING",
-    "notes": "Covers the RetroArch frontend. Each bundled core keeps its own license (see the license field in retroarch/info/*.info)."
-  },
-  "source": {
-    "type": "direct_url",
-    "url": "https://buildbot.libretro.com/stable/1.22.2/nintendo/ngc/RetroArch.7z",
-    "version": "1.22.2"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["RetroArch.7z", "."]
+    "name": "RetroArch",
+    "author": "libretro",
+    "description_short": "Frontend for emulators and game engines, bundling the libretro cores built for GameCube.",
+    "description_long": "RetroArch is a frontend for emulators, game engines and media players built on the libretro API. The GameCube port ships each core as a standalone DOL in /apps/retroarch: launch the one for the system you want to play. Cores cover NES, SNES, Game Boy, GBA, Mega Drive, Master System, PC Engine, PlayStation, arcade and more. Config, saves and save states live under /retroarch on the SD card in SD Gecko slot A.",
+    "category": "emulators",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko"
+    ],
+    "license": {
+        "spdx": "GPL-3.0-or-later",
+        "url": "https://github.com/libretro/RetroArch/blob/v1.22.2/COPYING",
+        "notes": "Covers the RetroArch frontend. Each bundled core keeps its own license (see the license field in retroarch/info/*.info)."
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["retroarch/*_libretro_ngc.dol", "apps/retroarch/"]
+    "source": {
+        "type": "direct_url",
+        "url": "https://buildbot.libretro.com/stable/1.22.2/nintendo/ngc/RetroArch.7z",
+        "version": "1.22.2"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["retroarch/assets/", "apps/retroarch/assets/"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["retroarch/filters/", "apps/retroarch/filters/"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["retroarch/info/", "apps/retroarch/info/"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["retroarch/overlays/", "apps/retroarch/overlays/"]
-    },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/retroarch/opening.bnr"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["apps/retroarch/cheats"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["apps/retroarch/autoconfig"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["retroarch/remaps"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["retroarch/config"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["retroarch/playlists"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["retroarch/logs"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["retroarch/savefiles"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["retroarch/savestates"]
-    },
-    {
-      "treatment": "contents.mkdir",
-      "arguments": ["retroarch/system"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "RetroArch.7z",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "retroarch/*_libretro_ngc.dol",
+                "apps/retroarch/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "retroarch/assets/",
+                "apps/retroarch/assets/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "retroarch/filters/",
+                "apps/retroarch/filters/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "retroarch/info/",
+                "apps/retroarch/info/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "retroarch/overlays/",
+                "apps/retroarch/overlays/"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/retroarch/opening.bnr"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "apps/retroarch/cheats"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "apps/retroarch/autoconfig"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "retroarch/remaps"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "retroarch/config"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "retroarch/playlists"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "retroarch/logs"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "retroarch/savefiles"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "retroarch/savestates"
+            ]
+        },
+        {
+            "treatment": "contents.mkdir",
+            "arguments": [
+                "retroarch/system"
+            ]
+        }
+    ]
 }

@@ -1,32 +1,45 @@
 {
-  "name": "Meese Engine",
-  "author": "Meese",
-  "description_short": "Minecraft-inspired open-world voxel game for GameCube.",
-  "description_long": "Meese Engine is an in-development, Minecraft-inspired open-world voxel game built for the GameCube. Explore a block-based world, place and break blocks, and use the standard GameCube controller to play. This GameCube build is an early indev release rather than a full Minecraft port.",
-  "category": "games",
-  "platforms": ["gamecube"],
-  "peripherals": ["controller"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "notes": "The upstream repository and release do not declare a license for Meese Engine."
-  },
-  "source": {
-    "type": "direct_url",
-    "url": "https://github.com/meese4/meese-engine/releases/download/indev-v0.1.1-gcn/meese_engine_indev-v0.1.1-gcn.zip",
-    "version": "v0.1.1"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["meese_engine_*-gcn.zip", "."]
+    "name": "Meese Engine",
+    "author": "Meese",
+    "description_short": "Minecraft-inspired open-world voxel game for GameCube.",
+    "description_long": "Meese Engine is an in-development, Minecraft-inspired open-world voxel game built for the GameCube. Explore a block-based world, place and break blocks, and use the standard GameCube controller to play. This GameCube build is an early indev release rather than a full Minecraft port.",
+    "category": "games",
+    "platforms": [
+        "gamecube"
+    ],
+    "peripherals": [
+        "controller"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "The upstream repository and release do not declare a license for Meese Engine."
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["meese_engine_*-gcn/game.dol", "apps/meese-engine/default.dol"]
+    "source": {
+        "type": "direct_url",
+        "url": "https://github.com/meese4/meese-engine/releases/download/indev-v0.1.1-gcn/meese_engine_indev-v0.1.1-gcn.zip",
+        "version": "v0.1.1"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/meese-engine/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "meese_engine_*-gcn.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "meese_engine_*-gcn/game.dol",
+                "apps/meese-engine/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/meese-engine/opening.bnr"
+            ]
+        }
+    ]
 }

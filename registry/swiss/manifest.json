@@ -1,36 +1,71 @@
 {
-  "name": "Swiss",
-  "author": "Extrems, emu_kidid",
-  "description_short": "The swiss army knife of GameCube homebrew",
-  "description_long": "Swiss is an all-in-one homebrew utility for the Nintendo GameCube. It allows browsing and loading DOL executables and GCM disc images from various storage devices including SD Gecko, SD2SP2, GC Loader, IDE-EXI, M.2 Loader, USB Gecko, Broadband Adapter (via SMB/FTP/FSP), DVD-R, memory cards, and many more.",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q", "tdev", "gdev", "npdp_reader", "nr_reader"],
-  "peripherals": ["controller", "memory_card", "disc", "dk_bongos", "steering_wheel", "sd_gecko", "sd2sp2", "m2loader", "mmce", "bba", "eth2gc", "gcloader", "flippydrive", "picoboot", "usb_gecko"],
-  "license": {
-    "spdx": "GPL-2.0-or-later",
-    "url": "https://github.com/emukidid/swiss-gc/blob/master/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "emukidid/swiss-gc",
-    "asset_pattern": "swiss_r*.7z"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["swiss_r*.7z", "./"]
+    "name": "Swiss",
+    "author": "Extrems, emu_kidid",
+    "description_short": "The swiss army knife of GameCube homebrew",
+    "description_long": "Swiss is an all-in-one homebrew utility for the Nintendo GameCube. It allows browsing and loading DOL executables and GCM disc images from various storage devices including SD Gecko, SD2SP2, GC Loader, IDE-EXI, M.2 Loader, USB Gecko, Broadband Adapter (via SMB/FTP/FSP), DVD-R, memory cards, and many more.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "tdev",
+        "gdev",
+        "npdp_reader",
+        "nr_reader"
+    ],
+    "peripherals": [
+        "controller",
+        "memory_card",
+        "disc",
+        "dk_bongos",
+        "steering_wheel",
+        "sd_gecko",
+        "sd2sp2",
+        "m2loader",
+        "mmce",
+        "bba",
+        "eth2gc",
+        "gcloader",
+        "flippydrive",
+        "picoboot",
+        "usb_gecko"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-or-later",
+        "url": "https://github.com/emukidid/swiss-gc/blob/master/LICENSE"
     },
-    {
-      "treatment": "archive.extract",
-      "arguments": ["swiss_r*/Apploader/EXTRACT_TO_ROOT.zip", "Apploader/"]
+    "source": {
+        "type": "github_release",
+        "repository": "emukidid/swiss-gc",
+        "asset_pattern": "swiss_r*.7z"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["swiss_r*/DOL/swiss_r*.dol", "apps/swiss/default.dol"]
-    },
-    {
-      "treatment": "contents.move",
-      "arguments": ["Apploader/*", "./"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "swiss_r*.7z",
+                "./"
+            ]
+        },
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "swiss_r*/Apploader/EXTRACT_TO_ROOT.zip",
+                "Apploader/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "swiss_r*/DOL/swiss_r*.dol",
+                "apps/swiss/default.dol"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "Apploader/*",
+                "./"
+            ]
+        }
+    ]
 }

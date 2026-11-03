@@ -1,29 +1,51 @@
 {
-  "name": "Joypad Tester",
-  "author": "RobertDaleSmith",
-  "description_short": "Open-Source Controller Test ROMs for Retro Game Consoles",
-  "description_long": "Open-Source Controller Test ROMs for Retro Game Consoles. Inspect every controller, accessory, and protocol quirk the console can speak to.",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "keyboard", "action_pad", "steering_wheel", "gba_link_cable", "dk_bongos"],
-  "license": {
-    "spdx": "Zlib",
-    "url": "https://github.com/joypad-ai/joypad-tester/blob/main/gcn/LICENSE.md"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "joypad-ai/joypad-tester",
-    "asset_pattern": "joypad_tester_*_gcn.zip",
-    "ignore_versions": ["gba-*", "pce-*", "3do-*", "n64-*", "snes-*"]
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["joypad_tester_*_gcn.zip", "."]
+    "name": "Joypad Tester",
+    "author": "RobertDaleSmith",
+    "description_short": "Open-Source Controller Test ROMs for Retro Game Consoles",
+    "description_long": "Open-Source Controller Test ROMs for Retro Game Consoles. Inspect every controller, accessory, and protocol quirk the console can speak to.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "keyboard",
+        "action_pad",
+        "steering_wheel",
+        "gba_link_cable",
+        "dk_bongos"
+    ],
+    "license": {
+        "spdx": "Zlib",
+        "url": "https://github.com/joypad-ai/joypad-tester/blob/main/gcn/LICENSE.md"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["Joypad Tester/", "apps/joypad-tester/"]
-    }
-  ]
+    "source": {
+        "type": "github_release",
+        "repository": "joypad-ai/joypad-tester",
+        "asset_pattern": "joypad_tester_*_gcn.zip",
+        "ignore_versions": [
+            "gba-*",
+            "pce-*",
+            "3do-*",
+            "n64-*",
+            "snes-*"
+        ]
+    },
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "joypad_tester_*_gcn.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "Joypad Tester/",
+                "apps/joypad-tester/"
+            ]
+        }
+    ]
 }

@@ -1,32 +1,50 @@
 {
-  "name": "SuDokuL",
-  "author": "Mode8fx",
-  "description_short": "Sudoku puzzle game with four difficulty levels.",
-  "description_long": "Multiplatform Sudoku game with four difficulty levels (Easy, Normal, Hard, Very Hard). Built in C++ and SDL2. Save data is created in the same directory as the executable.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
-  "license": {
-    "spdx": "MIT",
-    "url": "https://github.com/Mode8fx/SuDokuL/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "Mode8fx/SuDokuL",
-    "asset_pattern": "SuDokuL-*-gamecube.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["SuDokuL-*-gamecube.zip", "."]
+    "name": "SuDokuL",
+    "author": "Mode8fx",
+    "description_short": "Sudoku puzzle game with four difficulty levels.",
+    "description_long": "Multiplatform Sudoku game with four difficulty levels (Easy, Normal, Hard, Very Hard). Built in C++ and SDL2. Save data is created in the same directory as the executable.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/Mode8fx/SuDokuL/blob/main/LICENSE"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["SuDokuL-gamecube/SuDokuL/*.dol", "apps/sudokul/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "Mode8fx/SuDokuL",
+        "asset_pattern": "SuDokuL-*-gamecube.zip"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/sudokul/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "SuDokuL-*-gamecube.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "SuDokuL-gamecube/SuDokuL/*.dol",
+                "apps/sudokul/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/sudokul/opening.bnr"
+            ]
+        }
+    ]
 }

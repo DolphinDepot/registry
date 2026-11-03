@@ -1,32 +1,53 @@
 {
-  "name": "FCE Ultra GX",
-  "author": "Tantric, dborth",
-  "description_short": "Nintendo Entertainment System emulator for GameCube, based on FCE Ultra and FCEUX.",
-  "description_long": "FCE Ultra GX is a GameCube port of the FCE Ultra/FCEUX NES emulator. It supports iNES, FDS, VS, UNIF, and NSF formats, up to four players, Zapper input, save states, cheats, and ROM loading from SD storage. Preferences and game saves can be stored on an SD card or memory card.",
-  "category": "emulators",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": ["controller", "disc", "sd_gecko", "sd2sp2", "mmce", "bba", "eth2gc", "gcloader"],
-  "license": {
-    "spdx": "GPL-2.0-or-later",
-    "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "dborth/fceugx",
-    "asset_pattern": "FCEUltraGX-*-GameCube.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["FCEUltraGX-*-GameCube.zip", "."]
+    "name": "FCE Ultra GX",
+    "author": "Tantric, dborth",
+    "description_short": "Nintendo Entertainment System emulator for GameCube, based on FCE Ultra and FCEUX.",
+    "description_long": "FCE Ultra GX is a GameCube port of the FCE Ultra/FCEUX NES emulator. It supports iNES, FDS, VS, UNIF, and NSF formats, up to four players, Zapper input, save states, cheats, and ROM loading from SD storage. Preferences and game saves can be stored on an SD card or memory card.",
+    "category": "emulators",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "disc",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "bba",
+        "eth2gc",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-or-later",
+        "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["fceugx-gc.dol", "apps/fceugx/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "dborth/fceugx",
+        "asset_pattern": "FCEUltraGX-*-GameCube.zip"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/fceugx/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "FCEUltraGX-*-GameCube.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "fceugx-gc.dol",
+                "apps/fceugx/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/fceugx/opening.bnr"
+            ]
+        }
+    ]
 }

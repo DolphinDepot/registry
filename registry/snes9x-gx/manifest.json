@@ -1,33 +1,55 @@
 {
-  "name": "Snes9x GX",
-  "author": "Tantric, dborth",
-  "description_short": "Super Nintendo emulator for GameCube, port of Snes9x with extensive controller and storage support.",
-  "description_long": "Snes9x GX is a Super Nintendo Entertainment System (SNES) emulator for GameCube and Wii, based on the Snes9x core. Plays SNES ROMs loaded from SD Gecko or SD2SP2 storage, supports memory card saving of states and SRAM, custom controller configurations, and ZIP/7z compressed ROMs.",
-  "category": "emulators",
-  "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller", "disc", "sd_gecko", "sd2sp2", "mmce", "bba", "eth2gc", "gcloader"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "url": "https://github.com/dborth/snes9xgx/blob/master/LICENSE",
-    "notes": "Custom Snes9x license: non-commercial use only; redistribution permitted with copyright/license notice."
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "dborth/snes9xgx",
-    "asset_pattern": "Snes9xGX-*-GameCube.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["Snes9xGX-*-GameCube.zip", "."]
+    "name": "Snes9x GX",
+    "author": "Tantric, dborth",
+    "description_short": "Super Nintendo emulator for GameCube, port of Snes9x with extensive controller and storage support.",
+    "description_long": "Snes9x GX is a Super Nintendo Entertainment System (SNES) emulator for GameCube and Wii, based on the Snes9x core. Plays SNES ROMs loaded from SD Gecko or SD2SP2 storage, supports memory card saving of states and SRAM, custom controller configurations, and ZIP/7z compressed ROMs.",
+    "category": "emulators",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller",
+        "disc",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "bba",
+        "eth2gc",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "url": "https://github.com/dborth/snes9xgx/blob/master/LICENSE",
+        "notes": "Custom Snes9x license: non-commercial use only; redistribution permitted with copyright/license notice."
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["snes9xgx-gc.dol", "apps/snes9x-gx/default.dol"]
+    "source": {
+        "type": "github_release",
+        "repository": "dborth/snes9xgx",
+        "asset_pattern": "Snes9xGX-*-GameCube.zip"
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/snes9x-gx/opening.bnr"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "Snes9xGX-*-GameCube.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "snes9xgx-gc.dol",
+                "apps/snes9x-gx/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/snes9x-gx/opening.bnr"
+            ]
+        }
+    ]
 }

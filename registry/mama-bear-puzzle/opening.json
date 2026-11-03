@@ -1,10 +1,10 @@
 {
-  "type": "BNR1",
-  "text": {
-    "gameNameShort": "Mama Bear Puzzle",
-    "developerNameShort": "Sebastian Mihai",
-    "gameTitle": "Mama Bear Puzzle",
-    "developerName": "Sebastian Mihai",
-    "description": "Classic 15 sliding-tile puzzle for GameCube."
-  }
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Mama Bear Puzzle",
+        "developerNameShort": "Sebastian Mihai",
+        "gameTitle": "Mama Bear Puzzle",
+        "developerName": "Sebastian Mihai",
+        "description": "Classic 15 sliding-tile puzzle for GameCube."
+    }
 }

@@ -1,27 +1,39 @@
 {
-  "name": "Mama Bear Puzzle",
-  "author": "Sebastian Mihai",
-  "description_short": "A classic 15 puzzle game with sliding tiles on a four by four grid",
-  "description_long": "Mama Bear Puzzle is a direct implementation of the classic 15 puzzle game for the Nintendo GameCube. It features a four by four sliding tile area where one tile is missing. The goal is to restore a configuration where all tiles are in order. Use the d-pad to slide tiles and the Start button to reset the puzzle.",
-  "category": "games",
-  "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "notes": "Distributed as freeware from the author's website without an explicit license declaration."
-  },
-  "source": {
-    "type": "direct_url",
-    "url": "http://sebastianmihai.com/downloads/gcwii/mamabearpuzzle.dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": ["mamabearpuzzle.dol", "apps/mama-bear-puzzle/default.dol"]
+    "name": "Mama Bear Puzzle",
+    "author": "Sebastian Mihai",
+    "description_short": "A classic 15 puzzle game with sliding tiles on a four by four grid",
+    "description_long": "Mama Bear Puzzle is a direct implementation of the classic 15 puzzle game for the Nintendo GameCube. It features a four by four sliding tile area where one tile is missing. The goal is to restore a configuration where all tiles are in order. Use the d-pad to slide tiles and the Start button to reset the puzzle.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "Distributed as freeware from the author's website without an explicit license declaration."
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/mama-bear-puzzle/opening.bnr"]
-    }
-  ]
+    "source": {
+        "type": "direct_url",
+        "url": "http://sebastianmihai.com/downloads/gcwii/mamabearpuzzle.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "mamabearpuzzle.dol",
+                "apps/mama-bear-puzzle/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/mama-bear-puzzle/opening.bnr"
+            ]
+        }
+    ]
 }

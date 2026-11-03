@@ -1,40 +1,51 @@
 {
-  "name": "Cubiboot New UI",
-  "author": "DarthMotzkus",
-  "description_short": "A customizable GameCube boot menu for launching games and homebrew from multiple storage devices.",
-  "description_long": "Cubiboot New UI uses the native GameCube menu to present games and homebrew from ODE devices - including FlippyDrive, CUBE-ODE, and GC Loader - and SD card adapters such as SD2SP2 and SD Gecko, preserving the look and feel of the original console experience. It integrates with Swiss to launch selected titles.",
-  "category": "utilities",
-  "platforms": ["gamecube", "panasonic_q"],
-  "peripherals": [
-    "controller",
-    "sd_gecko",
-    "sd2sp2",
-    "gcloader",
-    "cubeode",
-    "flippydrive",
-    "picoboot"
-  ],
-  "license": {
-    "spdx": "GPL-2.0-only",
-    "url": "https://github.com/DarthMotzkus/cubiboot-new-ui/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "DarthMotzkus/cubiboot-new-ui",
-    "asset_pattern": "EXTRACT_TO_ROOT.zip"
-  },
-  "treatments": [
-    {
-      "treatment": "archive.extract",
-      "arguments": ["EXTRACT_TO_ROOT.zip", "cubiboot/"]
+    "name": "Cubiboot New UI",
+    "author": "DarthMotzkus",
+    "description_short": "A customizable GameCube boot menu for launching games and homebrew from multiple storage devices.",
+    "description_long": "Cubiboot New UI uses the native GameCube menu to present games and homebrew from ODE devices - including FlippyDrive, CUBE-ODE, and GC Loader - and SD card adapters such as SD2SP2 and SD Gecko, preserving the look and feel of the original console experience. It integrates with Swiss to launch selected titles.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2",
+        "gcloader",
+        "cubeode",
+        "flippydrive",
+        "picoboot"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-only",
+        "url": "https://github.com/DarthMotzkus/cubiboot-new-ui/blob/main/LICENSE"
     },
-    {
-      "treatment": "contents.delete",
-      "arguments": ["cubiboot/config.ini"]
+    "source": {
+        "type": "github_release",
+        "repository": "DarthMotzkus/cubiboot-new-ui",
+        "asset_pattern": "EXTRACT_TO_ROOT.zip"
     },
-    {
-      "treatment": "contents.move",
-      "arguments": ["cubiboot/*", "./"]
-    }
-  ]
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "EXTRACT_TO_ROOT.zip",
+                "cubiboot/"
+            ]
+        },
+        {
+            "treatment": "contents.delete",
+            "arguments": [
+                "cubiboot/config.ini"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "cubiboot/*",
+                "./"
+            ]
+        }
+    ]
 }

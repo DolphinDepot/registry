@@ -1,28 +1,46 @@
 {
-  "name": "Genesis Plus GX",
-  "author": "Eke-Eke",
-  "description_short": "Accurate Sega 8/16-bit emulator: Genesis/Mega Drive, Sega CD, Master System, Game Gear, SG-1000.",
-  "description_long": "Genesis Plus GX is an enhanced port of Charles MacDonald's Genesis Plus emulator, focused on accuracy and portability. Supports Sega Genesis/Mega Drive, Sega/Mega CD, Master System, Game Gear, and SG-1000, including unlicensed and pirate dumps with backwards-compatibility modes. ROM loading from SD cards via libfat (SD Gecko and SD2SP2).",
-  "category": "emulators",
-  "platforms": ["gamecube", "panasonic_q", "dolphin"],
-  "peripherals": ["controller", "memory_card", "disc", "sd_gecko", "sd2sp2", "mmce", "gcloader"],
-  "license": {
-    "spdx": "NOASSERTION",
-    "url": "https://github.com/ekeeke/Genesis-Plus-GX/blob/master/LICENSE.txt",
-    "notes": "Custom BSD-style license with a non-commercial clause: redistribution and use are permitted only for non-commercial purposes."
-  },
-  "source": {
-    "type": "direct_url",
-    "url": "https://github.com/ekeeke/Genesis-Plus-GX/raw/master/builds/genplus_cube.dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": ["genplus_cube.dol", "apps/genesis-plus-gx/default.dol"]
+    "name": "Genesis Plus GX",
+    "author": "Eke-Eke",
+    "description_short": "Accurate Sega 8/16-bit emulator: Genesis/Mega Drive, Sega CD, Master System, Game Gear, SG-1000.",
+    "description_long": "Genesis Plus GX is an enhanced port of Charles MacDonald's Genesis Plus emulator, focused on accuracy and portability. Supports Sega Genesis/Mega Drive, Sega/Mega CD, Master System, Game Gear, and SG-1000, including unlicensed and pirate dumps with backwards-compatibility modes. ROM loading from SD cards via libfat (SD Gecko and SD2SP2).",
+    "category": "emulators",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller",
+        "memory_card",
+        "disc",
+        "sd_gecko",
+        "sd2sp2",
+        "mmce",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "url": "https://github.com/ekeeke/Genesis-Plus-GX/blob/master/LICENSE.txt",
+        "notes": "Custom BSD-style license with a non-commercial clause: redistribution and use are permitted only for non-commercial purposes."
     },
-    {
-      "treatment": "registry.copy",
-      "arguments": ["opening.bnr", "apps/genesis-plus-gx/opening.bnr"]
-    }
-  ]
+    "source": {
+        "type": "direct_url",
+        "url": "https://github.com/ekeeke/Genesis-Plus-GX/raw/master/builds/genplus_cube.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "genplus_cube.dol",
+                "apps/genesis-plus-gx/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/genesis-plus-gx/opening.bnr"
+            ]
+        }
+    ]
 }
