@@ -13,7 +13,6 @@ jobs:
     permissions:
       contents: read
       packages: read
-      pull-requests: write
 
     steps:
       - uses: actions/checkout@v6
@@ -65,16 +64,25 @@ jobs:
           ITCHIO_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
         run: ./.github/scripts/test-manifests.sh "${{ steps.changed.outputs.manifests }}" "${{ github.workspace }}" "$GITHUB_OUTPUT"
 
-      - name: Comment on PR
+      # Fork PRs get a read-only token, so the comment is posted by comment-pr.yml via workflow_run.
+      - name: Save PR comment
         if: steps.test.outputs.comment != ''
-        uses: actions/github-script@v8
         env:
           COMMENT_BODY: ${{ steps.test.outputs.comment }}
           VALIDATE_OUTPUT: ${{ steps.validate.outputs.output }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          mkdir -p pr-comment
+          printf '%s' "$COMMENT_BODY" > pr-comment/comment.md
+          printf '%s' "$VALIDATE_OUTPUT" > pr-comment/validate.txt
+          printf '%s' "$PR_NUMBER" > pr-comment/pr-number
+
+      - name: Upload PR comment
+        if: steps.test.outputs.comment != ''
+        uses: actions/upload-artifact@v7
         with:
-          script: |
-            const script = require('./.github/scripts/comment-pr.js');
-            await script({ github, context });
+          name: pr-comment
+          path: pr-comment/
 
       - name: Fail if any manifest test failed
         if: steps.test.outputs.failed == '1'
