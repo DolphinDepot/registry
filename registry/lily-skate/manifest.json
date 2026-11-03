@@ -37,9 +37,9 @@
       ]
     },
     {
-      "treatment": "registry.copy",
+      "treatment": "contents.move",
       "arguments": [
-        "opening.bnr",
+        "lysk/opening.bnr",
         "apps/lily-skate/opening.bnr"
       ]
     }
