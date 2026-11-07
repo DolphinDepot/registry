@@ -1,3 +1,4 @@
+
 {
   "name": "BEANZ GameCube System Monitor",
   "author": "BEANZ",
@@ -18,7 +19,10 @@
   "treatments": [
     {
       "treatment": "contents.move",
-      "arguments": ["beanz_gc_monitor.dol", "apps/beanz-gc-monitor/default.dol"]
+      "arguments": [
+        "beanz_gc_monitor.dol",
+        "apps/beanz-gc-monitor/default.dol"
+      ]
     }
   ]
 }
