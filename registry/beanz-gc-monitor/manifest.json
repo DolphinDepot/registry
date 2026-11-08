@@ -1,28 +1,34 @@
-
 {
-  "name": "BEANZ GameCube System Monitor",
-  "author": "BEANZ",
-  "description_short": "Lightweight GameCube system and connected-device diagnostic utility.",
-  "description_long": "Displays runtime, memory, video, and timing information on original GameCube hardware. The devices page reports controller and memory card connections and response-based SP1/SP2 occupancy. Supports hotplug detection and START to return to Swiss. Tested on DOL-001 hardware using SD Gecko and SD2SP2. SP1 occupied detection remains unverified.",
-  "category": "utilities",
-  "platforms": ["gamecube"],
-  "peripherals": ["controller", "memory_card", "sd_gecko", "sd2sp2"],
-  "license": {
-    "spdx": "MIT",
-    "url": "https://github.com/nxs8739/BEANZ-GameCube-Monitor/blob/main/LICENSE"
-  },
-  "source": {
-    "type": "github_release",
-    "repository": "nxs8739/BEANZ-GameCube-Monitor",
-    "asset_pattern": "beanz_gc_monitor.dol"
-  },
-  "treatments": [
-    {
-      "treatment": "contents.move",
-      "arguments": [
-        "beanz_gc_monitor.dol",
-        "apps/beanz-gc-monitor/default.dol"
-      ]
-    }
-  ]
+    "name": "BEANZ GameCube System Monitor",
+    "author": "BEANZ",
+    "description_short": "Lightweight GameCube system and connected-device diagnostic utility.",
+    "description_long": "Displays runtime, memory, video, and timing information on original GameCube hardware. The devices page reports controller and memory card connections and response-based SP1/SP2 occupancy. Supports hotplug detection and START to return to Swiss. Tested on DOL-001 hardware using SD Gecko and SD2SP2. SP1 occupied detection remains unverified.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube"
+    ],
+    "peripherals": [
+        "controller",
+        "memory_card",
+        "sd_gecko",
+        "sd2sp2"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/nxs8739/BEANZ-GameCube-Monitor/blob/main/LICENSE"
+    },
+    "source": {
+        "type": "github_release",
+        "repository": "nxs8739/BEANZ-GameCube-Monitor",
+        "asset_pattern": "beanz_gc_monitor.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "beanz_gc_monitor.dol",
+                "apps/beanz-gc-monitor/default.dol"
+            ]
+        }
+    ]
 }
