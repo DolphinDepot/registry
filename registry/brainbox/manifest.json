@@ -25,13 +25,13 @@
     "source": {
         "type": "github_release",
         "repository": "Arial-Bold/Brainbox",
-        "asset_pattern": "brainbox v*.zip"
+        "asset_pattern": "brainbox*.zip"
     },
     "treatments": [
         {
             "treatment": "archive.extract",
             "arguments": [
-                "brainbox v*.zip",
+                "brainbox*.zip",
                 "."
             ]
         },
