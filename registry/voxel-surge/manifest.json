@@ -1,0 +1,53 @@
+{
+    "name": "Voxel Surge Demo",
+    "author": "jim",
+    "description_short": "A voxel mech roguelite: drop into the shaft, blast through swarms, stack upgrades and descend 10,000 m to face the Titan.",
+    "description_long": "Voxel Surge is a fast mech roguelite built for the GameCube. Pick a class and a build path, then fall through floating sectors full of enemies, rivals and bosses. Every level up offers new weapons, passives and evolutions; every floor rolls its own effect. This demo runs from the first sector to the Titan, with split-screen co-op and versus. Music and saves live in SD:/voxelsurge.",
+    "category": "games",
+    "platforms": [
+        "gamecube"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "Freeware demo. Free to download and redistribute unmodified; all other rights reserved by the author."
+    },
+    "source": {
+        "type": "direct_url",
+        "url": "https://nookers.tech/voxelsurge/voxel-surge-demo-gc.zip"
+    },
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "voxel-surge-demo-gc.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "apps/voxel-surge/default.dol",
+                "apps/voxel-surge/default.dol"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "voxelsurge/",
+                "voxelsurge/"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/voxel-surge/opening.bnr"
+            ]
+        }
+    ]
+}
