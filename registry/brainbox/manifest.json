@@ -1,0 +1,46 @@
+{
+    "name": "BrainBox",
+    "author": "Arial-Bold",
+    "description_short": "An AI-powered hologram chatbot for GameCube. Ask it anything!",
+    "description_long": "Your friendly holographic professor who lives right inside your GameCube! Ask him anything using a GameCube Microphone or PSO keyboard, and he'll answer aloud in it's own voice. BrainBox brings your GameCube to life with an animated 3D professor, on-console text-to-speech, and AI integration supporting Groq, Gemini, Claude, and ChatGPT with your own API key. Additional features include live speech captions, built-in updates, and customizable display settings.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q"
+    ],
+    "peripherals": [
+        "controller",
+        "microphone",
+        "keyboard",
+        "bba",
+        "eth2gc",
+        "sd2sp2",
+        "sd_gecko",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/Arial-Bold/Brainbox/blob/main/LICENSE"
+    },
+    "source": {
+        "type": "github_release",
+        "repository": "Arial-Bold/Brainbox",
+        "asset_pattern": "brainbox v*.zip"
+    },
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "brainbox v*.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "brainbox/",
+                "apps/brainbox/"
+            ]
+        }
+    ]
+}
