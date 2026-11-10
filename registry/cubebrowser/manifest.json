@@ -1,19 +1,21 @@
 {
     "name": "CubeBrowser",
     "author": "Arial-Bold",
-    "description_short": "A real web browser for the GameCube with HTTPS, images, CSS, forms, SD card downloads and a MIDI music player",
-    "description_long": "CubeBrowser loads websites over a wired network connection, including HTTPS sites, with pictures, page styles, tables and forms. It has its own layout engine, cookies for classic logins, bookmarks, resumable multi-connection downloads straight to the SD card with zip extraction, a background MIDI player with SoundFont support, and built-in updaters for itself and Swiss. No JavaScript support.",
+    "description_short": "A real web browser for the GameCube with HTTPS, images, CSS, JavaScript, ad blocking, SD card downloads and a MIDI music player",
+    "description_long": "CubeBrowser loads websites over a network connection, including HTTPS sites, with pictures, page styles, tables and forms. It has its own layout engine and runs pages' JavaScript, so menus, tabs and buttons work. It also blocks ads and trackers, keeps cookies for classic logins, has bookmarks, resumable multi-connection downloads to the SD card with zip extraction, a background MIDI player with SoundFont support, and a built-in updater.",
     "category": "utilities",
     "platforms": [
         "gamecube",
         "panasonic_q"
     ],
     "peripherals": [
-        "controller",
         "bba",
         "eth2gc",
         "sd2sp2",
-        "sd_gecko"
+        "sd_gecko",
+        "controller",
+        "keyboard",
+        "gba_link_cable"
     ],
     "license": {
         "spdx": "MIT",
