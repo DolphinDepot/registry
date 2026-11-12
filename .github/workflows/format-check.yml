@@ -1,0 +1,26 @@
+name: Check Formatting
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "registry/**"
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 25
+
+      - run: npm ci
+
+      # Reports unformatted files as warnings; never fails the job.
+      - name: Check JSON formatting
+        run: |
+          npx prettier --list-different 'scripts/**/*.ts' '**/*.json' | while read -r file; do
+            echo "::warning file=$file::File is not formatted with Prettier (run: npm run format)"
+          done || true
