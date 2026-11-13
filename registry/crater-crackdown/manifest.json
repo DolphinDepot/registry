@@ -2,7 +2,7 @@
     "name": "Crater Crackdown",
     "author": "BEANZ",
     "description_short": "Retro arcade clone of asteroid shooter for Nintendo GameCube",
-    "description_long": "An original Asteroids-inspired arcade shooter for Nintendo GameCube. Pilot a triangle spaceship, blast crater-covered asteroids into smaller fragments, and survive increasingly challenging waves. Features original synthesized sound effects, three starting lives, extra lives through scoring, and four seconds of flashing wave-start protection from wave 11 onward. Built in C with libogc and tested on original GameCube hardware.",
+    "description_long": "An original Asteroids-inspired arcade shooter for Nintendo GameCube. Pilot a triangle spaceship, blast crater-covered asteroids into smaller fragments, and survive increasingly challenging waves. Features original synthesized sound effects, three starting lives, extra lives through scoring, and four seconds of flashing wave-start protection from wave 11 onward.",
     "category": "games",
     "platforms": [
         "gamecube"
@@ -25,6 +25,13 @@
             "arguments": [
                 "crater_crackdown.dol",
                 "apps/crater-crackdown/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/crater-crackdown/opening.bnr"
             ]
         }
     ]
