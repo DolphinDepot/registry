@@ -28,6 +28,13 @@
                 "beanz_avi_player.dol",
                 "apps/beanz-avi-player/default.dol"
             ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/beanz-avi-player/opening.bnr"
+            ]
         }
     ]
 }

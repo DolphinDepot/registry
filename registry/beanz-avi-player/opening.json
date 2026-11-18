@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "BEANZ AVI Player",
+        "developerNameShort": "BEANZ",
+        "gameTitle": "BEANZ AVI Player",
+        "developerName": "BEANZ",
+        "description": "Lightweight GameCube AVI player with MJPEG video and PCM audio"
+    }
+}
