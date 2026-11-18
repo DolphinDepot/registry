@@ -1,0 +1,33 @@
+{
+    "name": "BEANZ AVI Player",
+    "author": "BEANZ",
+    "description_short": "Lightweight GameCube AVI player with MJPEG video, PCM audio, and AVIX continuation support",
+    "description_long": "Play MJPEG AVI videos with 32 kHz stereo PCM audio on Nintendo GameCube. Supports AVIX continuation, SD2SP2, SD Gecko, and a built-in wallpaper. IMPORTANT: Before playing videos, read the GitHub README for required encoding settings, controls, known issues, and limitations",
+    "category": "media",
+    "platforms": [
+        "gamecube"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/nxs8739/beanz-avi-player/blob/main/LICENSE"
+    },
+    "source": {
+        "type": "github_release",
+        "repository": "nxs8739/beanz-avi-player",
+        "asset_pattern": "beanz_avi_player.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "beanz_avi_player.dol",
+                "apps/beanz-avi-player/default.dol"
+            ]
+        }
+    ]
+}
