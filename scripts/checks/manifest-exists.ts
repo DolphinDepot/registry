@@ -4,11 +4,10 @@ import type { CheckContext, CheckResult } from "../lib/types.js";
 
 export async function manifestExists(ctx: CheckContext): Promise<CheckResult> {
     const manifestPath = join(ctx.dir, "manifest.json");
-    let raw: string;
 
     try {
         accessSync(manifestPath, constants.F_OK | constants.R_OK);
-    } catch (err) {
+    } catch {
         return {
             check: "manifest-exists",
             passed: false,

@@ -1,48 +1,92 @@
-import json from "@eslint/json";
+import jsonc from "eslint-plugin-jsonc";
+import stylistic from "@stylistic/eslint-plugin";
+import tseslint from "typescript-eslint";
 
-const local = {
-    rules: {
-        "eol-last": {
-            meta: {
-                type: "layout",
-                fixable: "whitespace",
-                messages: { missing: "Newline required at end of file." },
-            },
-            create(context) {
-                return {
-                    Document(node) {
-                        const text = context.sourceCode.text;
-                        if (text.length > 0 && !text.endsWith("\n")) {
-                            context.report({
-                                node,
-                                loc: context.sourceCode.getLoc(node).end,
-                                messageId: "missing",
-                                fix: (fixer) =>
-                                    fixer.insertTextAfterRange(
-                                        [text.length, text.length],
-                                        "\n",
-                                    ),
-                            });
-                        }
-                    },
-                };
-            },
-        },
-    },
-};
+// Formatting problems are reported as warnings; everything else is an error.
+const warn = (rules) =>
+    Object.fromEntries(
+        Object.entries(rules).map(([name, value]) => [
+            name,
+            Array.isArray(value) ? ["warn", ...value.slice(1)] : "warn",
+        ]),
+    );
 
 export default [
     {
         ignores: ["node_modules/", ".claude/", "package-lock.json"],
     },
+
+    // JSON: correctness from jsonc's recommended set, layout matching
+    // JSON.stringify(value, null, 4) with a trailing newline.
+    ...jsonc.configs["flat/recommended-with-json"],
     {
         files: ["**/*.json"],
-        language: "json/json",
-        plugins: { json, local },
+        plugins: { "@stylistic": stylistic },
+        rules: warn({
+            "jsonc/indent": ["error", 4],
+            "jsonc/key-spacing": "error",
+            "jsonc/comma-style": "error",
+            "jsonc/object-curly-newline": ["error", { minProperties: 1 }],
+            "jsonc/object-property-newline": "error",
+            "jsonc/array-bracket-newline": ["error", { minItems: 1 }],
+            "jsonc/array-element-newline": "error",
+            "@stylistic/eol-last": "error",
+            "@stylistic/no-trailing-spaces": "error",
+            "@stylistic/no-multiple-empty-lines": ["error", { max: 0 }],
+        }),
+    },
+
+    // TypeScript
+    ...tseslint.configs.recommended.map((config) => ({
+        ...config,
+        files: ["**/*.ts"],
+    })),
+    {
+        files: ["**/*.ts"],
         rules: {
-            ...json.configs.recommended.rules,
-            "json/top-level-interop": "error",
-            "local/eol-last": "error",
+            "@typescript-eslint/no-unused-vars": [
+                "error",
+                { ignoreRestSiblings: true },
+            ],
         },
+    },
+    {
+        // Tests deliberately pass malformed manifests.
+        files: ["**/__tests__/**/*.ts"],
+        rules: {
+            "@typescript-eslint/no-explicit-any": "off",
+        },
+    },
+    {
+        files: ["**/*.ts"],
+        plugins: { "@stylistic": stylistic },
+        rules: warn({
+            ...stylistic.configs.customize({
+                indent: 4,
+                quotes: "double",
+                semi: true,
+                commaDangle: "always-multiline",
+                braceStyle: "1tbs",
+                arrowParens: true,
+            }).rules,
+            "@stylistic/quotes": [
+                "error",
+                "double",
+                { avoidEscape: true, allowTemplateLiterals: "always" },
+            ],
+            "@stylistic/quote-props": ["error", "as-needed"],
+            "@stylistic/operator-linebreak": [
+                "error",
+                "after",
+                {
+                    overrides: {
+                        "?": "before",
+                        ":": "before",
+                        "|": "before",
+                        "&": "before",
+                    },
+                },
+            ],
+        }),
     },
 ];

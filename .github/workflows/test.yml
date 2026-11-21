@@ -8,12 +8,14 @@ on:
       - "package.json"
       - "tsconfig.json"
       - "vitest.config.ts"
+      - "eslint.config.mjs"
   pull_request:
     paths:
       - "scripts/**"
       - "package.json"
       - "tsconfig.json"
       - "vitest.config.ts"
+      - "eslint.config.mjs"
 
 jobs:
   test:
