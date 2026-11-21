@@ -20,7 +20,7 @@
             "type": "assets",
             "label": "Raptor: Call of the Shadows registered GLB assets (optional)",
             "url": "https://github.com/RetroGamer02/raptor-consoles",
-            "notes": "Optional. The shareware version 1.2 is embedded in the app with permission from Scott Host and plays out of the box. To play the registered (full) version, copy the GLB files (FILE000*.GLB) from Raptor: Call of the Shadows DOS v1.2 into apps/raptor/ next to default.dol."
+            "notes": "Optional. The shareware version 1.2 is embedded in the app with permission from Scott Host and plays out of the box. To play the registered (full) version, copy the GLB files (FILE0002-4.GLB) from Raptor: Call of the Shadows DOS v1.2 into apps/raptor/ next to default.dol."
         }
     ],
     "source": {
