@@ -1,0 +1,43 @@
+{
+  "name": "Sonic RPG Console",
+  "author": "epixjava & gameblabla",
+  "description_short": "Sonic RPG Console - A text based Sonic RPG",
+  "description_long": "Sonic RPG Console - The lost homebrew restored. Missing for years, you can play this lost title today! An epic battle between Sonic and Shadow!",
+  "category": "games",
+  "platforms": [
+    "gamecube",
+    "dolphin"
+  ],
+  "peripherals": [
+    "controller",
+    "gcloader",
+    "cubeode",
+    "flippydrive",
+    "picoboot"
+  ],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/epixjava/SRPG-GC/blob/main/LICENSE"
+  },
+  "source": {
+    "type": "github_release",
+    "repository": "epixjava/SRPG-GC",
+    "asset_pattern": "sonic-rpg-gc*.zip"
+  },
+  "treatments": [
+    {
+      "treatment": "archive.extract",
+      "arguments": [
+        "sonic-rpg-gc*.zip",
+        "."
+      ]
+    },
+    {
+      "treatment": "contents.move",
+      "arguments": [
+        "sonic-rpg-gc/",
+        "apps/sonic-rpg-gc/"
+      ]
+    }
+  ]
+}
