@@ -28,6 +28,13 @@
                 "beanz_mp3_player.dol",
                 "apps/beanz-mp3-player/default.dol"
             ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/beanz-mp3-player/opening.bnr"
+            ]
         }
     ]
 }
