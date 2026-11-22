@@ -1,0 +1,33 @@
+{
+    "name": "BEANZ MP3 Player",
+    "author": "BEANZ",
+    "description_short": "Lightweight Nintendo GameCube MP3 player with SD browsing, simple playback controls, and custom wallpapers",
+    "description_long": "Play MP3 music on Nintendo GameCube from SD2SP2 or SD Gecko storage. Includes a seven-row file browser, scrolling filenames, elapsed and total song time, and custom GameCube-themed wallpapers.",
+    "category": "media",
+    "platforms": [
+        "gamecube"
+    ],
+    "peripherals": [
+        "controller",
+        "sd_gecko",
+        "sd2sp2"
+    ],
+    "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/nxs8739/beanz-mp3-player/blob/main/LICENSE"
+    },
+    "source": {
+        "type": "github_release",
+        "repository": "nxs8739/beanz-mp3-player",
+        "asset_pattern": "beanz_mp3_player.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "beanz_mp3_player.dol",
+                "apps/beanz-mp3-player/default.dol"
+            ]
+        }
+    ]
+}
