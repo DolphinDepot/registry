@@ -1,0 +1,90 @@
+{
+    "name": "Indigo",
+    "author": "Spencer Norton",
+    "description_short": "A fork of Swiss for the Nintendo GameCube with an animated glass-cube interface, poster library, and game details.",
+    "description_long": "Indigo is an unofficial fork of Swiss with the interface rebuilt in the GameCube's own visual language: an animated glass-cube Home, 3D Boxes, Spotlight, and Jewel Case library views, a memory card save manager, and native Dolphin Depot /apps support. Includes swiss/patches/apploader.img so In-Game Reset returns to Indigo out of the box.",
+    "category": "utilities",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "tdev",
+        "gdev",
+        "npdp_reader",
+        "nr_reader",
+        "wii_swiss"
+    ],
+    "peripherals": [
+        "controller",
+        "memory_card",
+        "disc",
+        "dk_bongos",
+        "steering_wheel",
+        "sd_gecko",
+        "sd2sp2",
+        "m2loader",
+        "mmce",
+        "bba",
+        "eth2gc",
+        "gcloader",
+        "flippydrive",
+        "picoboot",
+        "usb_gecko"
+    ],
+    "license": {
+        "spdx": "GPL-2.0-or-later",
+        "url": "https://github.com/spencernorton/indigo/blob/main/LICENSE"
+    },
+    "external_resources": [
+        {
+            "type": "assets",
+            "label": "Optional Poster Pack (box art, stills, discs)",
+            "url": "https://indigo.norvitech.com/indigo-posters-all.zip",
+            "notes": "Extract swiss/ui/ to your games SD card for 3D Boxes, Spotlight, and Jewel Case artwork."
+        },
+        {
+            "type": "assets",
+            "label": "Optional Cheat Pack",
+            "url": "https://indigo.norvitech.com/indigo-cheats.zip",
+            "notes": "Extract swiss/cheats/ to your SD card to enable Gecko codes from Game Details."
+        }
+    ],
+    "source": {
+        "type": "github_release",
+        "repository": "spencernorton/indigo",
+        "asset_pattern": "Indigo-v*.zip",
+        "ignore_versions": [
+            "*-beta.*",
+            "*-rc.*"
+        ]
+    },
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "Indigo-v*.zip",
+                "indigo/"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "indigo/ipl.dol",
+                "apps/indigo/default.dol"
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "indigo/swiss/",
+                "swiss/"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/indigo/opening.bnr"
+            ]
+        }
+    ]
+}
