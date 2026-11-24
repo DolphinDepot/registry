@@ -1,0 +1,10 @@
+{
+    "type": "BNR1",
+    "text": {
+        "gameNameShort": "Indigo",
+        "developerNameShort": "Spencer Norton",
+        "gameTitle": "Indigo for Nintendo GameCube",
+        "developerName": "Spencer Norton",
+        "description": "Fork of Swiss with an animated glass-cube Home, poster library, and game details."
+    }
+}
