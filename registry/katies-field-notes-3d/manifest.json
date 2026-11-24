@@ -1,0 +1,44 @@
+{
+    "name": "Katie's Field Notes 3D",
+    "author": "Paul D. Price",
+    "description_short": "A cozy 3D birdwatching adventure: explore seven habitats and find, study and identify 184 real North American birds.",
+    "description_long": "Pack your binoculars and field journal. Wander seven habitats, from a sunny meadow to a lighthouse seashore and a desert canyon, and identify 184 real birds by their field marks, size and song. Fill your field guide with notes and trivia, meet friendly hermits, care for a pet bird, and unlock four minigames. Family-friendly, with no combat. Needs about 240 MB free on the SD card, and saves to the memory card in slot A.",
+    "category": "games",
+    "platforms": [
+        "gamecube"
+    ],
+    "peripherals": [
+        "controller",
+        "memory_card",
+        "sd2sp2",
+        "sd_gecko",
+        "gcloader"
+    ],
+    "license": {
+        "spdx": "NOASSERTION",
+        "notes": "Freeware by Paul D. Price; the author permits free redistribution of the unmodified release, including through Dolphin Depot. Includes libogc (zlib-style), libfat (BSD-style) and newlib; licence texts are in the release zip."
+    },
+    "source": {
+        "type": "itchio",
+        "creator": "pauldprice",
+        "game": "katies-field-notes-3d",
+        "upload": "KatiesFieldNotes3D_DolphinDepot*",
+        "format": "zip"
+    },
+    "treatments": [
+        {
+            "treatment": "archive.extract",
+            "arguments": [
+                "katies-field-notes-3d.zip",
+                "."
+            ]
+        },
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "apps/katies-field-notes-3d/",
+                "apps/katies-field-notes-3d/"
+            ]
+        }
+    ]
+}
