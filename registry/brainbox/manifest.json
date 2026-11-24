@@ -2,8 +2,8 @@
     "name": "BrainBox",
     "author": "Arial-Bold",
     "description_short": "An AI-powered hologram chatbot for GameCube. Ask it anything!",
-    "description_long": "Your friendly holographic professor who lives right inside your GameCube! Ask him anything using a GameCube Microphone or PSO keyboard, and he'll answer aloud in it's own voice. BrainBox brings your GameCube to life with an animated 3D professor, on-console text-to-speech, and AI integration supporting Groq, Gemini, Claude, and ChatGPT with your own API key. Additional features include live speech captions, built-in updates, and customizable display settings.",
-    "category": "utilities",
+    "description_long": "Meet Dr. Brahms and Professor Scotty, two brainiacs living right inside your GameCube! Ask them questions using a GameCube Microphone or PSO keyboard, and they'll respond aloud with their own unique voices. Play trivia with your hologram with up to four players, and questions on virtually any topic you can imagine. BrainBox supports AI integration with Groq, Gemini, Claude, and ChatGPT.",
+    "category": "games",
     "platforms": [
         "gamecube",
         "panasonic_q"
