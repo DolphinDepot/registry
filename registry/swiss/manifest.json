@@ -33,6 +33,17 @@
         "spdx": "GPL-2.0-or-later",
         "url": "https://github.com/emukidid/swiss-gc/blob/master/LICENSE"
     },
+    "boot_files": [
+        {
+            "source": "apps/swiss/default.dol",
+            "targets": [
+                "ipl.dol",
+                "autoexec.dol",
+                "boot.dol",
+                "swiss-gc.dol"
+            ]
+        }
+    ],
     "source": {
         "type": "github_release",
         "repository": "emukidid/swiss-gc",

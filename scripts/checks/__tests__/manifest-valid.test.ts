@@ -247,4 +247,72 @@ describe("manifestValid", () => {
         expect(result.message).toMatch(/platforms.*duplicate/);
         expect(result.message).toMatch(/peripherals.*duplicate/);
     });
+
+    it("accepts boot_files with known targets", () => {
+        const result = manifestValid(
+            makeCtx({
+                ...validManifest,
+                boot_files: [
+                    {
+                        source: "apps/test-app/default.dol",
+                        targets: ["ipl.dol", "autoexec.dol"],
+                    },
+                ],
+            }),
+        );
+
+        expect(result.passed).toBe(true);
+    });
+
+    it("fails when a boot_files target is not a known boot file", () => {
+        const result = manifestValid(
+            makeCtx({
+                ...validManifest,
+                boot_files: [
+                    {
+                        source: "apps/test-app/default.dol",
+                        targets: ["config.ini" as any],
+                    },
+                ],
+            }),
+        );
+
+        expect(result.passed).toBe(false);
+        expect(result.message).toMatch(/targets/);
+    });
+
+    it.each([
+        ["an absolute path", "/apps/test-app/default.dol"],
+        ["a parent segment", "apps/../IPL.dol"],
+        ["a leading parent segment", "../default.dol"],
+        ["a current-directory segment", "apps/./default.dol"],
+        ["a non-DOL file", "apps/test-app/default.elf"],
+    ])("fails when a boot_files source is %s", (_, source) => {
+        const result = manifestValid(
+            makeCtx({
+                ...validManifest,
+                boot_files: [{ source, targets: ["ipl.dol"] }],
+            }),
+        );
+
+        expect(result.passed).toBe(false);
+        expect(result.message).toMatch(/source/);
+    });
+
+    it("fails when boot_files targets repeat", () => {
+        const result = manifestValid(
+            makeCtx({
+                ...validManifest,
+                boot_files: [
+                    {
+                        source: "apps/test-app/default.dol",
+                        targets: ["ipl.dol", "ipl.dol"],
+                    },
+                ],
+            }),
+        );
+
+        expect(result.passed).toBe(false);
+        expect(result.message).toMatch(/duplicate/);
+    });
 });

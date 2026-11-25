@@ -18,6 +18,11 @@ export interface ExternalResource {
     notes?: string;
 }
 
+export interface BootFile {
+    source: string;
+    targets: ("boot.dol" | "ipl.dol" | "autoexec.dol" | "swiss-gc.dol")[];
+}
+
 export interface Manifest {
     name: string;
     author: string;
@@ -31,6 +36,7 @@ export interface Manifest {
         | { type: "github_release"; repository: string; asset_pattern: string }
         | { type: "direct_url"; url: string; file_name?: string };
     external_resources?: ExternalResource[];
+    boot_files?: BootFile[];
     treatments: {
         treatment: string;
         arguments: string[];
