@@ -48,6 +48,17 @@
             "notes": "Extract swiss/cheats/ to your SD card to enable Gecko codes from Game Details."
         }
     ],
+    "boot_files": [
+        {
+            "source": "apps/indigo/default.dol",
+            "targets": [
+                "ipl.dol",
+                "autoexec.dol",
+                "boot.dol",
+                "swiss-gc.dol"
+            ]
+        }
+    ],
     "source": {
         "type": "github_release",
         "repository": "spencernorton/indigo",
