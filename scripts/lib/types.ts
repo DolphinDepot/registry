@@ -20,7 +20,7 @@ export interface ExternalResource {
 
 export interface BootFile {
     source: string;
-    targets: ("ipl.dol" | "autoexec.dol" | "boot.dol" | "boot2.dol")[];
+    targets: ("boot.dol" | "ipl.dol" | "autoexec.dol" | "swiss-gc.dol")[];
 }
 
 export interface Manifest {

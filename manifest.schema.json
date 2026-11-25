@@ -370,7 +370,7 @@
             "type": "array",
             "minItems": 1,
             "maxItems": 4,
-            "description": "Installed files that the user can copy to a well-known boot path on the root of the storage device, so a bootloader or modchip (e.g. PicoBoot/gekkoboot `ipl.dol`, an Action Replay or SD `autoexec.dol`, FlippyDrive `boot.dol`) starts the application. The catalog only offers the copy after installation and the user confirms the target; an existing file at the target path is overwritten.",
+            "description": "Installed files that the user can copy to a well-known boot path on the root of the storage device, so a bootloader or modchip (e.g. PicoBoot/gekkoboot `ipl.dol`, an Action Replay or SD `autoexec.dol`, FlippyDrive `boot.dol`, cubiboot `swiss-gc.dol`) starts the application. The catalog only offers the copy after installation and the user confirms the target; an existing file at the target path is overwritten.",
             "items": {
                 "type": "object",
                 "properties": {
@@ -391,13 +391,13 @@
                         "items": {
                             "type": "string",
                             "enum": [
+                                "boot.dol",
                                 "ipl.dol",
                                 "autoexec.dol",
-                                "boot.dol",
-                                "boot2.dol"
+                                "swiss-gc.dol"
                             ]
                         },
-                        "description": "Boot file names on the root of the storage device that the user may choose from, in order of preference. FAT is case-insensitive, so `ipl.dol` also replaces an existing `IPL.DOL`.",
+                        "description": "Boot file names on the root of the storage device that the user may choose from. FAT is case-insensitive, so `ipl.dol` also replaces an existing `IPL.DOL`.",
                         "examples": [
                             [
                                 "ipl.dol",
@@ -419,7 +419,8 @@
                         "targets": [
                             "ipl.dol",
                             "autoexec.dol",
-                            "boot.dol"
+                            "boot.dol",
+                            "swiss-gc.dol"
                         ]
                     }
                 ]

@@ -39,7 +39,8 @@
             "targets": [
                 "ipl.dol",
                 "autoexec.dol",
-                "boot.dol"
+                "boot.dol",
+                "swiss-gc.dol"
             ]
         }
     ],
