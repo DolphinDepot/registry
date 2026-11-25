@@ -66,6 +66,13 @@
                 "Apploader/*",
                 "./"
             ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/swiss/opening.bnr"
+            ]
         }
     ]
 }
