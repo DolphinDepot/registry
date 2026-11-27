@@ -1,0 +1,41 @@
+{
+    "name": "Meritous",
+    "author": "ASCEAI, Cralex",
+    "description_short": "Top-down dungeon action game. Explore the Orcus Dome as Merit, fight hostile beings with psi powers and collect crystals to upgrade them.",
+    "description_long": "You play as Merit on a quest through the Orcus Dome, a large underground structure of interconnected rooms filled with hostile beings and valuable artifacts. Your psi power attacks everything within a radius around you in the same room. Charge it for a stronger blast, but the bigger the charge, the longer it takes to recharge. Collect crystals along the way to upgrade your psi abilities: charging, recharging and the reflect shield. Music is not included.",
+    "category": "games",
+    "platforms": [
+        "gamecube",
+        "panasonic_q",
+        "dolphin"
+    ],
+    "peripherals": [
+        "controller",
+        "memory_card"
+    ],
+    "license": {
+        "spdx": "GPL-3.0-or-later",
+        "url": "https://github.com/Cralex/meritous-ports/blob/main/gpl.txt"
+    },
+    "source": {
+        "type": "github_release",
+        "repository": "Cralex/meritous-ports",
+        "asset_pattern": "meritous-gamecube.dol"
+    },
+    "treatments": [
+        {
+            "treatment": "contents.move",
+            "arguments": [
+                "meritous-gamecube.dol",
+                "apps/meritous/default.dol"
+            ]
+        },
+        {
+            "treatment": "registry.copy",
+            "arguments": [
+                "opening.bnr",
+                "apps/meritous/opening.bnr"
+            ]
+        }
+    ]
+}
